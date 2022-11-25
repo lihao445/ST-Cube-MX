@@ -137,10 +137,6 @@ int main(void)
 		PS2Data_Acquire();
 		HAL_Delay(3);
 		
-		__HAL_TIM_SetCompare(&htim3,TIM_CHANNEL_1,15000);
-		HAL_GPIO_WritePin(MOTOR4_IN1_GPIO_Port, MOTOR4_IN1_Pin, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(MOTOR4_IN2_GPIO_Port, MOTOR4_IN2_Pin, GPIO_PIN_RESET);
-		
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

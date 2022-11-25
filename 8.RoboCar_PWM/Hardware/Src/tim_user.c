@@ -88,7 +88,7 @@ void Forward(int speed)
 	HAL_GPIO_WritePin(MOTOR4_IN1_GPIO_Port, MOTOR4_IN1_Pin, GPIO_PIN_SET);
 	HAL_GPIO_WritePin(MOTOR4_IN2_GPIO_Port, MOTOR4_IN2_Pin, GPIO_PIN_RESET);	
 				
-	Speed_Motor_Target_1= abs(speed);
+	Speed_Motor_Target_1 = abs(speed);
 	Speed_Motor_Target_2 = 	abs(speed);
 	Speed_Motor_Target_3 = 	abs(speed);
 	Speed_Motor_Target_4 = 	abs(speed);
@@ -109,7 +109,7 @@ void Reverse(int speed)
 	HAL_GPIO_WritePin(MOTOR4_IN1_GPIO_Port, MOTOR4_IN1_Pin, GPIO_PIN_RESET);
 	HAL_GPIO_WritePin(MOTOR4_IN2_GPIO_Port, MOTOR4_IN2_Pin, GPIO_PIN_SET);	
 	
-	Speed_Motor_Target_1 = abs(speed);
+	Speed_Motor_Target_1 =  abs(speed);
 	Speed_Motor_Target_2 = 	abs(speed);
 	Speed_Motor_Target_3 = 	abs(speed);
 	Speed_Motor_Target_4 = 	abs(speed);
@@ -122,7 +122,7 @@ void TurnLeft(int fast_speed)
 	int slow_speed;
 	slow_speed = abs(fast_speed) - 0.1 * abs(fast_speed);
 	
-	Speed_Motor_Target_1 = abs(slow_speed);
+	Speed_Motor_Target_1 =  abs(slow_speed);
 	Speed_Motor_Target_2 = 	abs(fast_speed);
 	Speed_Motor_Target_3 = 	abs(slow_speed);
 	Speed_Motor_Target_4 = 	abs(fast_speed);
@@ -133,7 +133,7 @@ void TurnRight(int fast_speed)
 	int slow_speed;
 	slow_speed = abs(fast_speed) - 0.1 * abs(fast_speed);
 	
-	Speed_Motor_Target_1 = abs(fast_speed);
+	Speed_Motor_Target_1 =  abs(fast_speed);
 	Speed_Motor_Target_2 = 	abs(slow_speed);
 	Speed_Motor_Target_3 = 	abs(fast_speed);
 	Speed_Motor_Target_4 = 	abs(slow_speed);
