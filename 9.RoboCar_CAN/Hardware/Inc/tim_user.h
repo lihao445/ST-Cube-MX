@@ -7,12 +7,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim);
 
 void RC_VC_DATA(void);
 
-void Chassis_Stop(void);
-void Chassis_Forward(float Chassis_Target);
-void Chassis_Reverse(float Chassis_Target);
-void Chassis_Left(float Chassis_Target);
-void Chassis_Right(float Chassis_Target);
-void Chassis_Ring_Left(float Chassis_Target);
-void Chassis_Ring_Right(float Chassis_Target);
+void Mecanum_Wheel_Speed_Calculation(void);
+	
+void Transmit_Speed(void);
 
 #endif

@@ -1,12 +1,13 @@
 #include "tim_user.h"
 
-float Vcx,Vcy,Vcr;
+float Vcx,Vcy,Wcr;
+float a,b;
 
 extern RC_ctrl_t rc_ctrl;
 
 extern float Target_1,Target_2,Target_3,Target_4;
 extern float Speed_Motor_Target_1,Speed_Motor_Target_2,Speed_Motor_Target_3,Speed_Motor_Target_4;
-extern float	Position_Motor_Target_1,Position_Motor_Target_2,Position_Motor_Target_3,Position_Motor_Target_4;
+extern float Position_Motor_Target_1,Position_Motor_Target_2,Position_Motor_Target_3,Position_Motor_Target_4;
 
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
@@ -23,33 +24,11 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 					
 				if(rc_ctrl.rc.s[1] == 3)    //S2中间    手动模式
 				{
-					Speed_Motor_Target_1 =   Vcx + Vcy;
-					Speed_Motor_Target_2 =   Vcx - Vcy;
-					Speed_Motor_Target_3 = - Vcx - Vcy;
-					Speed_Motor_Target_4 = - Vcx + Vcy;
-					if(rc_ctrl.rc.ch[4] != 0)
-					{
-						Speed_Motor_Target_1 = -Vcr ;
-						Speed_Motor_Target_2 = -Vcr ;
-						Speed_Motor_Target_3 = -Vcr ;
-						Speed_Motor_Target_4 = -Vcr ;
-					}
+					Mecanum_Wheel_Speed_Calculation();
 				}
-				
-				
 			}
-			
-			
-			
-			Target_1 = PID_velocity_realize_1(Speed_Motor_Target_1,1);
-			Target_2 = PID_velocity_realize_1(Speed_Motor_Target_2,2);
-			Target_3 = PID_velocity_realize_1(Speed_Motor_Target_3,3);
-			Target_4 = PID_velocity_realize_1(Speed_Motor_Target_4,4);
-//	 		Target_1 = pid_call_1(Position_Motor_Target_1,1);
-			CAN_cmd_chassis(Target_1,Target_2,Target_3,Target_4);
-			
+			Transmit_Speed();
 		}
-
 }
 
 
@@ -65,10 +44,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
 /*
 
-V1 =   Vcx + Vcy   (c是Chassis)
-V2 =   Vcx - Vcy
-V3 = - Vcx - Vcy
-V4 = - Vcx + Vcy
+V1 = - Vcx + Vcy + Wcr * ( a + b )        (c是Chassis)
+V2 =   Vcx + Vcy - Wcr * ( a + b )
+V3 = - Vcx + Vcy - Wcr * ( a + b )
+V4 =   Vcx + Vcy + Wcr * ( a + b )
 
 */
 
@@ -76,85 +55,31 @@ void RC_VC_DATA(void)
 {
 	Vcx = 0.707106f * rc_ctrl.rc.ch[2];
 	Vcy = 0.707106f * rc_ctrl.rc.ch[3];
-	Vcr = 0.707106f * rc_ctrl.rc.ch[4];
+	Wcr = 0.707106f * rc_ctrl.rc.ch[4];
 	
 	Vcx *= 7;
 	Vcy *= 7;
-	Vcr *= 7;
-}
-
-
-
-
-void Chassis_Stop(void)
-{
-	Vcx = 0;
-	Vcy = 0;
-	Speed_Motor_Target_1 =   Vcx + Vcy;
-	Speed_Motor_Target_2 =   Vcx - Vcy;
-	Speed_Motor_Target_3 = - Vcx - Vcy;
-	Speed_Motor_Target_4 = - Vcx + Vcy;
-}
-
-
-void Chassis_Forward(float Chassis_Target)
-{
-	Vcx = 0;
-	Vcy = Chassis_Target;
-	Speed_Motor_Target_1 =   Vcx + Vcy;
-	Speed_Motor_Target_2 =   Vcx - Vcy;
-	Speed_Motor_Target_3 = - Vcx - Vcy;
-	Speed_Motor_Target_4 = - Vcx + Vcy;
-}
-
-
-void Chassis_Reverse(float Chassis_Target)
-{
-	Vcx = 0;
-	Vcy = - Chassis_Target;
-	Speed_Motor_Target_1 =   Vcx + Vcy;
-	Speed_Motor_Target_2 =   Vcx - Vcy;
-	Speed_Motor_Target_3 = - Vcx - Vcy;
-	Speed_Motor_Target_4 = - Vcx + Vcy;
-}
-
-
-void Chassis_Left(float Chassis_Target)
-{
-	Vcx = - Chassis_Target;
-	Vcy = 0;
-	Speed_Motor_Target_1 =   Vcx + Vcy;
-	Speed_Motor_Target_2 =   Vcx - Vcy;
-	Speed_Motor_Target_3 = - Vcx - Vcy;
-	Speed_Motor_Target_4 = - Vcx + Vcy;
-}
-
-
-void Chassis_Right(float Chassis_Target)
-{
-	Vcx = Chassis_Target;
-	Vcy = 0;
-	Speed_Motor_Target_1 =   Vcx + Vcy;
-	Speed_Motor_Target_2 =   Vcx - Vcy;
-	Speed_Motor_Target_3 = - Vcx - Vcy;
-	Speed_Motor_Target_4 = - Vcx + Vcy;
-}
-
-void Chassis_Ring_Left(float Chassis_Target)
-{
-
-	Speed_Motor_Target_1 = -Chassis_Target ;
-	Speed_Motor_Target_2 = -Chassis_Target ;
-	Speed_Motor_Target_3 = -Chassis_Target ;
-	Speed_Motor_Target_4 = -Chassis_Target ;
-}
-
-void Chassis_Ring_Right(float Chassis_Target)
-{
+	Wcr *= -7;
 	
-	Speed_Motor_Target_1 =  Chassis_Target ;
-	Speed_Motor_Target_2 =  Chassis_Target ;
-	Speed_Motor_Target_3 =  Chassis_Target ;
-	Speed_Motor_Target_4 =  Chassis_Target ;
+	a =  0.085;           //轮子到底盘中心的 X轴距离
+	b =  0.065;					  //轮子到底盘中心的 Y轴距离
 }
 
+
+void Mecanum_Wheel_Speed_Calculation(void)
+{
+	Speed_Motor_Target_1 = - Vcx + Vcy + Wcr * ( a + b ) ;
+	Speed_Motor_Target_2 =   Vcx + Vcy - Wcr * ( a + b ) ;
+	Speed_Motor_Target_3 = - Vcx + Vcy - Wcr * ( a + b ) ;
+	Speed_Motor_Target_4 =   Vcx + Vcy + Wcr * ( a + b ) ;
+}
+
+void Transmit_Speed(void)
+{
+			Target_1 = PID_velocity_realize_1(Speed_Motor_Target_1,1);
+			Target_2 = PID_velocity_realize_1(Speed_Motor_Target_2,2);
+			Target_3 = PID_velocity_realize_1(Speed_Motor_Target_3,3);
+			Target_4 = PID_velocity_realize_1(Speed_Motor_Target_4,4);
+//	 		Target_1 = pid_call_1(Position_Motor_Target_1,1);
+			CAN_cmd_chassis(Target_1,Target_2,Target_3,Target_4);
+}
