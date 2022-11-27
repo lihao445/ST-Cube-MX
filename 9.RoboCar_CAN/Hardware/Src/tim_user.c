@@ -57,9 +57,9 @@ void RC_VC_DATA(void)
 	Vcy = 0.707106f * rc_ctrl.rc.ch[3];
 	Wcr = 0.707106f * rc_ctrl.rc.ch[4];
 	
-	Vcx *= 7;
-	Vcy *= 7;
-	Wcr *= -7;
+	Vcx *= 17;
+	Vcy *= 17;
+	Wcr *= -17;
 	
 	a =  0.085;           //轮子到底盘中心的 X轴距离
 	b =  0.065;					  //轮子到底盘中心的 Y轴距离
