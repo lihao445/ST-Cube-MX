@@ -1,9 +1,9 @@
 rtos_led_flash\queue.o: ../Middlewares/Third_Party/FreeRTOS/Source/queue.c
-rtos_led_flash\queue.o: D:\Program Files\ARM Keil\Keil_v5\ARM\AC5\Bin\..\include\stdlib.h
-rtos_led_flash\queue.o: D:\Program Files\ARM Keil\Keil_v5\ARM\AC5\Bin\..\include\string.h
+rtos_led_flash\queue.o: D:\Program Files\Arm\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+rtos_led_flash\queue.o: D:\Program Files\Arm\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 rtos_led_flash\queue.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-rtos_led_flash\queue.o: D:\Program Files\ARM Keil\Keil_v5\ARM\AC5\Bin\..\include\stddef.h
-rtos_led_flash\queue.o: D:\Program Files\ARM Keil\Keil_v5\ARM\AC5\Bin\..\include\stdint.h
+rtos_led_flash\queue.o: D:\Program Files\Arm\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+rtos_led_flash\queue.o: D:\Program Files\Arm\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 rtos_led_flash\queue.o: ../Core/Inc/FreeRTOSConfig.h
 rtos_led_flash\queue.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 rtos_led_flash\queue.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h

@@ -3,20 +3,20 @@
         {
             "name": "CA",
             "includePath": [
-                "d:\\XiaomiCloud\\Work\\Source\\ST Cude MX\\CA_Test\\Core\\Inc",
-                "d:\\XiaomiCloud\\Work\\Source\\ST Cude MX\\CA_Test\\Drivers\\STM32F4xx_HAL_Driver\\Inc",
-                "d:\\XiaomiCloud\\Work\\Source\\ST Cude MX\\CA_Test\\Drivers\\STM32F4xx_HAL_Driver\\Inc\\Legacy",
-                "d:\\XiaomiCloud\\Work\\Source\\ST Cude MX\\CA_Test\\Drivers\\CMSIS\\Device\\ST\\STM32F4xx\\Include",
-                "d:\\XiaomiCloud\\Work\\Source\\ST Cude MX\\CA_Test\\Drivers\\CMSIS\\Include",
-                "d:\\XiaomiCloud\\Work\\Source\\ST Cude MX\\CA_Test\\Hardware\\Inc",
+                "d:\\XiaomiCloud\\Work\\Source\\ST-Cube-MX\\CA_Test\\Core\\Inc",
+                "d:\\XiaomiCloud\\Work\\Source\\ST-Cube-MX\\CA_Test\\Drivers\\STM32F4xx_HAL_Driver\\Inc",
+                "d:\\XiaomiCloud\\Work\\Source\\ST-Cube-MX\\CA_Test\\Drivers\\STM32F4xx_HAL_Driver\\Inc\\Legacy",
+                "d:\\XiaomiCloud\\Work\\Source\\ST-Cube-MX\\CA_Test\\Drivers\\CMSIS\\Device\\ST\\STM32F4xx\\Include",
+                "d:\\XiaomiCloud\\Work\\Source\\ST-Cube-MX\\CA_Test\\Drivers\\CMSIS\\Include",
+                "d:\\XiaomiCloud\\Work\\Source\\ST-Cube-MX\\CA_Test\\Hardware\\Inc",
                 "D:\\Program Files\\Arm\\Keil_v5\\ARM\\ARMCC\\include",
                 "D:\\Program Files\\Arm\\Keil_v5\\ARM\\ARMCC\\include\\arm_linux",
                 "D:\\Program Files\\Arm\\Keil_v5\\ARM\\ARMCC\\include\\arm_linux_compat",
                 "D:\\Program Files\\Arm\\Keil_v5\\ARM\\ARMCC\\include\\rw",
-                "d:\\XiaomiCloud\\Work\\Source\\ST Cude MX\\CA_Test\\MDK-ARM",
-                "d:\\XiaomiCloud\\Work\\Source\\ST Cude MX\\CA_Test\\Core\\Src",
-                "d:\\XiaomiCloud\\Work\\Source\\ST Cude MX\\CA_Test\\Drivers\\STM32F4xx_HAL_Driver\\Src",
-                "d:\\XiaomiCloud\\Work\\Source\\ST Cude MX\\CA_Test\\Hardware\\Src"
+                "d:\\XiaomiCloud\\Work\\Source\\ST-Cube-MX\\CA_Test\\MDK-ARM",
+                "d:\\XiaomiCloud\\Work\\Source\\ST-Cube-MX\\CA_Test\\Core\\Src",
+                "d:\\XiaomiCloud\\Work\\Source\\ST-Cube-MX\\CA_Test\\Drivers\\STM32F4xx_HAL_Driver\\Src",
+                "d:\\XiaomiCloud\\Work\\Source\\ST-Cube-MX\\CA_Test\\Hardware\\Src"
             ],
             "defines": [
                 "USE_HAL_DRIVER",
