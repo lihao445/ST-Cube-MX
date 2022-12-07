@@ -1426,10 +1426,10 @@ Image component sizes
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
         96         10          0          0          0        903   gpio.o
-       182         12          0          0          0     683856   main.o
+       182         12          0          0          0     683852   main.o
         64         26        392          0       1536        856   startup_stm32f407xx.o
        144         24          0         12          0       8849   stm32f4xx_hal.o
-       198         14          0          0          0      34027   stm32f4xx_hal_cortex.o
+       198         14          0          0          0      34023   stm32f4xx_hal_cortex.o
        506         46          0          0          0       2228   stm32f4xx_hal_gpio.o
         48          6          0          0          0        878   stm32f4xx_hal_msp.o
       1284         52          0          0          0       4090   stm32f4xx_hal_rcc.o
@@ -1440,7 +1440,7 @@ Image component sizes
        164         18          0          0         72       1742   tim.o
 
     ----------------------------------------------------------------------
-      4002        318        442         16       1608     756150   Object Totals
+      4002        318        442         16       1608     756142   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         10          0          2          0          0          0   (incl. Padding)
 
@@ -1493,8 +1493,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      4610        334        442         16       1704     752670   Grand Totals
-      4610        334        442         16       1704     752670   ELF Image Totals
+      4610        334        442         16       1704     752662   Grand Totals
+      4610        334        442         16       1704     752662   ELF Image Totals
       4610        334        442         16          0          0   ROM Totals
 
 ==============================================================================

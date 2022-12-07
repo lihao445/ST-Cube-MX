@@ -1,7 +1,4 @@
 {
-    // 使用 IntelliSense 了解相关属性。 
-    // 悬停以查看现有属性的描述。
-    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
         {
@@ -27,6 +24,30 @@
                     "text": "-gdb-set disassembly-flavor intel",
                     "ignoreFailures": true
                 }
+            ]
+        },
+        {
+            "cwd": "${workspaceRoot}",
+            "type": "cortex-debug",
+            "request": "launch",
+            "name": "stlink",
+            "servertype": "stlink",
+            "interface": "swd",
+            "executable": "build\\RTOS_LED_FLASH\\RTOS_LED_FLASH.elf",
+            "runToEntryPoint": "main",
+            "device": "null"
+        },
+        {
+            "cwd": "${workspaceRoot}",
+            "type": "cortex-debug",
+            "request": "launch",
+            "name": "stlink",
+            "servertype": "openocd",
+            "executable": "build\\RTOS_LED_FLASH\\RTOS_LED_FLASH.elf",
+            "runToEntryPoint": "main",
+            "configFiles": [
+                "interface/stlink.cfg",
+                "target/<target-name>.cfg"
             ]
         }
     ]

@@ -8,7 +8,7 @@ testinter\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h
 testinter\gpio.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 testinter\gpio.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h
 testinter\gpio.o: ../Drivers/CMSIS/Include/core_cm4.h
-testinter\gpio.o: D:\Program Files\Arm\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+testinter\gpio.o: D:\Program Files\Arm\Keil_v5\ARM\AC5\Bin\..\include\stdint.h
 testinter\gpio.o: ../Drivers/CMSIS/Include/cmsis_version.h
 testinter\gpio.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 testinter\gpio.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
@@ -16,7 +16,7 @@ testinter\gpio.o: ../Drivers/CMSIS/Include/mpu_armv7.h
 testinter\gpio.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
 testinter\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 testinter\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-testinter\gpio.o: D:\Program Files\Arm\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+testinter\gpio.o: D:\Program Files\Arm\Keil_v5\ARM\AC5\Bin\..\include\stddef.h
 testinter\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
 testinter\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
 testinter\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h

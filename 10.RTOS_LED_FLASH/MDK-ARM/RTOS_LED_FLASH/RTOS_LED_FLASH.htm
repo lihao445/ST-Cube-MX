@@ -3,7 +3,7 @@
 <title>Static Call Graph - [RTOS_LED_FLASH\RTOS_LED_FLASH.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image RTOS_LED_FLASH\RTOS_LED_FLASH.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Wed Nov 30 19:16:24 2022
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Tue Dec 06 20:40:09 2022
 <BR><P>
 <H3>Maximum Stack Usage =        288 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -883,16 +883,16 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f407xx.o(RESET)
 </UL>
-<P><STRONG><a name="[65]"></a>blue_led_task</STRONG> (Thumb, 64 bytes, Stack size 16 bytes, main.o(i.blue_led_task))
-<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = blue_led_task &rArr; osDelay &rArr; vTaskDelay &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
+<P><STRONG><a name="[65]"></a>blue_led_task</STRONG> (Thumb, 60 bytes, Stack size 0 bytes, main.o(i.blue_led_task))
+<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = blue_led_task &rArr; osDelay &rArr; vTaskDelay &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 <LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
-<P><STRONG><a name="[63]"></a>green_led_task</STRONG> (Thumb, 64 bytes, Stack size 16 bytes, main.o(i.green_led_task))
-<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = green_led_task &rArr; osDelay &rArr; vTaskDelay &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
+<P><STRONG><a name="[63]"></a>green_led_task</STRONG> (Thumb, 60 bytes, Stack size 0 bytes, main.o(i.green_led_task))
+<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = green_led_task &rArr; osDelay &rArr; vTaskDelay &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 <LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
