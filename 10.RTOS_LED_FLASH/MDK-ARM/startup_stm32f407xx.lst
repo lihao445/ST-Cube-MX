@@ -852,7 +852,7 @@ ARM Macro Assembler    Page 14
 p_stm32f407xx.o -I..\Core\Inc -I.\RTE\_RTOS_LED_FLASH -I"D:\Program Files\Arm\P
 acks\ARM\CMSIS\5.9.0\CMSIS\Core\Include" -I"D:\Program Files\Arm\Packs\Keil\STM
 32F4xx_DFP\2.16.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include" --predefine="__UVI
-SION_VERSION SETA 537" --predefine="_RTE_ SETA 1" --predefine="STM32F407xx SETA
+SION_VERSION SETA 538" --predefine="_RTE_ SETA 1" --predefine="STM32F407xx SETA
  1" --predefine="_RTE_ SETA 1" --list=startup_stm32f407xx.lst startup_stm32f407
 xx.s
 

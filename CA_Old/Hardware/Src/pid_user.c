@@ -56,7 +56,6 @@ float PID_position_realize_1(float set_pos,int i)
 
 		PID_calc(&pid_pos[i-1],motor_can1[i-1].total_angle , set_pos);
 		return pid_pos[i-1].out;
-
 }
 
 float pid_call_1(float position,int i)
