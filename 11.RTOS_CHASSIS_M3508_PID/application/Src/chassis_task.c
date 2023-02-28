@@ -30,9 +30,6 @@ void chassis_task(void const * argument)
 		//底盘任务控制间隔 2ms
 		vTaskDelay(CHASSIS_CONTROL_TIME_MS);
   }
-	
-
-	
   while(1)
   {
 		//chassis data update
@@ -53,7 +50,7 @@ void chassis_task(void const * argument)
             //当遥控器掉线的时候，发送给底盘电机零电流.
             if (toe_is_error(DBUS_TOE))
             {
-                CAN_cmd_chassis(0, 0, 0, 0);
+                CAN_cmd_chassis(0, 0, 0, 0);  //有松弛风险（待定）
             }
             else
             {
