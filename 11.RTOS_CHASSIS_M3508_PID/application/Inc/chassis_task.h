@@ -12,7 +12,6 @@
 
 
 
-
 static void chassis_feedback_update(motor_measure_t *chassis_move_update);
 static void chassis_set_contorl(motor_measure_t *chassis_move_control);
 static void chassis_control_loop(void);

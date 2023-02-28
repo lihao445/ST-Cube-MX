@@ -62,11 +62,6 @@ void chassis_task(void const * argument)
 							CAN_cmd_chassis(Target_1,Target_2,Target_3,Target_4);
             }
         }
-		
-
-		
-		
-		
 		//os delay
     //œµÕ≥—” ±
 	  vTaskDelay(CHASSIS_CONTROL_TIME_MS);	

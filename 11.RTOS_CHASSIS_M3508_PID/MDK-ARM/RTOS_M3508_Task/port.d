@@ -1,7 +1,7 @@
 rtos_m3508_task\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/port.c
 rtos_m3508_task\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-rtos_m3508_task\port.o: D:\Program Files\ARM Keil\Keil_v5\ARM\AC5\Bin\..\include\stddef.h
-rtos_m3508_task\port.o: D:\Program Files\ARM Keil\Keil_v5\ARM\AC5\Bin\..\include\stdint.h
+rtos_m3508_task\port.o: D:\Program Files\Arm\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+rtos_m3508_task\port.o: D:\Program Files\Arm\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 rtos_m3508_task\port.o: ../Core/Inc/FreeRTOSConfig.h
 rtos_m3508_task\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 rtos_m3508_task\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
