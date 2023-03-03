@@ -2,7 +2,7 @@
 
 float Target_1,Target_2,Target_3,Target_4;
 float Speed_Motor_Target_1,Speed_Motor_Target_2,Speed_Motor_Target_3,Speed_Motor_Target_4;
-float	Position_Motor_Target_1,Position_Motor_Target_2,Position_Motor_Target_3,Position_Motor_Target_4;
+float Position_Motor_Target_1,Position_Motor_Target_2,Position_Motor_Target_3,Position_Motor_Target_4;
 
 float Vcx,Vcy,Wcr;
 float a,b;
@@ -19,7 +19,7 @@ void chassis_task(void const * argument)
   //空闲一段时间
   vTaskDelay(CHASSIS_TASK_INIT_TIME);
 	
-	//底盘初始化
+	//底盘初始化 
 	pid_chassis_init();
 	
   //make sure all chassis motor is online,
@@ -34,10 +34,10 @@ void chassis_task(void const * argument)
   {
 		//chassis data update
     //底盘数据更新
-		chassis_feedback_update(&motor_can1[8]);
+		chassis_feedback_update();
     //set chassis control set-point 
     //底盘控制量设置
-    chassis_set_contorl(&motor_can1[8]);
+    chassis_set_contorl();
     //chassis control pid calculate
     //底盘控制PID计算
     chassis_control_loop();
@@ -56,7 +56,7 @@ void chassis_task(void const * argument)
             {
 							//send control current
 							//发送控制电流
-							CAN_cmd_chassis(Target_1,Target_2,Target_3,Target_4);
+							CAN_cmd_chassis(0,Target_2,0,0);
             }
         }
 		//os delay
@@ -82,12 +82,12 @@ void chassis_task(void const * argument)
   * @param[out]     chassis_move_update:"chassis_move"变量指针.
   * @retval         none
   */
-static void chassis_feedback_update(motor_measure_t *chassis_move_update)
+static void chassis_feedback_update(void)
 {
-    if (chassis_move_update == NULL)
-    {
-        return;
-    }
+//    if (chassis_move_update == NULL)
+//    {
+//        return;
+//    }
 
 //    uint8_t i = 0;
 //    for (i = 0; i < 4; i++)
@@ -111,18 +111,19 @@ static void chassis_feedback_update(motor_measure_t *chassis_move_update)
   * @param[out]     chassis_move_update:"chassis_move"变量指针.
   * @retval         none
   */
-static void chassis_set_contorl(motor_measure_t *chassis_move_control)
+static void chassis_set_contorl(void)
 {
 
-    if (chassis_move_control == NULL)
-    {
-        return;
-    }
+//    if (chassis_move_control == NULL)
+//    {
+//        return;
+//    }
 		
 		RC_speed_chassis_data();
 		
-		Speed_Motor_Target_1 = - Vcx + Vcy + Wcr * ( a + b ) ;
-		Speed_Motor_Target_2 =   Vcx + Vcy - Wcr * ( a + b ) ;
+		Speed_Motor_Target_1 = - Vcx + Vcy + Wcr * ( a + b ) ;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+//		Speed_Motor_Target_2 =   Vcx + Vcy - Wcr * ( a + b ) ;
+	  Speed_Motor_Target_2 = 3000;
 		Speed_Motor_Target_3 = - Vcx + Vcy - Wcr * ( a + b ) ;
 		Speed_Motor_Target_4 =   Vcx + Vcy + Wcr * ( a + b ) ;
 }

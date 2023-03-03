@@ -42,6 +42,7 @@
 "rtos_m3508_task\pid_user.o"
 "rtos_m3508_task\remote_control.o"
 "rtos_m3508_task\chassis_task.o"
+"rtos_m3508_task\detect_task.o"
 "rtos_m3508_task\bsp_delay.o"
 "rtos_m3508_task\bsp_rc.o"
 --strict --scatter "RTOS_M3508_Task\RTOS_M3508_Task.sct"

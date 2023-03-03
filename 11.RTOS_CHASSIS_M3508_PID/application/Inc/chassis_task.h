@@ -1,6 +1,8 @@
 #ifndef __CHASSIS_TASK_H_
 #define __CHASSIS_TASK_H_
 #include "main.h"
+#include "can_receive.h"
+
 
 //in the beginning of task ,wait a time
 //任务开始空闲一段时间
@@ -12,8 +14,8 @@
 
 
 
-static void chassis_feedback_update(motor_measure_t *chassis_move_update);
-static void chassis_set_contorl(motor_measure_t *chassis_move_control);
+static void chassis_feedback_update(void);
+static void chassis_set_contorl(void);
 static void chassis_control_loop(void);
 
 void RC_speed_chassis_data(void);

@@ -852,7 +852,7 @@ ARM Macro Assembler    Page 14
 tup_stm32f407xx.o -I..\Core\Inc -I.\RTE\_RTOS_M3508_Task -I"D:\Program Files\Ar
 m\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include" -I"D:\Program Files\Arm\Packs\Keil\
 STM32F4xx_DFP\2.16.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include" --predefine="__
-UVISION_VERSION SETA 538" --predefine="_RTE_ SETA 1" --predefine="STM32F407xx S
+UVISION_VERSION SETA 537" --predefine="_RTE_ SETA 1" --predefine="STM32F407xx S
 ETA 1" --predefine="_RTE_ SETA 1" --list=startup_stm32f407xx.lst startup_stm32f
 407xx.s
 

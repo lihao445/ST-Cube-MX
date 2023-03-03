@@ -1,8 +1,5 @@
 #include "can_receive.h"
 
-float Target_1,Target_2,Target_3,Target_4;
-float Speed_Motor_Target_1,Speed_Motor_Target_2,Speed_Motor_Target_3,Speed_Motor_Target_4;
-float	Position_Motor_Target_1,Position_Motor_Target_2,Position_Motor_Target_3,Position_Motor_Target_4;
 
 //#define get_motor_measure(ptr, data) \
 //{ \
