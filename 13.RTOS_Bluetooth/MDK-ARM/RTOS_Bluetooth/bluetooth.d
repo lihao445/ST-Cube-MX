@@ -1,6 +1,6 @@
 rtos_bluetooth\bluetooth.o: ..\application\Src\bluetooth.c
-rtos_bluetooth\bluetooth.o: ..\application\Inc\bluetooth.h
-rtos_bluetooth\bluetooth.o: ..\bsp\boards\Inc\include.h
+rtos_bluetooth\bluetooth.o: ../application/Inc/bluetooth.h
+rtos_bluetooth\bluetooth.o: ../bsp/boards/Inc/include.h
 rtos_bluetooth\bluetooth.o: ../Core/Inc/main.h
 rtos_bluetooth\bluetooth.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 rtos_bluetooth\bluetooth.o: ../Core/Inc/stm32f4xx_hal_conf.h
@@ -49,6 +49,6 @@ rtos_bluetooth\bluetooth.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/s
 rtos_bluetooth\bluetooth.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 rtos_bluetooth\bluetooth.o: ../Core/Inc/usart.h
 rtos_bluetooth\bluetooth.o: ../Core/Inc/gpio.h
-rtos_bluetooth\bluetooth.o: ..\application\Inc\bluetooth.h
-rtos_bluetooth\bluetooth.o: ..\bsp\boards\Inc\led.h
-rtos_bluetooth\bluetooth.o: ..\bsp\boards\Inc\include.h
+rtos_bluetooth\bluetooth.o: ../application/Inc/bluetooth.h
+rtos_bluetooth\bluetooth.o: ../bsp/boards/Inc/led.h
+rtos_bluetooth\bluetooth.o: ../bsp/boards/Inc/include.h

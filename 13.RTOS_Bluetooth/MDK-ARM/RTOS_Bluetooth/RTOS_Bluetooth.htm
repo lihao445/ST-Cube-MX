@@ -3,7 +3,7 @@
 <title>Static Call Graph - [RTOS_Bluetooth\RTOS_Bluetooth.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image RTOS_Bluetooth\RTOS_Bluetooth.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Fri Mar 03 23:47:24 2023
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Sun Mar 05 19:53:36 2023
 <BR><P>
 <H3>Maximum Stack Usage =        264 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -638,7 +638,7 @@ Global Symbols
 <LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
 </UL>
 
-<P><STRONG><a name="[ab]"></a>HAL_GPIO_TogglePin</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, stm32f4xx_hal_gpio.o(i.HAL_GPIO_TogglePin))
+<P><STRONG><a name="[ac]"></a>HAL_GPIO_TogglePin</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, stm32f4xx_hal_gpio.o(i.HAL_GPIO_TogglePin))
 <BR><BR>[Called By]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;green_led_task
 </UL>
 
@@ -869,7 +869,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[a3]"></a>MX_USART1_UART_Init</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, usart.o(i.MX_USART1_UART_Init))
+<P><STRONG><a name="[a3]"></a>MX_USART1_UART_Init</STRONG> (Thumb, 48 bytes, Stack size 8 bytes, usart.o(i.MX_USART1_UART_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = MX_USART1_UART_Init &rArr; HAL_UART_Init &rArr; HAL_UART_MspInit &rArr; HAL_GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Init
@@ -943,21 +943,22 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f407xx.o(RESET)
 </UL>
-<P><STRONG><a name="[64]"></a>bluetooth_task</STRONG> (Thumb, 60 bytes, Stack size 8 bytes, bluetooth.o(i.bluetooth_task))
+<P><STRONG><a name="[64]"></a>bluetooth_task</STRONG> (Thumb, 68 bytes, Stack size 8 bytes, bluetooth.o(i.bluetooth_task))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = bluetooth_task &rArr; HAL_UART_Receive &rArr; UART_WaitOnFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Transmit
 <LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Receive
 <LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspend
 <LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskResume
+<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
 <P><STRONG><a name="[63]"></a>green_led_task</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, led.o(i.green_led_task))
-<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = green_led_task &rArr; vTaskDelay &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
+<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = green_led_task &rArr; osDelay &rArr; vTaskDelay &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_TogglePin
-<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
+<BR>[Calls]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
+<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_TogglePin
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> freertos.o(.constdata)
 </UL>
@@ -977,9 +978,10 @@ Global Symbols
 <P><STRONG><a name="[a5]"></a>osDelay</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, cmsis_os.o(i.osDelay))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = osDelay &rArr; vTaskDelay &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
+<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
 </UL>
 <BR>[Called By]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;StartDefaultTask
+<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;green_led_task
 </UL>
 
 <P><STRONG><a name="[ad]"></a>osKernelStart</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, cmsis_os.o(i.osKernelStart))
@@ -1084,7 +1086,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xPortStartScheduler
 </UL>
 
-<P><STRONG><a name="[ac]"></a>vTaskDelay</STRONG> (Thumb, 66 bytes, Stack size 8 bytes, tasks.o(i.vTaskDelay))
+<P><STRONG><a name="[ab]"></a>vTaskDelay</STRONG> (Thumb, 66 bytes, Stack size 8 bytes, tasks.o(i.vTaskDelay))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = vTaskDelay &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
 <BR>[Calls]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
@@ -1092,7 +1094,7 @@ Global Symbols
 <LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvAddCurrentTaskToDelayedList
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
-<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;green_led_task
+<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bluetooth_task
 </UL>
 
 <P><STRONG><a name="[aa]"></a>vTaskResume</STRONG> (Thumb, 112 bytes, Stack size 16 bytes, tasks.o(i.vTaskResume))
@@ -1133,7 +1135,7 @@ Global Symbols
 <P><STRONG><a name="[c0]"></a>vTaskSuspendAll</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, tasks.o(i.vTaskSuspendAll))
 <BR><BR>[Called By]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortFree
 <LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pvPortMalloc
-<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
+<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
 </UL>
 
 <P><STRONG><a name="[77]"></a>vTaskSwitchContext</STRONG> (Thumb, 82 bytes, Stack size 0 bytes, tasks.o(i.vTaskSwitchContext))
@@ -1195,7 +1197,7 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortFree
 <LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pvPortMalloc
-<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
+<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
 </UL>
 
 <P><STRONG><a name="[6b]"></a>_fp_init</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, fpinit.o(x$fpl$fpinit))
@@ -1239,7 +1241,7 @@ Local Symbols
 <LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vListInsert
 <LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
+<BR>[Called By]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
 </UL>
 
 <P><STRONG><a name="[b6]"></a>prvAddNewTaskToReadyList</STRONG> (Thumb, 194 bytes, Stack size 24 bytes, tasks.o(i.prvAddNewTaskToReadyList))

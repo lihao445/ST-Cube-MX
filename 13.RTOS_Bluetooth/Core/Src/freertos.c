@@ -114,7 +114,7 @@ void MX_FREERTOS_Init(void) {
   LED_GREENHandle = osThreadCreate(osThread(LED_GREEN), NULL);
 
   /* definition and creation of BLUETOOTH */
-  osThreadDef(BLUETOOTH, bluetooth_task, osPriorityHigh, 0, 128);
+  osThreadDef(BLUETOOTH, bluetooth_task, osPriorityNormal, 0, 128);
   BLUETOOTHHandle = osThreadCreate(osThread(BLUETOOTH), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */

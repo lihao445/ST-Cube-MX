@@ -892,10 +892,11 @@ Section Cross References
     bluetooth.o(i.bluetooth_task) refers to stm32f4xx_hal_uart.o(i.HAL_UART_Receive) for HAL_UART_Receive
     bluetooth.o(i.bluetooth_task) refers to tasks.o(i.vTaskSuspend) for vTaskSuspend
     bluetooth.o(i.bluetooth_task) refers to tasks.o(i.vTaskResume) for vTaskResume
+    bluetooth.o(i.bluetooth_task) refers to tasks.o(i.vTaskDelay) for vTaskDelay
     bluetooth.o(i.bluetooth_task) refers to usart.o(.bss) for huart1
     bluetooth.o(i.bluetooth_task) refers to freertos.o(.data) for LED_GREENHandle
     led.o(i.green_led_task) refers to stm32f4xx_hal_gpio.o(i.HAL_GPIO_TogglePin) for HAL_GPIO_TogglePin
-    led.o(i.green_led_task) refers to tasks.o(i.vTaskDelay) for vTaskDelay
+    led.o(i.green_led_task) refers to cmsis_os.o(i.osDelay) for osDelay
     rt_memcpy_v6.o(.text) refers to rt_memcpy_w.o(.text) for __aeabi_memcpy4
     memset.o(.text) refers to rt_memclr.o(.text) for _memset
     __main.o(!!!main) refers to __rtentry.o(.ARM.Collect$$rtentry$$00000000) for __rt_entry
@@ -1825,22 +1826,22 @@ Image Symbol Table
     i.MX_FREERTOS_Init                       0x0800131c   Section        0  freertos.o(i.MX_FREERTOS_Init)
     i.MX_GPIO_Init                           0x08001370   Section        0  gpio.o(i.MX_GPIO_Init)
     i.MX_USART1_UART_Init                    0x080013e0   Section        0  usart.o(i.MX_USART1_UART_Init)
-    i.MemManage_Handler                      0x08001420   Section        0  stm32f4xx_it.o(i.MemManage_Handler)
-    i.NMI_Handler                            0x08001422   Section        0  stm32f4xx_it.o(i.NMI_Handler)
-    i.StartDefaultTask                       0x08001424   Section        0  freertos.o(i.StartDefaultTask)
-    i.SysTick_Handler                        0x0800142c   Section        0  port.o(i.SysTick_Handler)
-    i.SystemClock_Config                     0x08001458   Section        0  main.o(i.SystemClock_Config)
-    i.SystemInit                             0x080014ec   Section        0  system_stm32f4xx.o(i.SystemInit)
-    i.TIM7_IRQHandler                        0x080014fc   Section        0  stm32f4xx_it.o(i.TIM7_IRQHandler)
-    i.TIM_Base_SetConfig                     0x08001508   Section        0  stm32f4xx_hal_tim.o(i.TIM_Base_SetConfig)
-    i.UART_SetConfig                         0x080015d0   Section        0  stm32f4xx_hal_uart.o(i.UART_SetConfig)
-    UART_SetConfig                           0x080015d1   Thumb Code   258  stm32f4xx_hal_uart.o(i.UART_SetConfig)
-    i.UART_WaitOnFlagUntilTimeout            0x080016dc   Section        0  stm32f4xx_hal_uart.o(i.UART_WaitOnFlagUntilTimeout)
-    UART_WaitOnFlagUntilTimeout              0x080016dd   Thumb Code   120  stm32f4xx_hal_uart.o(i.UART_WaitOnFlagUntilTimeout)
-    i.UsageFault_Handler                     0x08001754   Section        0  stm32f4xx_it.o(i.UsageFault_Handler)
-    i.__NVIC_SetPriority                     0x08001756   Section        0  stm32f4xx_hal_cortex.o(i.__NVIC_SetPriority)
-    __NVIC_SetPriority                       0x08001757   Thumb Code    32  stm32f4xx_hal_cortex.o(i.__NVIC_SetPriority)
-    i.bluetooth_task                         0x08001778   Section        0  bluetooth.o(i.bluetooth_task)
+    i.MemManage_Handler                      0x08001418   Section        0  stm32f4xx_it.o(i.MemManage_Handler)
+    i.NMI_Handler                            0x0800141a   Section        0  stm32f4xx_it.o(i.NMI_Handler)
+    i.StartDefaultTask                       0x0800141c   Section        0  freertos.o(i.StartDefaultTask)
+    i.SysTick_Handler                        0x08001424   Section        0  port.o(i.SysTick_Handler)
+    i.SystemClock_Config                     0x08001450   Section        0  main.o(i.SystemClock_Config)
+    i.SystemInit                             0x080014e4   Section        0  system_stm32f4xx.o(i.SystemInit)
+    i.TIM7_IRQHandler                        0x080014f4   Section        0  stm32f4xx_it.o(i.TIM7_IRQHandler)
+    i.TIM_Base_SetConfig                     0x08001500   Section        0  stm32f4xx_hal_tim.o(i.TIM_Base_SetConfig)
+    i.UART_SetConfig                         0x080015c8   Section        0  stm32f4xx_hal_uart.o(i.UART_SetConfig)
+    UART_SetConfig                           0x080015c9   Thumb Code   258  stm32f4xx_hal_uart.o(i.UART_SetConfig)
+    i.UART_WaitOnFlagUntilTimeout            0x080016d4   Section        0  stm32f4xx_hal_uart.o(i.UART_WaitOnFlagUntilTimeout)
+    UART_WaitOnFlagUntilTimeout              0x080016d5   Thumb Code   120  stm32f4xx_hal_uart.o(i.UART_WaitOnFlagUntilTimeout)
+    i.UsageFault_Handler                     0x0800174c   Section        0  stm32f4xx_it.o(i.UsageFault_Handler)
+    i.__NVIC_SetPriority                     0x0800174e   Section        0  stm32f4xx_hal_cortex.o(i.__NVIC_SetPriority)
+    __NVIC_SetPriority                       0x0800174f   Thumb Code    32  stm32f4xx_hal_cortex.o(i.__NVIC_SetPriority)
+    i.bluetooth_task                         0x08001770   Section        0  bluetooth.o(i.bluetooth_task)
     i.green_led_task                         0x080017c4   Section        0  led.o(i.green_led_task)
     i.main                                   0x080017e4   Section        0  main.o(i.main)
     i.makeFreeRtosPriority                   0x080017fe   Section        0  cmsis_os.o(i.makeFreeRtosPriority)
@@ -2182,17 +2183,17 @@ Image Symbol Table
     HardFault_Handler                        0x0800131b   Thumb Code     2  stm32f4xx_it.o(i.HardFault_Handler)
     MX_FREERTOS_Init                         0x0800131d   Thumb Code    74  freertos.o(i.MX_FREERTOS_Init)
     MX_GPIO_Init                             0x08001371   Thumb Code   102  gpio.o(i.MX_GPIO_Init)
-    MX_USART1_UART_Init                      0x080013e1   Thumb Code    56  usart.o(i.MX_USART1_UART_Init)
-    MemManage_Handler                        0x08001421   Thumb Code     2  stm32f4xx_it.o(i.MemManage_Handler)
-    NMI_Handler                              0x08001423   Thumb Code     2  stm32f4xx_it.o(i.NMI_Handler)
-    StartDefaultTask                         0x08001425   Thumb Code     8  freertos.o(i.StartDefaultTask)
-    SysTick_Handler                          0x0800142d   Thumb Code    38  port.o(i.SysTick_Handler)
-    SystemClock_Config                       0x08001459   Thumb Code   140  main.o(i.SystemClock_Config)
-    SystemInit                               0x080014ed   Thumb Code    12  system_stm32f4xx.o(i.SystemInit)
-    TIM7_IRQHandler                          0x080014fd   Thumb Code     6  stm32f4xx_it.o(i.TIM7_IRQHandler)
-    TIM_Base_SetConfig                       0x08001509   Thumb Code   156  stm32f4xx_hal_tim.o(i.TIM_Base_SetConfig)
-    UsageFault_Handler                       0x08001755   Thumb Code     2  stm32f4xx_it.o(i.UsageFault_Handler)
-    bluetooth_task                           0x08001779   Thumb Code    60  bluetooth.o(i.bluetooth_task)
+    MX_USART1_UART_Init                      0x080013e1   Thumb Code    48  usart.o(i.MX_USART1_UART_Init)
+    MemManage_Handler                        0x08001419   Thumb Code     2  stm32f4xx_it.o(i.MemManage_Handler)
+    NMI_Handler                              0x0800141b   Thumb Code     2  stm32f4xx_it.o(i.NMI_Handler)
+    StartDefaultTask                         0x0800141d   Thumb Code     8  freertos.o(i.StartDefaultTask)
+    SysTick_Handler                          0x08001425   Thumb Code    38  port.o(i.SysTick_Handler)
+    SystemClock_Config                       0x08001451   Thumb Code   140  main.o(i.SystemClock_Config)
+    SystemInit                               0x080014e5   Thumb Code    12  system_stm32f4xx.o(i.SystemInit)
+    TIM7_IRQHandler                          0x080014f5   Thumb Code     6  stm32f4xx_it.o(i.TIM7_IRQHandler)
+    TIM_Base_SetConfig                       0x08001501   Thumb Code   156  stm32f4xx_hal_tim.o(i.TIM_Base_SetConfig)
+    UsageFault_Handler                       0x0800174d   Thumb Code     2  stm32f4xx_it.o(i.UsageFault_Handler)
+    bluetooth_task                           0x08001771   Thumb Code    68  bluetooth.o(i.bluetooth_task)
     green_led_task                           0x080017c5   Thumb Code    26  led.o(i.green_led_task)
     main                                     0x080017e5   Thumb Code    26  main.o(i.main)
     osDelay                                  0x0800180b   Thumb Code    14  cmsis_os.o(i.osDelay)
@@ -2359,21 +2360,21 @@ Memory Map of the image
     0x0800131a   0x0800131a   0x00000002   Code   RO          331    i.HardFault_Handler  stm32f4xx_it.o
     0x0800131c   0x0800131c   0x00000054   Code   RO          225    i.MX_FREERTOS_Init  freertos.o
     0x08001370   0x08001370   0x00000070   Code   RO          201    i.MX_GPIO_Init      gpio.o
-    0x080013e0   0x080013e0   0x00000040   Code   RO          289    i.MX_USART1_UART_Init  usart.o
-    0x08001420   0x08001420   0x00000002   Code   RO          332    i.MemManage_Handler  stm32f4xx_it.o
-    0x08001422   0x08001422   0x00000002   Code   RO          333    i.NMI_Handler       stm32f4xx_it.o
-    0x08001424   0x08001424   0x00000008   Code   RO          226    i.StartDefaultTask  freertos.o
-    0x0800142c   0x0800142c   0x0000002c   Code   RO         4180    i.SysTick_Handler   port.o
-    0x08001458   0x08001458   0x00000094   Code   RO           15    i.SystemClock_Config  main.o
-    0x080014ec   0x080014ec   0x00000010   Code   RO         2919    i.SystemInit        system_stm32f4xx.o
-    0x080014fc   0x080014fc   0x0000000c   Code   RO          334    i.TIM7_IRQHandler   stm32f4xx_it.o
-    0x08001508   0x08001508   0x000000c8   Code   RO         1683    i.TIM_Base_SetConfig  stm32f4xx_hal_tim.o
-    0x080015d0   0x080015d0   0x0000010c   Code   RO         2616    i.UART_SetConfig    stm32f4xx_hal_uart.o
-    0x080016dc   0x080016dc   0x00000078   Code   RO         2619    i.UART_WaitOnFlagUntilTimeout  stm32f4xx_hal_uart.o
-    0x08001754   0x08001754   0x00000002   Code   RO          335    i.UsageFault_Handler  stm32f4xx_it.o
-    0x08001756   0x08001756   0x00000020   Code   RO         1213    i.__NVIC_SetPriority  stm32f4xx_hal_cortex.o
-    0x08001776   0x08001776   0x00000002   PAD
-    0x08001778   0x08001778   0x0000004c   Code   RO         4259    i.bluetooth_task    bluetooth.o
+    0x080013e0   0x080013e0   0x00000038   Code   RO          289    i.MX_USART1_UART_Init  usart.o
+    0x08001418   0x08001418   0x00000002   Code   RO          332    i.MemManage_Handler  stm32f4xx_it.o
+    0x0800141a   0x0800141a   0x00000002   Code   RO          333    i.NMI_Handler       stm32f4xx_it.o
+    0x0800141c   0x0800141c   0x00000008   Code   RO          226    i.StartDefaultTask  freertos.o
+    0x08001424   0x08001424   0x0000002c   Code   RO         4180    i.SysTick_Handler   port.o
+    0x08001450   0x08001450   0x00000094   Code   RO           15    i.SystemClock_Config  main.o
+    0x080014e4   0x080014e4   0x00000010   Code   RO         2919    i.SystemInit        system_stm32f4xx.o
+    0x080014f4   0x080014f4   0x0000000c   Code   RO          334    i.TIM7_IRQHandler   stm32f4xx_it.o
+    0x08001500   0x08001500   0x000000c8   Code   RO         1683    i.TIM_Base_SetConfig  stm32f4xx_hal_tim.o
+    0x080015c8   0x080015c8   0x0000010c   Code   RO         2616    i.UART_SetConfig    stm32f4xx_hal_uart.o
+    0x080016d4   0x080016d4   0x00000078   Code   RO         2619    i.UART_WaitOnFlagUntilTimeout  stm32f4xx_hal_uart.o
+    0x0800174c   0x0800174c   0x00000002   Code   RO          335    i.UsageFault_Handler  stm32f4xx_it.o
+    0x0800174e   0x0800174e   0x00000020   Code   RO         1213    i.__NVIC_SetPriority  stm32f4xx_hal_cortex.o
+    0x0800176e   0x0800176e   0x00000002   PAD
+    0x08001770   0x08001770   0x00000054   Code   RO         4259    i.bluetooth_task    bluetooth.o
     0x080017c4   0x080017c4   0x00000020   Code   RO         4293    i.green_led_task    led.o
     0x080017e4   0x080017e4   0x0000001a   Code   RO           16    i.main              main.o
     0x080017fe   0x080017fe   0x0000000c   Code   RO         3745    i.makeFreeRtosPriority  cmsis_os.o
@@ -2457,7 +2458,7 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-        76         16          0          0          0        585   bluetooth.o
+        84         16          0          0          0        597   bluetooth.o
        120          0          0          0          0      23501   cmsis_os.o
          0          0          0          0          0      17020   event_groups.o
        112         14        120         12        596       2738   freertos.o
@@ -2481,10 +2482,10 @@ Image component sizes
          0          0          0          0          0        424   stream_buffer.o
         16          4         24          4          0       1187   system_stm32f4xx.o
       1884        142          0         60        240      22467   tasks.o
-       168         20          0          0         68       1794   usart.o
+       160         20          0          0         68       1790   usart.o
 
     ----------------------------------------------------------------------
-      8158        620        568        132      17872     890891   Object Totals
+      8158        620        568        132      17872     890899   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         14          0          0          0          0          0   (incl. Padding)
 
@@ -2538,8 +2539,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      8868        636        568        132      17972     882939   Grand Totals
-      8868        636        568        132      17972     882939   ELF Image Totals
+      8868        636        568        132      17972     882947   Grand Totals
+      8868        636        568        132      17972     882947   ELF Image Totals
       8868        636        568        132          0          0   ROM Totals
 
 ==============================================================================

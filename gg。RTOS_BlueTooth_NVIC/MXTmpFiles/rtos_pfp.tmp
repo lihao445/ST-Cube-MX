@@ -1,0 +1,2 @@
+void StartDefaultTask(void const * argument);
+void green_led_task(void const * argument);#n
