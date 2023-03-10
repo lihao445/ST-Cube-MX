@@ -107,9 +107,6 @@ int main(void)
 			case '0':HAL_GPIO_WritePin(GPIOH, GPIO_PIN_11, GPIO_PIN_RESET);break;
 			case '1':HAL_GPIO_WritePin(GPIOH, GPIO_PIN_11, GPIO_PIN_SET);break;
 			default:;
-//			case '0':HAL_UART_Transmit(&huart1,"on\r\n",4,HAL_MAX_DELAY);break;//on 2个字节+\r\n 一共4个字节
-//			case '1':HAL_UART_Transmit(&huart1,"off\r\n",5,HAL_MAX_DELAY);break;
-//			default:HAL_UART_Transmit(&huart1,"none\r\n",6,HAL_MAX_DELAY);break;
 		}
 		HAL_Delay(5);
 		

@@ -89,6 +89,11 @@ int main(void)
   MX_GPIO_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
+	
+	
+	//一定要比osKernelStart函数提前！！！
+	HAL_UART_Receive_IT(&huart1,rx_buffer,1);
+	
 
   /* USER CODE END 2 */
 
@@ -101,8 +106,6 @@ int main(void)
   /* We should never get here as control is now taken by the scheduler */
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-	
-	HAL_UART_Receive_IT(&huart1,rx_buffer,1);
 	
   while (1)
   {

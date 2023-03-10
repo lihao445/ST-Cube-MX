@@ -49,6 +49,8 @@
 /* USER CODE END Variables */
 osThreadId defaultTaskHandle;
 osThreadId LED_GREENHandle;
+osThreadId BLUETOOTHHandle;
+osSemaphoreId USART1_BinarySem01Handle;
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -57,6 +59,7 @@ osThreadId LED_GREENHandle;
 
 void StartDefaultTask(void const * argument);
 void green_led_task(void const * argument);
+void bluetooth_task(void const * argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -90,6 +93,11 @@ void MX_FREERTOS_Init(void) {
   /* add mutexes, ... */
   /* USER CODE END RTOS_MUTEX */
 
+  /* Create the semaphores(s) */
+  /* definition and creation of USART1_BinarySem01 */
+  osSemaphoreDef(USART1_BinarySem01);
+  USART1_BinarySem01Handle = osSemaphoreCreate(osSemaphore(USART1_BinarySem01), 1);
+
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
   /* USER CODE END RTOS_SEMAPHORES */
@@ -110,6 +118,10 @@ void MX_FREERTOS_Init(void) {
   /* definition and creation of LED_GREEN */
   osThreadDef(LED_GREEN, green_led_task, osPriorityNormal, 0, 128);
   LED_GREENHandle = osThreadCreate(osThread(LED_GREEN), NULL);
+
+  /* definition and creation of BLUETOOTH */
+  osThreadDef(BLUETOOTH, bluetooth_task, osPriorityAboveNormal, 0, 128);
+  BLUETOOTHHandle = osThreadCreate(osThread(BLUETOOTH), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -151,6 +163,24 @@ __weak void green_led_task(void const * argument)
     osDelay(1);
   }
   /* USER CODE END green_led_task */
+}
+
+/* USER CODE BEGIN Header_bluetooth_task */
+/**
+* @brief Function implementing the BLUETOOTH thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_bluetooth_task */
+__weak void bluetooth_task(void const * argument)
+{
+  /* USER CODE BEGIN bluetooth_task */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END bluetooth_task */
 }
 
 /* Private application code --------------------------------------------------*/
