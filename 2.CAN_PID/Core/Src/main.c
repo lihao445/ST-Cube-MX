@@ -110,7 +110,7 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 
-		CAN1_CMD_1(PID_velocity_realize_1(500,1),0,0,0);     //让1号电机速度为500rpm;
+		CAN1_CMD_1(PID_velocity_realize_1(1000,1),0,0,0);     //让1号电机速度为500rpm;
 		HAL_Delay(1);              //延时不能太久
 		
   }

@@ -33,10 +33,10 @@ rtos_m3508_task\pid_user.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pw
 rtos_m3508_task\pid_user.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 rtos_m3508_task\pid_user.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 rtos_m3508_task\pid_user.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
-rtos_m3508_task\pid_user.o: ..\application\Inc\can_receive.h
-rtos_m3508_task\pid_user.o: ../Core/Inc/can.h
+rtos_m3508_task\pid_user.o: ..\bsp\boards\Inc\include.h
 rtos_m3508_task\pid_user.o: ../Core/Inc/main.h
 rtos_m3508_task\pid_user.o: ..\application\Inc\can_receive.h
+rtos_m3508_task\pid_user.o: ..\bsp\boards\Inc\include.h
 rtos_m3508_task\pid_user.o: ..\application\Inc\pid_user.h
 rtos_m3508_task\pid_user.o: ..\application\Inc\remote_control.h
 rtos_m3508_task\pid_user.o: ..\bsp\boards\Inc\struct_typedef.h
@@ -59,3 +59,6 @@ rtos_m3508_task\pid_user.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/e
 rtos_m3508_task\pid_user.o: ..\application\Inc\detect_task.h
 rtos_m3508_task\pid_user.o: ..\application\Inc\chassis_task.h
 rtos_m3508_task\pid_user.o: ../Core/Inc/main.h
+rtos_m3508_task\pid_user.o: ../Core/Inc/gpio.h
+rtos_m3508_task\pid_user.o: ..\bsp\boards\Inc\bsp_can.h
+rtos_m3508_task\pid_user.o: ..\application\Inc\pid.h

@@ -20,7 +20,7 @@ void chassis_task(void const * argument)
   vTaskDelay(CHASSIS_TASK_INIT_TIME);
 	
 	//底盘初始化 
-	pid_chassis_init();
+	PID_devices_Init();
 	
   //make sure all chassis motor is online,
   //判断底盘电机是否都在线
@@ -39,6 +39,7 @@ void chassis_task(void const * argument)
     //底盘控制量设置
     chassis_set_contorl();
     //chassis control pid calculate
+//		Speed_Motor_Target_1 = 1000;
     //底盘控制PID计算
     chassis_control_loop();
 		
@@ -50,13 +51,13 @@ void chassis_task(void const * argument)
             //当遥控器掉线的时候，发送给底盘电机零电流.
             if (toe_is_error(DBUS_TOE))
             {
-                CAN_cmd_chassis(0, 0, 0, 0);  //有松弛风险（待定）
+                CAN1_CMD_1(0, 0, 0, 0);  //有松弛风险（待定）
             }
             else
             {
 							//send control current
 							//发送控制电流
-							CAN_cmd_chassis(0,Target_2,0,0);
+							CAN1_CMD_1(Target_1,0,0,0);
             }
         }
 		//os delay
@@ -122,11 +123,22 @@ static void chassis_set_contorl(void)
 		RC_speed_chassis_data();
 		
 		Speed_Motor_Target_1 = - Vcx + Vcy + Wcr * ( a + b ) ;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
-//		Speed_Motor_Target_2 =   Vcx + Vcy - Wcr * ( a + b ) ;
-	  Speed_Motor_Target_2 = 3000;
+		Speed_Motor_Target_2 =   Vcx + Vcy - Wcr * ( a + b ) ;
 		Speed_Motor_Target_3 = - Vcx + Vcy - Wcr * ( a + b ) ;
 		Speed_Motor_Target_4 =   Vcx + Vcy + Wcr * ( a + b ) ;
 }
+
+
+/*
+麦轮速度解析式
+
+V1 = - Vcx + Vcy + Wcr * ( a + b )        (c是Chassis)
+V2 =   Vcx + Vcy - Wcr * ( a + b )
+V3 = - Vcx + Vcy - Wcr * ( a + b )
+V4 =   Vcx + Vcy + Wcr * ( a + b )
+
+*/
+
 
 
 /**
@@ -149,18 +161,6 @@ static void chassis_control_loop(void)
 }
 
 
-
-
-
-/*
-麦轮速度解析式
-
-V1 = - Vcx + Vcy + Wcr * ( a + b )        (c是Chassis)
-V2 =   Vcx + Vcy - Wcr * ( a + b )
-V3 = - Vcx + Vcy - Wcr * ( a + b )
-V4 =   Vcx + Vcy + Wcr * ( a + b )
-
-*/
 
 
 void RC_speed_chassis_data(void)
