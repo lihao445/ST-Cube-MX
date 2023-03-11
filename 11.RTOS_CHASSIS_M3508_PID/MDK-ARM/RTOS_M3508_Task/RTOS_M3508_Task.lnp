@@ -38,14 +38,14 @@
 "rtos_m3508_task\heap_4.o"
 "rtos_m3508_task\port.o"
 "rtos_m3508_task\can_receive.o"
+"rtos_m3508_task\chassis_task.o"
+"rtos_m3508_task\detect_task.o"
 "rtos_m3508_task\pid.o"
 "rtos_m3508_task\pid_user.o"
 "rtos_m3508_task\remote_control.o"
-"rtos_m3508_task\chassis_task.o"
-"rtos_m3508_task\detect_task.o"
+"rtos_m3508_task\bsp_can.o"
 "rtos_m3508_task\bsp_delay.o"
 "rtos_m3508_task\bsp_rc.o"
-"rtos_m3508_task\bsp_can.o"
 --strict --scatter "RTOS_M3508_Task\RTOS_M3508_Task.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

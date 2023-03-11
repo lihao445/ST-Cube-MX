@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F407xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;..\bsp\boards\Inc;..\application\Inc</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;..\bsp\boards\Inc;..\applications\Inc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -597,43 +597,48 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>application</GroupName>
+          <GroupName>applications</GroupName>
           <Files>
             <File>
-              <FileName>can_receive.c</FileName>
+              <FileName>CAN_receive.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\application\Src\can_receive.c</FilePath>
-            </File>
-            <File>
-              <FileName>pid.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\application\Src\pid.c</FilePath>
-            </File>
-            <File>
-              <FileName>pid_user.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\application\Src\pid_user.c</FilePath>
-            </File>
-            <File>
-              <FileName>remote_control.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\application\Src\remote_control.c</FilePath>
+              <FilePath>..\applications\Src\CAN_receive.c</FilePath>
             </File>
             <File>
               <FileName>chassis_task.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\application\Src\chassis_task.c</FilePath>
+              <FilePath>..\applications\Src\chassis_task.c</FilePath>
             </File>
             <File>
               <FileName>detect_task.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\application\Src\detect_task.c</FilePath>
+              <FilePath>..\applications\Src\detect_task.c</FilePath>
+            </File>
+            <File>
+              <FileName>pid.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\applications\Src\pid.c</FilePath>
+            </File>
+            <File>
+              <FileName>pid_user.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\applications\Src\pid_user.c</FilePath>
+            </File>
+            <File>
+              <FileName>remote_control.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\applications\Src\remote_control.c</FilePath>
             </File>
           </Files>
         </Group>
         <Group>
           <GroupName>bsp/boards</GroupName>
           <Files>
+            <File>
+              <FileName>bsp_can.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\boards\Src\bsp_can.c</FilePath>
+            </File>
             <File>
               <FileName>bsp_delay.c</FileName>
               <FileType>1</FileType>
@@ -643,11 +648,6 @@
               <FileName>bsp_rc.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\bsp\boards\Src\bsp_rc.c</FilePath>
-            </File>
-            <File>
-              <FileName>bsp_can.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\bsp\boards\Src\bsp_can.c</FilePath>
             </File>
           </Files>
         </Group>

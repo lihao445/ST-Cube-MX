@@ -1,6 +1,6 @@
-rtos_m3508_task\pid_user.o: ..\application\Src\pid_user.c
-rtos_m3508_task\pid_user.o: ..\application\Inc\pid_user.h
-rtos_m3508_task\pid_user.o: ..\application\Inc\pid.h
+rtos_m3508_task\pid_user.o: ..\applications\Src\pid_user.c
+rtos_m3508_task\pid_user.o: ..\applications\Inc\pid_user.h
+rtos_m3508_task\pid_user.o: ..\applications\Inc\pid.h
 rtos_m3508_task\pid_user.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 rtos_m3508_task\pid_user.o: ../Core/Inc/stm32f4xx_hal_conf.h
 rtos_m3508_task\pid_user.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h
@@ -35,10 +35,10 @@ rtos_m3508_task\pid_user.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ti
 rtos_m3508_task\pid_user.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 rtos_m3508_task\pid_user.o: ..\bsp\boards\Inc\include.h
 rtos_m3508_task\pid_user.o: ../Core/Inc/main.h
-rtos_m3508_task\pid_user.o: ..\application\Inc\can_receive.h
+rtos_m3508_task\pid_user.o: ..\applications\Inc\can_receive.h
 rtos_m3508_task\pid_user.o: ..\bsp\boards\Inc\include.h
-rtos_m3508_task\pid_user.o: ..\application\Inc\pid_user.h
-rtos_m3508_task\pid_user.o: ..\application\Inc\remote_control.h
+rtos_m3508_task\pid_user.o: ..\applications\Inc\pid_user.h
+rtos_m3508_task\pid_user.o: ..\applications\Inc\remote_control.h
 rtos_m3508_task\pid_user.o: ..\bsp\boards\Inc\struct_typedef.h
 rtos_m3508_task\pid_user.o: ..\bsp\boards\Inc\bsp_rc.h
 rtos_m3508_task\pid_user.o: ..\bsp\boards\Inc\bsp_delay.h
@@ -56,9 +56,9 @@ rtos_m3508_task\pid_user.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/t
 rtos_m3508_task\pid_user.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 rtos_m3508_task\pid_user.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 rtos_m3508_task\pid_user.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
-rtos_m3508_task\pid_user.o: ..\application\Inc\detect_task.h
-rtos_m3508_task\pid_user.o: ..\application\Inc\chassis_task.h
+rtos_m3508_task\pid_user.o: ..\applications\Inc\detect_task.h
+rtos_m3508_task\pid_user.o: ..\applications\Inc\chassis_task.h
 rtos_m3508_task\pid_user.o: ../Core/Inc/main.h
 rtos_m3508_task\pid_user.o: ../Core/Inc/gpio.h
 rtos_m3508_task\pid_user.o: ..\bsp\boards\Inc\bsp_can.h
-rtos_m3508_task\pid_user.o: ..\application\Inc\pid.h
+rtos_m3508_task\pid_user.o: ..\applications\Inc\pid.h

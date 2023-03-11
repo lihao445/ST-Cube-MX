@@ -1,5 +1,5 @@
-rtos_m3508_task\detect_task.o: ..\application\Src\detect_task.c
-rtos_m3508_task\detect_task.o: ..\application\Inc\detect_task.h
+rtos_m3508_task\detect_task.o: ..\applications\Src\detect_task.c
+rtos_m3508_task\detect_task.o: ..\applications\Inc\detect_task.h
 rtos_m3508_task\detect_task.o: ..\bsp\boards\Inc\struct_typedef.h
 rtos_m3508_task\detect_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 rtos_m3508_task\detect_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h

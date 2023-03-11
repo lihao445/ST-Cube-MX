@@ -1,5 +1,5 @@
-rtos_m3508_task\pid.o: ..\application\Src\pid.c
-rtos_m3508_task\pid.o: ..\application\Inc\pid.h
+rtos_m3508_task\pid.o: ..\applications\Src\pid.c
+rtos_m3508_task\pid.o: ..\applications\Inc\pid.h
 rtos_m3508_task\pid.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 rtos_m3508_task\pid.o: ../Core/Inc/stm32f4xx_hal_conf.h
 rtos_m3508_task\pid.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h
@@ -34,11 +34,11 @@ rtos_m3508_task\pid.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.
 rtos_m3508_task\pid.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 rtos_m3508_task\pid.o: ..\bsp\boards\Inc\include.h
 rtos_m3508_task\pid.o: ../Core/Inc/main.h
-rtos_m3508_task\pid.o: ..\application\Inc\can_receive.h
+rtos_m3508_task\pid.o: ..\applications\Inc\can_receive.h
 rtos_m3508_task\pid.o: ..\bsp\boards\Inc\include.h
-rtos_m3508_task\pid.o: ..\application\Inc\pid_user.h
-rtos_m3508_task\pid.o: ..\application\Inc\pid.h
-rtos_m3508_task\pid.o: ..\application\Inc\remote_control.h
+rtos_m3508_task\pid.o: ..\applications\Inc\pid_user.h
+rtos_m3508_task\pid.o: ..\applications\Inc\pid.h
+rtos_m3508_task\pid.o: ..\applications\Inc\remote_control.h
 rtos_m3508_task\pid.o: ..\bsp\boards\Inc\struct_typedef.h
 rtos_m3508_task\pid.o: ..\bsp\boards\Inc\bsp_rc.h
 rtos_m3508_task\pid.o: ..\bsp\boards\Inc\bsp_delay.h
@@ -56,8 +56,8 @@ rtos_m3508_task\pid.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers
 rtos_m3508_task\pid.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 rtos_m3508_task\pid.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 rtos_m3508_task\pid.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
-rtos_m3508_task\pid.o: ..\application\Inc\detect_task.h
-rtos_m3508_task\pid.o: ..\application\Inc\chassis_task.h
+rtos_m3508_task\pid.o: ..\applications\Inc\detect_task.h
+rtos_m3508_task\pid.o: ..\applications\Inc\chassis_task.h
 rtos_m3508_task\pid.o: ../Core/Inc/main.h
 rtos_m3508_task\pid.o: ../Core/Inc/gpio.h
 rtos_m3508_task\pid.o: ..\bsp\boards\Inc\bsp_can.h

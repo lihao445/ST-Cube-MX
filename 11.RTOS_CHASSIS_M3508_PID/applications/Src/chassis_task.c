@@ -39,7 +39,7 @@ void chassis_task(void const * argument)
     //底盘控制量设置
     chassis_set_contorl();
     //chassis control pid calculate
-//		Speed_Motor_Target_1 = 1000;
+		Speed_Motor_Target_1 = 1000;    //测试电机闭环是否可用的代码，正式使用时请注释该行代码
     //底盘控制PID计算
     chassis_control_loop();
 		

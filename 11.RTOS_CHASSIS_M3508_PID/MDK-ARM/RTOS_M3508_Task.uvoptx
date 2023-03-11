@@ -678,7 +678,7 @@
   </Group>
 
   <Group>
-    <GroupName>application</GroupName>
+    <GroupName>applications</GroupName>
     <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
@@ -690,8 +690,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\application\Src\can_receive.c</PathWithFileName>
-      <FilenameWithoutPath>can_receive.c</FilenameWithoutPath>
+      <PathWithFileName>..\applications\Src\CAN_receive.c</PathWithFileName>
+      <FilenameWithoutPath>CAN_receive.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -702,8 +702,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\application\Src\pid.c</PathWithFileName>
-      <FilenameWithoutPath>pid.c</FilenameWithoutPath>
+      <PathWithFileName>..\applications\Src\chassis_task.c</PathWithFileName>
+      <FilenameWithoutPath>chassis_task.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -714,8 +714,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\application\Src\pid_user.c</PathWithFileName>
-      <FilenameWithoutPath>pid_user.c</FilenameWithoutPath>
+      <PathWithFileName>..\applications\Src\detect_task.c</PathWithFileName>
+      <FilenameWithoutPath>detect_task.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -726,8 +726,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\application\Src\remote_control.c</PathWithFileName>
-      <FilenameWithoutPath>remote_control.c</FilenameWithoutPath>
+      <PathWithFileName>..\applications\Src\pid.c</PathWithFileName>
+      <FilenameWithoutPath>pid.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -738,8 +738,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\application\Src\chassis_task.c</PathWithFileName>
-      <FilenameWithoutPath>chassis_task.c</FilenameWithoutPath>
+      <PathWithFileName>..\applications\Src\pid_user.c</PathWithFileName>
+      <FilenameWithoutPath>pid_user.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -750,8 +750,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\application\Src\detect_task.c</PathWithFileName>
-      <FilenameWithoutPath>detect_task.c</FilenameWithoutPath>
+      <PathWithFileName>..\applications\Src\remote_control.c</PathWithFileName>
+      <FilenameWithoutPath>remote_control.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -770,8 +770,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\bsp\boards\Src\bsp_delay.c</PathWithFileName>
-      <FilenameWithoutPath>bsp_delay.c</FilenameWithoutPath>
+      <PathWithFileName>..\bsp\boards\Src\bsp_can.c</PathWithFileName>
+      <FilenameWithoutPath>bsp_can.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -782,8 +782,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\bsp\boards\Src\bsp_rc.c</PathWithFileName>
-      <FilenameWithoutPath>bsp_rc.c</FilenameWithoutPath>
+      <PathWithFileName>..\bsp\boards\Src\bsp_delay.c</PathWithFileName>
+      <FilenameWithoutPath>bsp_delay.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -794,8 +794,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\bsp\boards\Src\bsp_can.c</PathWithFileName>
-      <FilenameWithoutPath>bsp_can.c</FilenameWithoutPath>
+      <PathWithFileName>..\bsp\boards\Src\bsp_rc.c</PathWithFileName>
+      <FilenameWithoutPath>bsp_rc.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>

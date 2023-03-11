@@ -34,11 +34,11 @@ rtos_m3508_task\bsp_can.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr
 rtos_m3508_task\bsp_can.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 rtos_m3508_task\bsp_can.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 rtos_m3508_task\bsp_can.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
-rtos_m3508_task\bsp_can.o: ..\application\Inc\can_receive.h
+rtos_m3508_task\bsp_can.o: ..\applications\Inc\can_receive.h
 rtos_m3508_task\bsp_can.o: ..\bsp\boards\Inc\include.h
-rtos_m3508_task\bsp_can.o: ..\application\Inc\pid_user.h
-rtos_m3508_task\bsp_can.o: ..\application\Inc\pid.h
-rtos_m3508_task\bsp_can.o: ..\application\Inc\remote_control.h
+rtos_m3508_task\bsp_can.o: ..\applications\Inc\pid_user.h
+rtos_m3508_task\bsp_can.o: ..\applications\Inc\pid.h
+rtos_m3508_task\bsp_can.o: ..\applications\Inc\remote_control.h
 rtos_m3508_task\bsp_can.o: ..\bsp\boards\Inc\struct_typedef.h
 rtos_m3508_task\bsp_can.o: ..\bsp\boards\Inc\bsp_rc.h
 rtos_m3508_task\bsp_can.o: ..\bsp\boards\Inc\bsp_delay.h
@@ -56,8 +56,8 @@ rtos_m3508_task\bsp_can.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/ti
 rtos_m3508_task\bsp_can.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 rtos_m3508_task\bsp_can.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 rtos_m3508_task\bsp_can.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
-rtos_m3508_task\bsp_can.o: ..\application\Inc\detect_task.h
-rtos_m3508_task\bsp_can.o: ..\application\Inc\chassis_task.h
+rtos_m3508_task\bsp_can.o: ..\applications\Inc\detect_task.h
+rtos_m3508_task\bsp_can.o: ..\applications\Inc\chassis_task.h
 rtos_m3508_task\bsp_can.o: ../Core/Inc/main.h
 rtos_m3508_task\bsp_can.o: ../Core/Inc/gpio.h
 rtos_m3508_task\bsp_can.o: ..\bsp\boards\Inc\bsp_can.h

@@ -1,5 +1,5 @@
-rtos_m3508_task\can_receive.o: ..\application\Src\can_receive.c
-rtos_m3508_task\can_receive.o: ..\application\Inc\can_receive.h
+rtos_m3508_task\can_receive.o: ..\applications\Src\CAN_receive.c
+rtos_m3508_task\can_receive.o: ..\applications\Inc\can_receive.h
 rtos_m3508_task\can_receive.o: ..\bsp\boards\Inc\include.h
 rtos_m3508_task\can_receive.o: ../Core/Inc/main.h
 rtos_m3508_task\can_receive.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
@@ -34,11 +34,11 @@ rtos_m3508_task\can_receive.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal
 rtos_m3508_task\can_receive.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 rtos_m3508_task\can_receive.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 rtos_m3508_task\can_receive.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
-rtos_m3508_task\can_receive.o: ..\application\Inc\can_receive.h
-rtos_m3508_task\can_receive.o: ..\application\Inc\pid_user.h
-rtos_m3508_task\can_receive.o: ..\application\Inc\pid.h
+rtos_m3508_task\can_receive.o: ..\applications\Inc\can_receive.h
+rtos_m3508_task\can_receive.o: ..\applications\Inc\pid_user.h
+rtos_m3508_task\can_receive.o: ..\applications\Inc\pid.h
 rtos_m3508_task\can_receive.o: ..\bsp\boards\Inc\include.h
-rtos_m3508_task\can_receive.o: ..\application\Inc\remote_control.h
+rtos_m3508_task\can_receive.o: ..\applications\Inc\remote_control.h
 rtos_m3508_task\can_receive.o: ..\bsp\boards\Inc\struct_typedef.h
 rtos_m3508_task\can_receive.o: ..\bsp\boards\Inc\bsp_rc.h
 rtos_m3508_task\can_receive.o: ..\bsp\boards\Inc\bsp_delay.h
@@ -56,8 +56,8 @@ rtos_m3508_task\can_receive.o: ../Middlewares/Third_Party/FreeRTOS/Source/includ
 rtos_m3508_task\can_receive.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 rtos_m3508_task\can_receive.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 rtos_m3508_task\can_receive.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
-rtos_m3508_task\can_receive.o: ..\application\Inc\detect_task.h
-rtos_m3508_task\can_receive.o: ..\application\Inc\chassis_task.h
+rtos_m3508_task\can_receive.o: ..\applications\Inc\detect_task.h
+rtos_m3508_task\can_receive.o: ..\applications\Inc\chassis_task.h
 rtos_m3508_task\can_receive.o: ../Core/Inc/main.h
 rtos_m3508_task\can_receive.o: ../Core/Inc/gpio.h
 rtos_m3508_task\can_receive.o: ..\bsp\boards\Inc\bsp_can.h

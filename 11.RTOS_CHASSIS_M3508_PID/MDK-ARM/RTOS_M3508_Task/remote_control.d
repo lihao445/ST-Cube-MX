@@ -1,5 +1,5 @@
-rtos_m3508_task\remote_control.o: ..\application\Src\remote_control.c
-rtos_m3508_task\remote_control.o: ..\application\Inc\remote_control.h
+rtos_m3508_task\remote_control.o: ..\applications\Src\remote_control.c
+rtos_m3508_task\remote_control.o: ..\applications\Inc\remote_control.h
 rtos_m3508_task\remote_control.o: ..\bsp\boards\Inc\struct_typedef.h
 rtos_m3508_task\remote_control.o: ..\bsp\boards\Inc\bsp_rc.h
 rtos_m3508_task\remote_control.o: ../Core/Inc/main.h
@@ -35,16 +35,16 @@ rtos_m3508_task\remote_control.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_
 rtos_m3508_task\remote_control.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 rtos_m3508_task\remote_control.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 rtos_m3508_task\remote_control.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
-rtos_m3508_task\remote_control.o: ..\application\Inc\can_receive.h
+rtos_m3508_task\remote_control.o: ..\applications\Inc\can_receive.h
 rtos_m3508_task\remote_control.o: ..\bsp\boards\Inc\include.h
 rtos_m3508_task\remote_control.o: ../Core/Inc/main.h
 rtos_m3508_task\remote_control.o: ../Core/Inc/gpio.h
 rtos_m3508_task\remote_control.o: ..\bsp\boards\Inc\bsp_delay.h
-rtos_m3508_task\remote_control.o: ..\application\Inc\CAN_receive.h
+rtos_m3508_task\remote_control.o: ..\applications\Inc\CAN_receive.h
 rtos_m3508_task\remote_control.o: ..\bsp\boards\Inc\bsp_can.h
 rtos_m3508_task\remote_control.o: ..\bsp\boards\Inc\include.h
-rtos_m3508_task\remote_control.o: ..\application\Inc\pid.h
-rtos_m3508_task\remote_control.o: ..\application\Inc\pid_user.h
+rtos_m3508_task\remote_control.o: ..\applications\Inc\pid.h
+rtos_m3508_task\remote_control.o: ..\applications\Inc\pid_user.h
 rtos_m3508_task\remote_control.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 rtos_m3508_task\remote_control.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
 rtos_m3508_task\remote_control.o: ../Core/Inc/FreeRTOSConfig.h
@@ -59,5 +59,5 @@ rtos_m3508_task\remote_control.o: ../Middlewares/Third_Party/FreeRTOS/Source/inc
 rtos_m3508_task\remote_control.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 rtos_m3508_task\remote_control.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 rtos_m3508_task\remote_control.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
-rtos_m3508_task\remote_control.o: ..\application\Inc\detect_task.h
-rtos_m3508_task\remote_control.o: ..\application\Inc\chassis_task.h
+rtos_m3508_task\remote_control.o: ..\applications\Inc\detect_task.h
+rtos_m3508_task\remote_control.o: ..\applications\Inc\chassis_task.h
