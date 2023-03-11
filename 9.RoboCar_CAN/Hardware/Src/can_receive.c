@@ -11,7 +11,7 @@ float	Position_Motor_Target_1,Position_Motor_Target_2,Position_Motor_Target_3,Po
 // (ptr)->speed_rpm = (uint16_t)((data)[2] << 8 | (data)[3]); \
 // (ptr)->given_current = (uint16_t)((data)[4] << 8 | (data)[5]); \
 // (ptr)->temperate = (data)[6]; \
-//}-
+//}
 
 
 
@@ -160,5 +160,4 @@ void CAN_Start(CAN_HandleTypeDef *hcan)
   {
     Error_Handler();
 	}
-
 }
