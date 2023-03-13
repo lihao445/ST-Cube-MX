@@ -14,22 +14,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {		
 		if(htim->Instance == htim1.Instance)               //htim==(&htim1)
 		{
-			Speed_Motor_Target_2 = 3000;
-			Target_2 = PID_velocity_realize_1(Speed_Motor_Target_2,2);
+			Speed_Motor_Target_1 = rc_ctrl.rc.ch[3]*15;
+			Target_1 = PID_velocity_realize_1(Speed_Motor_Target_1,1);
 			CAN_cmd_chassis(Target_1,Target_2,Target_3,Target_4);
-//      Position_Motor_Target_1 = 8192 * 2 *19;
-			
-//			RC_VC_DATA();         //将遥控器左边数据赋值
-//			
-//			if(rc_ctrl.rc.s[0] == 3)       //S1中间
-//			{
-//					
-//				if(rc_ctrl.rc.s[1] == 3)    //S2中间    手动模式
-//				{
-//					Mecanum_Wheel_Speed_Calculation();
-//				}
-//			}
-//			Transmit_Speed();
+
 		}
 }
 
