@@ -119,7 +119,8 @@
 #define MPU_FIFO_RW_REG 0X74      // FIFO读写寄存器
 #define MPU_DEVICE_ID_REG 0X75    //器件ID寄存器
 
-uint8_t MPU_Init(void);                                                              //初始化MPU6050
+uint8_t MPU_Init(void);     //初始化MPU6050
+
 uint8_t MPU_Write_Len(uint8_t addr, uint8_t reg, uint8_t len, uint8_t *buf); // IIC连续写
 uint8_t MPU_Read_Len(uint8_t addr, uint8_t reg, uint8_t len, uint8_t *buf);  // IIC连续读
 uint8_t MPU_Write_Byte(uint8_t reg, uint8_t data);                           // IIC写一个字节

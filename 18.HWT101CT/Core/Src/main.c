@@ -56,7 +56,7 @@ void SystemClock_Config(void);
 /* USER CODE BEGIN 0 */
 
 extern char s_cDataUpdate;
-
+extern uint8_t ucRxData;
 extern float fAcc[3], fGyro[3], fAngle[3], fYaw;
 extern int i;
 
@@ -93,7 +93,9 @@ int main(void)
   MX_GPIO_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-
+	
+	 HAL_UART_Receive_IT(&huart1, &ucRxData, 1);
+	
   /* USER CODE END 2 */
 
   /* Infinite loop */

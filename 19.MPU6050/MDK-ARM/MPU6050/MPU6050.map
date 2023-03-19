@@ -2708,25 +2708,25 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-        60          6          0          0          0        855   gpio.o
-       168         28          0          0         84       1709   i2c.o
-      5252        264        156         53          0      31990   inv_mpu.o
-      2442        134       3062          0         16      20526   inv_mpu_dmp_motion_driver.o
-       200         14          0         12          0     658669   main.o
-       220          0          0          0          0       3237   mpu6050.o
-       634         30          0          0          0       7221   mpuiic.o
-        64         26        392          0       1536        852   startup_stm32f407xx.o
-       180         28          0         12          0       9485   stm32f4xx_hal.o
-       172         14          0          0          0      33322   stm32f4xx_hal_cortex.o
-       516         46          0          0          0       2883   stm32f4xx_hal_gpio.o
-       392         16          0          0          0       3135   stm32f4xx_hal_i2c.o
-        48          6          0          0          0        874   stm32f4xx_hal_msp.o
-      1316         64          0          0          0       4685   stm32f4xx_hal_rcc.o
-        20          0          0          0          0       4250   stm32f4xx_it.o
-        16          4         24          4          0       1151   system_stm32f4xx.o
+        60          6          0          0          0        859   gpio.o
+       168         28          0          0         84       1725   i2c.o
+      5252        264        156         53          0      32098   inv_mpu.o
+      2442        134       3062          0         16      20586   inv_mpu_dmp_motion_driver.o
+       200         14          0         12          0     658713   main.o
+       220          0          0          0          0       3261   mpu6050.o
+       634         30          0          0          0       7257   mpuiic.o
+        64         26        392          0       1536        856   startup_stm32f407xx.o
+       180         28          0         12          0       9505   stm32f4xx_hal.o
+       172         14          0          0          0      33338   stm32f4xx_hal_cortex.o
+       516         46          0          0          0       2899   stm32f4xx_hal_gpio.o
+       392         16          0          0          0       3143   stm32f4xx_hal_i2c.o
+        48          6          0          0          0        878   stm32f4xx_hal_msp.o
+      1316         64          0          0          0       4705   stm32f4xx_hal_rcc.o
+        20          0          0          0          0       4274   stm32f4xx_it.o
+        16          4         24          4          0       1163   system_stm32f4xx.o
 
     ----------------------------------------------------------------------
-     11716        680       3672         84       1636     784844   Object Totals
+     11716        680       3672         84       1636     785260   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         16          0          6          3          0          0   (incl. Padding)
 
@@ -2844,8 +2844,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     21198       1404       3942         96       1984     779004   Grand Totals
-     21198       1404       3942         96       1984     779004   ELF Image Totals
+     21198       1404       3942         96       1984     779420   Grand Totals
+     21198       1404       3942         96       1984     779420   ELF Image Totals
      21198       1404       3942         96          0          0   ROM Totals
 
 ==============================================================================
