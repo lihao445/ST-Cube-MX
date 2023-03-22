@@ -4,6 +4,7 @@
 
 float calc_angle_helm(float set_ch2,float set_ch3);
 
+float calc_motor_round_cnt(float angle,float last_angle);
 
 
 
