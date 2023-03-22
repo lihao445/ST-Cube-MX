@@ -1,0 +1,26 @@
+--cpu=Cortex-M4.fp.sp
+"ledtest2\startup_stm32f407xx.o"
+"ledtest2\main.o"
+"ledtest2\gpio.o"
+"ledtest2\stm32f4xx_it.o"
+"ledtest2\stm32f4xx_hal_msp.o"
+"ledtest2\stm32f4xx_hal_tim.o"
+"ledtest2\stm32f4xx_hal_tim_ex.o"
+"ledtest2\stm32f4xx_hal_rcc.o"
+"ledtest2\stm32f4xx_hal_rcc_ex.o"
+"ledtest2\stm32f4xx_hal_flash.o"
+"ledtest2\stm32f4xx_hal_flash_ex.o"
+"ledtest2\stm32f4xx_hal_flash_ramfunc.o"
+"ledtest2\stm32f4xx_hal_gpio.o"
+"ledtest2\stm32f4xx_hal_dma_ex.o"
+"ledtest2\stm32f4xx_hal_dma.o"
+"ledtest2\stm32f4xx_hal_pwr.o"
+"ledtest2\stm32f4xx_hal_pwr_ex.o"
+"ledtest2\stm32f4xx_hal_cortex.o"
+"ledtest2\stm32f4xx_hal.o"
+"ledtest2\stm32f4xx_hal_exti.o"
+"ledtest2\system_stm32f4xx.o"
+--strict --scatter "LEDtest2\LEDtest2.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "LEDtest2.map" -o LEDtest2\LEDtest2.axf
