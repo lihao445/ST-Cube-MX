@@ -153,7 +153,7 @@
         <Ww>
           <count>0</count>
           <WinNumber>1</WinNumber>
-          <ItemText>motor_can1[i]</ItemText>
+          <ItemText>motor_can2</ItemText>
         </Ww>
       </WatchWindow1>
       <Tracepoint>

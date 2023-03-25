@@ -1,7 +1,7 @@
 helm_wheel_chassis\remote_control.o: ..\applications\Src\remote_control.c
-helm_wheel_chassis\remote_control.o: ..\applications\Inc\remote_control.h
-helm_wheel_chassis\remote_control.o: ..\bsp\boards\Inc\struct_typedef.h
-helm_wheel_chassis\remote_control.o: ..\bsp\boards\Inc\bsp_rc.h
+helm_wheel_chassis\remote_control.o: ../applications/Inc/remote_control.h
+helm_wheel_chassis\remote_control.o: ../bsp/boards/Inc/struct_typedef.h
+helm_wheel_chassis\remote_control.o: ../bsp/boards/Inc/bsp_rc.h
 helm_wheel_chassis\remote_control.o: ../Core/Inc/main.h
 helm_wheel_chassis\remote_control.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 helm_wheel_chassis\remote_control.o: ../Core/Inc/stm32f4xx_hal_conf.h
@@ -35,15 +35,15 @@ helm_wheel_chassis\remote_control.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4
 helm_wheel_chassis\remote_control.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 helm_wheel_chassis\remote_control.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 helm_wheel_chassis\remote_control.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
-helm_wheel_chassis\remote_control.o: ..\bsp\boards\Inc\include.h
+helm_wheel_chassis\remote_control.o: ../bsp/boards/Inc/include.h
 helm_wheel_chassis\remote_control.o: ../Core/Inc/main.h
 helm_wheel_chassis\remote_control.o: ../Core/Inc/gpio.h
-helm_wheel_chassis\remote_control.o: ..\bsp\boards\Inc\bsp_delay.h
-helm_wheel_chassis\remote_control.o: ..\applications\Inc\CAN_receive.h
-helm_wheel_chassis\remote_control.o: ..\bsp\boards\Inc\include.h
-helm_wheel_chassis\remote_control.o: ..\bsp\boards\Inc\bsp_can.h
-helm_wheel_chassis\remote_control.o: ..\applications\Inc\pid.h
-helm_wheel_chassis\remote_control.o: ..\applications\Inc\pid_user.h
-helm_wheel_chassis\remote_control.o: ..\applications\Inc\helm_wheel.h
-helm_wheel_chassis\remote_control.o: ..\applications\Inc\timer_user.h
+helm_wheel_chassis\remote_control.o: ../bsp/boards/Inc/bsp_delay.h
+helm_wheel_chassis\remote_control.o: ../applications/Inc/CAN_receive.h
+helm_wheel_chassis\remote_control.o: ../bsp/boards/Inc/include.h
+helm_wheel_chassis\remote_control.o: ../bsp/boards/Inc/bsp_can.h
+helm_wheel_chassis\remote_control.o: ../applications/Inc/pid.h
+helm_wheel_chassis\remote_control.o: ../applications/Inc/pid_user.h
+helm_wheel_chassis\remote_control.o: ../applications/Inc/helm_wheel.h
+helm_wheel_chassis\remote_control.o: ../applications/Inc/timer_user.h
 helm_wheel_chassis\remote_control.o: D:\Program Files\Arm\Keil_v5\ARM\ARMCC\Bin\..\include\math.h

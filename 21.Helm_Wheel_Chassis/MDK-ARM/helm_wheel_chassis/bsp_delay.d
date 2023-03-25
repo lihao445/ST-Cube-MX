@@ -1,6 +1,6 @@
 helm_wheel_chassis\bsp_delay.o: ..\bsp\boards\Src\bsp_delay.c
-helm_wheel_chassis\bsp_delay.o: ..\bsp\boards\Inc\bsp_delay.h
-helm_wheel_chassis\bsp_delay.o: ..\bsp\boards\Inc\struct_typedef.h
+helm_wheel_chassis\bsp_delay.o: ../bsp/boards/Inc/bsp_delay.h
+helm_wheel_chassis\bsp_delay.o: ../bsp/boards/Inc/struct_typedef.h
 helm_wheel_chassis\bsp_delay.o: ../Core/Inc/main.h
 helm_wheel_chassis\bsp_delay.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 helm_wheel_chassis\bsp_delay.o: ../Core/Inc/stm32f4xx_hal_conf.h
@@ -34,16 +34,16 @@ helm_wheel_chassis\bsp_delay.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ha
 helm_wheel_chassis\bsp_delay.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 helm_wheel_chassis\bsp_delay.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 helm_wheel_chassis\bsp_delay.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
-helm_wheel_chassis\bsp_delay.o: ..\bsp\boards\Inc\include.h
+helm_wheel_chassis\bsp_delay.o: ../bsp/boards/Inc/include.h
 helm_wheel_chassis\bsp_delay.o: ../Core/Inc/main.h
 helm_wheel_chassis\bsp_delay.o: ../Core/Inc/gpio.h
-helm_wheel_chassis\bsp_delay.o: ..\applications\Inc\CAN_receive.h
-helm_wheel_chassis\bsp_delay.o: ..\bsp\boards\Inc\include.h
-helm_wheel_chassis\bsp_delay.o: ..\bsp\boards\Inc\bsp_can.h
-helm_wheel_chassis\bsp_delay.o: ..\applications\Inc\pid.h
-helm_wheel_chassis\bsp_delay.o: ..\applications\Inc\pid_user.h
-helm_wheel_chassis\bsp_delay.o: ..\bsp\boards\Inc\bsp_rc.h
-helm_wheel_chassis\bsp_delay.o: ..\applications\Inc\remote_control.h
-helm_wheel_chassis\bsp_delay.o: ..\applications\Inc\helm_wheel.h
-helm_wheel_chassis\bsp_delay.o: ..\applications\Inc\timer_user.h
+helm_wheel_chassis\bsp_delay.o: ../applications/Inc/CAN_receive.h
+helm_wheel_chassis\bsp_delay.o: ../bsp/boards/Inc/include.h
+helm_wheel_chassis\bsp_delay.o: ../bsp/boards/Inc/bsp_can.h
+helm_wheel_chassis\bsp_delay.o: ../applications/Inc/pid.h
+helm_wheel_chassis\bsp_delay.o: ../applications/Inc/pid_user.h
+helm_wheel_chassis\bsp_delay.o: ../bsp/boards/Inc/bsp_rc.h
+helm_wheel_chassis\bsp_delay.o: ../applications/Inc/remote_control.h
+helm_wheel_chassis\bsp_delay.o: ../applications/Inc/helm_wheel.h
+helm_wheel_chassis\bsp_delay.o: ../applications/Inc/timer_user.h
 helm_wheel_chassis\bsp_delay.o: D:\Program Files\Arm\Keil_v5\ARM\ARMCC\Bin\..\include\math.h

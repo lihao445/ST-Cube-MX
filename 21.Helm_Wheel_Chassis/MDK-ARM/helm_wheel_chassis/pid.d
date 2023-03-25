@@ -1,5 +1,5 @@
 helm_wheel_chassis\pid.o: ..\applications\Src\pid.c
-helm_wheel_chassis\pid.o: ..\applications\Inc\pid.h
+helm_wheel_chassis\pid.o: ../applications/Inc/pid.h
 helm_wheel_chassis\pid.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 helm_wheel_chassis\pid.o: ../Core/Inc/stm32f4xx_hal_conf.h
 helm_wheel_chassis\pid.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h
@@ -32,18 +32,18 @@ helm_wheel_chassis\pid.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_
 helm_wheel_chassis\pid.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 helm_wheel_chassis\pid.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 helm_wheel_chassis\pid.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
-helm_wheel_chassis\pid.o: ..\bsp\boards\Inc\include.h
+helm_wheel_chassis\pid.o: ../bsp/boards/Inc/include.h
 helm_wheel_chassis\pid.o: ../Core/Inc/main.h
-helm_wheel_chassis\pid.o: ..\bsp\boards\Inc\include.h
+helm_wheel_chassis\pid.o: ../bsp/boards/Inc/include.h
 helm_wheel_chassis\pid.o: ../Core/Inc/gpio.h
-helm_wheel_chassis\pid.o: ..\bsp\boards\Inc\bsp_delay.h
-helm_wheel_chassis\pid.o: ..\bsp\boards\Inc\struct_typedef.h
-helm_wheel_chassis\pid.o: ..\applications\Inc\CAN_receive.h
-helm_wheel_chassis\pid.o: ..\bsp\boards\Inc\bsp_can.h
-helm_wheel_chassis\pid.o: ..\applications\Inc\pid.h
-helm_wheel_chassis\pid.o: ..\applications\Inc\pid_user.h
-helm_wheel_chassis\pid.o: ..\bsp\boards\Inc\bsp_rc.h
-helm_wheel_chassis\pid.o: ..\applications\Inc\remote_control.h
-helm_wheel_chassis\pid.o: ..\applications\Inc\helm_wheel.h
-helm_wheel_chassis\pid.o: ..\applications\Inc\timer_user.h
+helm_wheel_chassis\pid.o: ../bsp/boards/Inc/bsp_delay.h
+helm_wheel_chassis\pid.o: ../bsp/boards/Inc/struct_typedef.h
+helm_wheel_chassis\pid.o: ../applications/Inc/CAN_receive.h
+helm_wheel_chassis\pid.o: ../bsp/boards/Inc/bsp_can.h
+helm_wheel_chassis\pid.o: ../applications/Inc/pid.h
+helm_wheel_chassis\pid.o: ../applications/Inc/pid_user.h
+helm_wheel_chassis\pid.o: ../bsp/boards/Inc/bsp_rc.h
+helm_wheel_chassis\pid.o: ../applications/Inc/remote_control.h
+helm_wheel_chassis\pid.o: ../applications/Inc/helm_wheel.h
+helm_wheel_chassis\pid.o: ../applications/Inc/timer_user.h
 helm_wheel_chassis\pid.o: D:\Program Files\Arm\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
