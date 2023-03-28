@@ -98,11 +98,11 @@ int main(void)
 		HAL_Delay(1000);
 		 __HAL_TIM_SetCompare(&htim1,TIM_CHANNEL_1,1500);
 		
-		HAL_Delay(2000);
+		HAL_Delay(1000);
 		
 		 __HAL_TIM_SetCompare(&htim1,TIM_CHANNEL_1,1000);
 		
-		HAL_Delay(2000);
+		HAL_Delay(1000);
 		
     /* USER CODE END WHILE */
 

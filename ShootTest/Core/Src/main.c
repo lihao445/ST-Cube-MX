@@ -119,7 +119,7 @@ int main(void)
 
 
 		
-		CAN1_CMD_1(PID_velocity_realize_1(rc_ctrl.rc.ch[3]*13.67,1),0,0,0);     //让1号电机速度为500rpm;
+		CAN1_CMD_1(PID_velocity_realize_1(rc_ctrl.rc.ch[3]*13.67,1),PID_velocity_realize_1(-rc_ctrl.rc.ch[3]*13.67,2),0,0); 
 		HAL_Delay(1);              //延时不能太久
 		
   }

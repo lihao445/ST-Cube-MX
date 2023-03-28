@@ -98,10 +98,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 				Speed_Motor_Target_3 = -0.707106f * rc_ctrl.rc.ch[4];
 				Speed_Motor_Target_4 = +0.707106f * rc_ctrl.rc.ch[4];
 
-				Speed_Motor_Target_1 *= 4.2f;
-				Speed_Motor_Target_2 *= 4.2f;
-				Speed_Motor_Target_3 *= 4.2f;
-				Speed_Motor_Target_4 *= 4.2f;
+				Speed_Motor_Target_1 *= 5.2f;
+				Speed_Motor_Target_2 *= 5.2f;
+				Speed_Motor_Target_3 *= 5.2f;
+				Speed_Motor_Target_4 *= 5.2f;
 			}
 
 			M3508_Target_1 = PID_velocity_realize_1(Speed_Motor_Target_1,1);
