@@ -13,7 +13,9 @@ typedef struct
 	fp32 w_z;
 } encoding_disk_measure_t;
 
+void USART_SendData(USART_TypeDef* USARTx, uint16_t Data);
 
+uint16_t USART_ReceiveData(USART_TypeDef* USARTx);
 
 void Data_Analyse(uint8_t rec);
 

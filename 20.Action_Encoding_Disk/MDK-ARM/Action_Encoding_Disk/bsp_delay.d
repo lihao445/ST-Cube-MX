@@ -1,6 +1,6 @@
 action_encoding_disk\bsp_delay.o: ..\bsp\boards\Src\bsp_delay.c
-action_encoding_disk\bsp_delay.o: ..\bsp\boards\Inc\bsp_delay.h
-action_encoding_disk\bsp_delay.o: ..\bsp\boards\Inc\struct_typedef.h
+action_encoding_disk\bsp_delay.o: ../bsp/boards/Inc/bsp_delay.h
+action_encoding_disk\bsp_delay.o: ../bsp/boards/Inc/struct_typedef.h
 action_encoding_disk\bsp_delay.o: ../Core/Inc/main.h
 action_encoding_disk\bsp_delay.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 action_encoding_disk\bsp_delay.o: ../Core/Inc/stm32f4xx_hal_conf.h

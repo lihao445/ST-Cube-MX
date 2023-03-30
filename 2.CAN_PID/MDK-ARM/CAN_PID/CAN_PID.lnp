@@ -26,6 +26,7 @@
 "can_pid\pid.o"
 "can_pid\pid_user.o"
 "can_pid\bsp_can.o"
+"can_pid\bsp_delay.o"
 --strict --scatter "CAN_PID\CAN_PID.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

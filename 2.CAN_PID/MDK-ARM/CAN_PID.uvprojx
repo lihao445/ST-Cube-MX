@@ -544,6 +544,11 @@
               <FileType>1</FileType>
               <FilePath>..\bsp\boards\Src\bsp_can.c</FilePath>
             </File>
+            <File>
+              <FileName>bsp_delay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\boards\Src\bsp_delay.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

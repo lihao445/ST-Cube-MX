@@ -88,10 +88,10 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_USART1_UART_Init();
+  MX_USART6_UART_Init();
   /* USER CODE BEGIN 2 */
 
-	HAL_UART_Receive_IT(&huart1,&Res_buffer,sizeof(Res_buffer));
+	HAL_UART_Receive_IT(&huart6,&Res_buffer,sizeof(Res_buffer));
 
   /* USER CODE END 2 */
 

@@ -74,6 +74,7 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 		case CAN_3508_M5_ID:
 		case CAN_3508_M6_ID:
 		case CAN_3508_M7_ID:
+			//			case CAN_3508_ALL_ID:
 		{
 			static uint8_t i = 0;
 			// get motor id

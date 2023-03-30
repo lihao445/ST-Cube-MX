@@ -6,6 +6,19 @@
 extern uint8_t Res_buffer;
 
 
+void USART_SendData(USART_TypeDef* USARTx, uint16_t Data)
+{
+	USARTx->DR = (Data & (uint16_t)0x01FF);
+}
+
+
+uint16_t USART_ReceiveData(USART_TypeDef* USARTx)
+{
+	 return (uint16_t)(USARTx->DR & (uint16_t)0x01FF);
+}
+
+
+
 
 /**
  * @brief 解析结果变量，如需跨文件调用，需要外部声明
@@ -32,7 +45,10 @@ extern uint8_t Res_buffer;
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
-	Data_Analyse(Res_buffer);
+		if(huart->Instance == USART6)
+		{
+				Data_Analyse(Res_buffer);
+		}
 }
 
 
@@ -131,7 +147,7 @@ void Data_Analyse(uint8_t rec)
 //	for(i=0;i<8;i++)
 //	{
 //		while(huart6.Instance->SR | UART_FLAG_TXE);
-//		HAL_UART_Transmit_IT(&huart6, update_x, sizeof(update_x));	
+//		USART_SendData(USART6, update_x);	
 //	}
 //}
 
@@ -150,7 +166,7 @@ void Data_Analyse(uint8_t rec)
 //	for(i=0;i<8;i++)
 //	{
 //		while(huart6.Instance->SR | UART_FLAG_TXE);
-//		HAL_UART_Transmit_IT(&huart6, update_y, sizeof(update_y));	
+//		USART_SendData(USART6, update_y);		
 //	}
 //}
 
@@ -168,7 +184,7 @@ void Data_Analyse(uint8_t rec)
 //	for(i=0;i<8;i++)
 //	{
 //		while(huart6.Instance->SR | UART_FLAG_TXE);
-//		HAL_UART_Transmit_IT(&huart6, update_yaw, sizeof(update_yaw));	
+//		USART_SendData(USART6, update_yaw);		
 //	}
 //}
 

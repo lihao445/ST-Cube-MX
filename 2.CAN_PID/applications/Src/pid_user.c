@@ -6,9 +6,9 @@ extern motor_measure_t motor_can2[8];
 pid_type_def pid_v_1[8],pid_pos_1[8];
 pid_type_def pid_v_2[8],pid_pos_2[8];
 
-float motor_speed_3508_pid[3] = {10, 0.1, 0};//3508²ÎÊı
+float motor_speed_3508_pid[3] = {10, 0.1, 0};//3508å‚æ•°
 float motor_position_3508_pid[3] = {0.2, 0, 1};
-float motor_speed_2006_pid[3] = {9, 0.1, 0};//2006²ÎÊı
+float motor_speed_2006_pid[3] = {9, 0.1, 0};//2006å‚æ•°
 float motor_position_2006_pid[3] = {0.2, 0, 0};
 
 
@@ -25,7 +25,7 @@ float motor_position_2006_pid[3] = {0.2, 0, 0};
     }
 
 
-//µ×ÅÌµç»úPID³õÊ¼»¯
+//åº•ç›˜ç”µæœºPIDåˆå§‹åŒ–
 void PID_devices_Init(void)
 {
 	for(int i=0;i<4;i++)

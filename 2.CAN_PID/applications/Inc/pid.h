@@ -12,13 +12,13 @@ enum PID_MODE
 typedef struct
 {
     uint8_t mode;
-    //PID Èı²ÎÊı
+    //PID ä¸‰å‚æ•°
     float Kp;
     float Ki;
     float Kd;
 
-    float max_out;  //×î´óÊä³ö
-    float max_iout; //×î´ó»ı·ÖÊä³ö
+    float max_out;  //æœ€å¤§è¾“å‡º
+    float max_iout; //æœ€å¤§ç§¯åˆ†è¾“å‡º
 
     float set;
     float fdb;
@@ -27,8 +27,8 @@ typedef struct
     float Pout;
     float Iout;
     float Dout;
-    float Dbuf[3];  //Î¢·ÖÏî 0×îĞÂ 1ÉÏÒ»´Î 2ÉÏÉÏ´Î
-    float error[3]; //Îó²îÏî 0×îĞÂ 1ÉÏÒ»´Î 2ÉÏÉÏ´Î
+    float Dbuf[3];  //å¾®åˆ†é¡¹ 0æœ€æ–° 1ä¸Šä¸€æ¬¡ 2ä¸Šä¸Šæ¬¡
+    float error[3]; //è¯¯å·®é¡¹ 0æœ€æ–° 1ä¸Šä¸€æ¬¡ 2ä¸Šä¸Šæ¬¡
 
 } pid_type_def;
 

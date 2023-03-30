@@ -1,6 +1,6 @@
 action_encoding_disk\encoding_disk.o: ..\applications\Src\encoding_disk.c
-action_encoding_disk\encoding_disk.o: ..\applications\Inc\encoding_disk.h
-action_encoding_disk\encoding_disk.o: ..\bsp\boards\Inc\include.h
+action_encoding_disk\encoding_disk.o: ../applications/Inc/encoding_disk.h
+action_encoding_disk\encoding_disk.o: ../bsp/boards/Inc/include.h
 action_encoding_disk\encoding_disk.o: ../Core/Inc/main.h
 action_encoding_disk\encoding_disk.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 action_encoding_disk\encoding_disk.o: ../Core/Inc/stm32f4xx_hal_conf.h
@@ -31,6 +31,6 @@ action_encoding_disk\encoding_disk.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f
 action_encoding_disk\encoding_disk.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h
 action_encoding_disk\encoding_disk.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
 action_encoding_disk\encoding_disk.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
-action_encoding_disk\encoding_disk.o: ..\bsp\boards\Inc\bsp_delay.h
-action_encoding_disk\encoding_disk.o: ..\bsp\boards\Inc\struct_typedef.h
+action_encoding_disk\encoding_disk.o: ../bsp/boards/Inc/bsp_delay.h
+action_encoding_disk\encoding_disk.o: ../bsp/boards/Inc/struct_typedef.h
 action_encoding_disk\encoding_disk.o: ../Core/Inc/usart.h
