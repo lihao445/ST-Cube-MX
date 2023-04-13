@@ -1,0 +1,159 @@
+/**    《遥控器舵轮控制》
+ *           _____                    _____
+ *          /\    \                  /\    \
+ *         /::\    \                /::\    \
+ *        /::::\    \              /::::\    \
+ *       /::::::\    \            /::::::\    \
+ *      /:::/\:::\    \          /:::/\:::\    \
+ *     /:::/__\:::\    \        /:::/  \:::\    \
+ *    /::::\   \:::\    \      /:::/    \:::\    \
+ *   /::::::\   \:::\    \    /:::/    / \:::\    \
+ *  /:::/\:::\   \:::\____\  /:::/    /   \:::\    \
+ * /:::/  \:::\   \:::|    |/:::/____/     \:::\____\
+ * \::/   |::::\  /:::|____|\:::\    \      \::/    /
+ *  \/____|:::::\/:::/    /  \:::\    \      \/____/
+ *        |:::::::::/    /    \:::\    \
+ *        |::|\::::/    /      \:::\    \
+ *        |::| \::/____/        \:::\    \
+ *        |::|  ~|               \:::\    \
+ *        |::|   |                \:::\    \
+ *        \::|   |                 \:::\____\
+ *         \:|   |                  \::/    /
+ *          \|___|                   \/____/
+ */
+#include "timer_user.h"
+
+extern RC_ctrl_t rc_ctrl;
+
+fp32 res = 0.00f, prev_res = 0.00f, res1 = 0.00f;
+fp32 round_cnt = 0.00f;
+fp32 round1 = 0.00f, round2 = 0.00f;
+fp32 direction_coefficient = 1.00f;
+
+fp32 Angle_Helm_Target[4];
+fp32 Speed_Motor_Target[4];
+fp32 Shoot_Motor_Target[2];
+fp32 Claw_Motor_Target[1];
+
+fp32 M2006_Target[4];
+fp32 M3508_Target[7];
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+	if (htim->Instance == TIM1)
+	{
+		
+		/***************************************底盘运动****************************************************************/
+			res = calc_angle_helm_wheel(rc_ctrl.rc.ch[2], rc_ctrl.rc.ch[3]); //计算遥控器遥杆角度
+			res1 = calc_min_angle(res, prev_res);							 //就近转圈的目标角度
+
+			round_cnt = calc_motor_round_cnt((res + res1), prev_res); //计算圈数
+			round1 = fabs(prev_res - res1);
+			round2 = fabs(res - prev_res);
+			if (round1 >= round2)
+			{
+				res1 = 0.00f;
+				direction_coefficient = 1.00f;
+			}
+			if (round1 < round2)
+			{
+				res = 0.00f;
+				direction_coefficient = -1.00f;
+			}
+			prev_res = res + res1;																				//记录上一次的角度数据
+			Angle_Helm_Target[0] = 67.00f / 20.00f * (36.00f * 8192.00f * (round_cnt + (res + res1) / 360.00f)); //将数据转换成轮子转动的角度数据
+			Angle_Helm_Target[1] = 67.00f / 20.00f * (36.00f * 8192.00f * (round_cnt + (res + res1) / 360.00f));
+			Angle_Helm_Target[2] = 67.00f / 20.00f * (36.00f * 8192.00f * (round_cnt + (res + res1) / 360.00f));
+			Angle_Helm_Target[3] = 67.00f / 20.00f * (36.00f * 8192.00f * (round_cnt + (res + res1) / 360.00f));
+
+			if (ABS(rc_ctrl.rc.ch[2]) > 250 || ABS(rc_ctrl.rc.ch[3]) > 250)
+			{
+				Speed_Motor_Target[0] = direction_coefficient * (-0.849106f * sqrt(rc_ctrl.rc.ch[2] * rc_ctrl.rc.ch[2] + rc_ctrl.rc.ch[3] * rc_ctrl.rc.ch[3]));
+				Speed_Motor_Target[1] = direction_coefficient * (-0.849106f * sqrt(rc_ctrl.rc.ch[2] * rc_ctrl.rc.ch[2] + rc_ctrl.rc.ch[3] * rc_ctrl.rc.ch[3]) - rc_ctrl.rc.ch[3] / 98.636f);
+				Speed_Motor_Target[2] = direction_coefficient * (-0.849106f * sqrt(rc_ctrl.rc.ch[2] * rc_ctrl.rc.ch[2] + rc_ctrl.rc.ch[3] * rc_ctrl.rc.ch[3]) - rc_ctrl.rc.ch[3] / 98.636f);
+				Speed_Motor_Target[3] = direction_coefficient * (-0.849106f * sqrt(rc_ctrl.rc.ch[2] * rc_ctrl.rc.ch[2] + rc_ctrl.rc.ch[3] * rc_ctrl.rc.ch[3]));
+
+				Speed_Motor_Target[0] *= 7;
+				Speed_Motor_Target[1] *= 7;
+				Speed_Motor_Target[2] *= 7;
+				Speed_Motor_Target[3] *= 7;
+			}
+			if (ABS(rc_ctrl.rc.ch[2]) <= 250 && ABS(rc_ctrl.rc.ch[3]) <= 250)
+			{
+				Speed_Motor_Target[0] = 0;
+				Speed_Motor_Target[1] = 0;
+				Speed_Motor_Target[2] = 0;
+				Speed_Motor_Target[3] = 0;
+			}
+
+			if (ABS(rc_ctrl.rc.ch[4]) >= 200)
+			{
+				Angle_Helm_Target[0] = -123494.400f + 67.00f / 20.00f * round_cnt * 8192.00f * 36.00f;
+				Angle_Helm_Target[1] = 123494.400f + 67.00f / 20.00f * round_cnt * 8192.00f * 36.00f;
+				Angle_Helm_Target[2] = -123494.400f + 67.00f / 20.00f * round_cnt * 8192.00f * 36.00f;
+				Angle_Helm_Target[3] = 123494.400f + 67.00f / 20.00f * round_cnt * 8192.00f * 36.00f;
+			}
+			if (ABS(rc_ctrl.rc.ch[4]) >= 330)
+			{
+				Speed_Motor_Target[0] = +0.707106f * rc_ctrl.rc.ch[4]; // 原地旋转
+				Speed_Motor_Target[1] = -0.707106f * rc_ctrl.rc.ch[4];
+				Speed_Motor_Target[2] = -0.707106f * rc_ctrl.rc.ch[4];
+				Speed_Motor_Target[3] = +0.707106f * rc_ctrl.rc.ch[4];
+
+				Speed_Motor_Target[0] *= 5.2f;
+				Speed_Motor_Target[1] *= 5.2f;
+				Speed_Motor_Target[2] *= 5.2f;
+				Speed_Motor_Target[3] *= 5.2f;
+			}
+			for(int i = 0;i < 4;i++)
+			{
+				M3508_Target[i] = PID_velocity_realize_1(Speed_Motor_Target[i],i+1);
+				M2006_Target[i] = pid_call_2(Angle_Helm_Target[i],i+1);
+			}
+			CAN1_CMD_1(M3508_Target[0], M3508_Target[1], M3508_Target[2], M3508_Target[3]);
+			CAN2_CMD_1(M2006_Target[0], M2006_Target[1], M2006_Target[2], M2006_Target[3]);
+		
+		
+		
+		if (rc_ctrl.rc.s[0] == 3 && rc_ctrl.rc.s[1] == 1) //底盘收环模式
+		{
+		/**********************************爪子****************************************************************/
+			if(ABS(rc_ctrl.rc.ch[0]) > 180)
+			{
+				Claw_Motor_Target[0] = 8191.0f * 19.2f * 0.25f * (fp32)rc_ctrl.rc.ch[0] / 660.0f;
+				M3508_Target[6] = pid_call_1(Claw_Motor_Target[0],7);
+			}
+			
+			if(rc_ctrl.rc.ch[1] >= 580)
+			{
+				  HAL_GPIO_WritePin(Claw_Catch_GPIO_Port, Claw_Catch_Pin, GPIO_PIN_SET);
+			}			
+			else if(rc_ctrl.rc.ch[1] <= -580)
+			{
+				  HAL_GPIO_WritePin(Claw_Catch_GPIO_Port, Claw_Catch_Pin, GPIO_PIN_RESET);
+			}
+		}
+		
+		if (rc_ctrl.rc.s[0] == 3 && rc_ctrl.rc.s[1] == 2) //底盘发射模式
+		{
+				/****************************************发射装置****************************************************************/
+			Shoot_Motor_Target[0] = rc_ctrl.rc.ch[1] *13.67;
+			Shoot_Motor_Target[1] = -rc_ctrl.rc.ch[1] *13.67;
+		
+			for(int i = 5;i < 7;i++)
+			{
+				M3508_Target[i] = PID_velocity_realize_1(Shoot_Motor_Target[i],i+1);
+			}
+		}
+			CAN1_CMD_2(M3508_Target[4], M3508_Target[5], M3508_Target[6], 0);   //5,6号电机
+		
+		
+		
+			
+		
+		
+		
+		
+		
+	}
+}

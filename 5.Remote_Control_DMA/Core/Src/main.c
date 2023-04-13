@@ -24,7 +24,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "remote_control.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -55,6 +55,10 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
+//remote control data
+//遥控器控制变量
+extern RC_ctrl_t rc_ctrl;     //在哪里用就复制到哪里，Debug直接查看该全局变量的数值即可检测是否成功
 
 /* USER CODE END 0 */
 
@@ -99,6 +103,8 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+		
+		
   }
   /* USER CODE END 3 */
 }

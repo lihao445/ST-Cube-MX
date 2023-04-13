@@ -591,11 +591,6 @@
           <GroupName>applications</GroupName>
           <Files>
             <File>
-              <FileName>helm_wheel.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\applications\Src\helm_wheel.c</FilePath>
-            </File>
-            <File>
               <FileName>timer_user.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\applications\Src\timer_user.c</FilePath>
@@ -619,6 +614,11 @@
               <FileName>remote_control.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\applications\Src\remote_control.c</FilePath>
+            </File>
+            <File>
+              <FileName>helm_wheel.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\applications\Src\helm_wheel.c</FilePath>
             </File>
           </Files>
         </Group>

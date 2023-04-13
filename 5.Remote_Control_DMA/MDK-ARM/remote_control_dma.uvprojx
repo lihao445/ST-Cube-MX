@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F407xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;..\Hardware\Inc</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;..\applications\Inc;..\bsp\boards\Inc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -522,17 +522,27 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>Hardware</GroupName>
+          <GroupName>applications</GroupName>
           <Files>
             <File>
               <FileName>remote_control.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Hardware\Src\remote_control.c</FilePath>
+              <FilePath>..\applications\Src\remote_control.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>bsp/boards</GroupName>
+          <Files>
+            <File>
+              <FileName>bsp_delay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\boards\Src\bsp_delay.c</FilePath>
             </File>
             <File>
               <FileName>bsp_rc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Hardware\Src\bsp_rc.c</FilePath>
+              <FilePath>..\bsp\boards\Src\bsp_rc.c</FilePath>
             </File>
           </Files>
         </Group>

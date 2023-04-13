@@ -4,9 +4,7 @@
 
 #define ABS(x)	((x>0) ? (x) : (-x))  //通用型绝对值函数(x是什么类型就是什么类型)
 
-#define PI (3.141593)
-#define Radian_to_Angle (180.0f / PI)
-#define Angle_to_Radian (PI / 180.0f)
+#define PI (3.141592f)
 
 //底盘模式
 typedef enum
@@ -18,9 +16,9 @@ typedef enum
 //底盘速度
 typedef struct
 {
-    float vx;
-    float vy;
-    float vw;
+    fp32 vx;
+    fp32 vy;
+    fp32 vw;
 } Chassis_Speed_t;
 
 void Remote_Control_Chassis_Set_Mode(void);
@@ -33,7 +31,17 @@ void helm_wheel_speed_calc(Chassis_Speed_t *speed, fp32 *out_speed);
 
 void Chassis_Loop_Out(void);
 
-float calc_min_angle(float set_angle, float last_set_angle);
+//void calc_min_angle(fp32* set_angle,fp32* last_angle,fp32* target_angle);
+
+fp32 atan2_angle_calc(fp32 x,fp32 y);
+
+//fp32 calc_motor_round_cnt(fp32 angle, fp32 last_angle);
+
+void calc_min_angle_round(fp32 *set_angle,fp32 *previous_angle,fp32 *angle_temp,fp32 *round_cnt,int8_t *direction_coefficient);
+
+fp32 deg2rad(fp32 deg);
+
+fp32 rad2deg(fp32 rad);
 
 //float calc_angle_helm_wheel(float set_ch2,float set_ch3);
 

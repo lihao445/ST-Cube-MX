@@ -24,6 +24,7 @@
 "remote_control_dma\stm32f4xx_hal_exti.o"
 "remote_control_dma\system_stm32f4xx.o"
 "remote_control_dma\remote_control.o"
+"remote_control_dma\bsp_delay.o"
 "remote_control_dma\bsp_rc.o"
 --strict --scatter "remote_control_dma\remote_control_dma.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols

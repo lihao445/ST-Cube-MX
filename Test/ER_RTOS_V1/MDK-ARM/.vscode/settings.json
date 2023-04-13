@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "claw_task.h": "c",
+        "include.h": "c",
+        "bsp_delay.h": "c",
+        "struct_typedef.h": "c",
+        "can_receive.h": "c",
+        "remote_control.h": "c",
+        "shoot_task.h": "c"
+    }
+}

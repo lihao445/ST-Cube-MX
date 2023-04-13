@@ -1,0 +1,28 @@
+--cpu=Cortex-M4.fp.sp
+"hwt605\startup_stm32f407xx.o"
+"hwt605\main.o"
+"hwt605\gpio.o"
+"hwt605\usart.o"
+"hwt605\stm32f4xx_it.o"
+"hwt605\stm32f4xx_hal_msp.o"
+"hwt605\stm32f4xx_hal_tim.o"
+"hwt605\stm32f4xx_hal_tim_ex.o"
+"hwt605\stm32f4xx_hal_uart.o"
+"hwt605\stm32f4xx_hal_rcc.o"
+"hwt605\stm32f4xx_hal_rcc_ex.o"
+"hwt605\stm32f4xx_hal_flash.o"
+"hwt605\stm32f4xx_hal_flash_ex.o"
+"hwt605\stm32f4xx_hal_flash_ramfunc.o"
+"hwt605\stm32f4xx_hal_gpio.o"
+"hwt605\stm32f4xx_hal_dma_ex.o"
+"hwt605\stm32f4xx_hal_dma.o"
+"hwt605\stm32f4xx_hal_pwr.o"
+"hwt605\stm32f4xx_hal_pwr_ex.o"
+"hwt605\stm32f4xx_hal_cortex.o"
+"hwt605\stm32f4xx_hal.o"
+"hwt605\stm32f4xx_hal_exti.o"
+"hwt605\system_stm32f4xx.o"
+--strict --scatter "HWT605\HWT605.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "HWT605.map" -o HWT605\HWT605.axf

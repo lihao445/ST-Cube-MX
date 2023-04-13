@@ -29,9 +29,12 @@ remote_control_dma\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_fla
 remote_control_dma\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h
 remote_control_dma\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
 remote_control_dma\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+remote_control_dma\main.o: ..\bsp\boards\Inc\include.h
+remote_control_dma\main.o: ../Core/Inc/main.h
 remote_control_dma\main.o: ../Core/Inc/dma.h
 remote_control_dma\main.o: ../Core/Inc/usart.h
 remote_control_dma\main.o: ../Core/Inc/gpio.h
-remote_control_dma\main.o: ..\Hardware\Inc\remote_control.h
-remote_control_dma\main.o: ..\Hardware\Inc\struct_typedef.h
-remote_control_dma\main.o: ..\Hardware\Inc\bsp_rc.h
+remote_control_dma\main.o: ..\bsp\boards\Inc\bsp_delay.h
+remote_control_dma\main.o: ..\bsp\boards\Inc\struct_typedef.h
+remote_control_dma\main.o: ..\bsp\boards\Inc\bsp_rc.h
+remote_control_dma\main.o: ..\applications\Inc\remote_control.h
