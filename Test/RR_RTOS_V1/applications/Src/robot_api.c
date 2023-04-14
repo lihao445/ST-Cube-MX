@@ -95,9 +95,12 @@ void Remote_Control_Other_Mode(Other_Devices_t *robot_control_message)
         //射击
         robot_control_message->shoot_speed[0] = rc_ctrl.rc.ch[0] * 13.67f;
         robot_control_message->shoot_speed[1] = -rc_ctrl.rc.ch[0] * 13.67f;
-        //抓环
-        robot_control_message->claw_position = 8191.0f * 19.2f * 0.05f;  //默认原位置
-        robot_control_message->claw_catch_bool = 0; //默认张开
+				//抓环
+				if(CLAW_DEFAULT_STATUS)
+				{
+				  robot_control_message->claw_position = 8191.0f * 19.2f * 0.0f;  //默认原位置
+					robot_control_message->claw_catch_bool = 0; //默认张开
+				}
         //传送
         robot_control_message->conveyer_speed = 3000.0f; //给3000rpm传送速度
         vTaskResume(CLAW_CATCHHandle);
@@ -110,9 +113,12 @@ void Remote_Control_Other_Mode(Other_Devices_t *robot_control_message)
         //射击
         robot_control_message->shoot_speed[0] = 0.0f;
         robot_control_message->shoot_speed[1] = 0.0f;
-        //抓环
-        robot_control_message->claw_position = 8191.0f * 19.2f * 0.05f;  //默认原位置
-        robot_control_message->claw_catch_bool = 0;  //默认张开
+       //抓环
+				if(CLAW_DEFAULT_STATUS)
+				{
+				  robot_control_message->claw_position = 8191.0f * 19.2f * 0.0f;  //默认原位置
+					robot_control_message->claw_catch_bool = 0; //默认张开
+				}
         //传送
         robot_control_message->conveyer_speed = 0.0f;
         vTaskSuspend(CLAW_CATCHHandle);
@@ -126,8 +132,11 @@ void Remote_Control_Other_Mode(Other_Devices_t *robot_control_message)
         robot_control_message->shoot_speed[0] = rc_ctrl.rc.ch[0] * 13.67f;
         robot_control_message->shoot_speed[1] = -rc_ctrl.rc.ch[0] * 13.67f;
         //抓环
-        robot_control_message->claw_position = 8191.0f * 19.2f * 0.05f;  //默认原位置
-        robot_control_message->claw_catch_bool = 0.0f;
+				if(CLAW_DEFAULT_STATUS)
+				{
+				  robot_control_message->claw_position = 8191.0f * 19.2f * 0.0f;  //默认原位置
+					robot_control_message->claw_catch_bool = 0; //默认张开
+				}
         //传送
         robot_control_message->conveyer_speed = 0.0f;
         vTaskSuspend(CLAW_CATCHHandle);
@@ -141,8 +150,11 @@ void Remote_Control_Other_Mode(Other_Devices_t *robot_control_message)
         robot_control_message->shoot_speed[0] = 0.0f;
         robot_control_message->shoot_speed[1] = 0.0f;
         //抓环
-        robot_control_message->claw_position = 8191.0f * 19.2f * 0.05f;  //默认原位置
-        robot_control_message->claw_catch_bool = 0;  //默认张开
+				if(CLAW_DEFAULT_STATUS)
+				{
+				  robot_control_message->claw_position = 8191.0f * 19.2f * 0.0f;  //默认原位置
+					robot_control_message->claw_catch_bool = 0; //默认张开
+				}
         //传送
         robot_control_message->conveyer_speed = 0.0f;
         vTaskResume(CLAW_CATCHHandle);
@@ -156,8 +168,11 @@ void Remote_Control_Other_Mode(Other_Devices_t *robot_control_message)
         robot_control_message->shoot_speed[0] = 0.0f;
         robot_control_message->shoot_speed[1] = 0.0f;
         //抓环
-        robot_control_message->claw_position = 8191.0f * 19.2f * 0.05f;  //默认原位置
-        robot_control_message->claw_catch_bool = 0;  //默认张开
+				if(CLAW_DEFAULT_STATUS)
+				{
+				  robot_control_message->claw_position = 8191.0f * 19.2f * 0.0f;  //默认原位置
+					robot_control_message->claw_catch_bool = 0; //默认张开
+				}
         //传送
         robot_control_message->conveyer_speed = 3000.0f; //默认3000速度
         vTaskSuspend(CLAW_CATCHHandle);

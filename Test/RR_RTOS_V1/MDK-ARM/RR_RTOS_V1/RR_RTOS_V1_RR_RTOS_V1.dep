@@ -60,7 +60,7 @@ I (../bsp/boards/Inc/bsp_rc.h)(0x63844000)
 I (../applications/Inc/remote_control.h)(0x64369B3A)
 I (../applications/Inc/chassis_api.h)(0x6437B149)
 I (../applications/Inc/chassis_task.h)(0x64369E1B)
-I (../applications/Inc/robot_api.h)(0x6437CEF2)
+I (../applications/Inc/robot_api.h)(0x6438E788)
 I (../applications/Inc/claw_task.h)(0x6437A500)
 I (../applications/Inc/shoot_task.h)(0x6437762D)
 I (../applications/Inc/conveyer_task.h)(0x6437B626)
@@ -129,7 +129,7 @@ I (../bsp/boards/Inc/bsp_rc.h)(0x63844000)
 I (../applications/Inc/remote_control.h)(0x64369B3A)
 I (../applications/Inc/chassis_api.h)(0x6437B149)
 I (../applications/Inc/chassis_task.h)(0x64369E1B)
-I (../applications/Inc/robot_api.h)(0x6437CEF2)
+I (../applications/Inc/robot_api.h)(0x6438E788)
 I (../applications/Inc/claw_task.h)(0x6437A500)
 I (../applications/Inc/shoot_task.h)(0x6437762D)
 I (../applications/Inc/conveyer_task.h)(0x6437B626)
@@ -195,7 +195,7 @@ I (../bsp/boards/Inc/bsp_rc.h)(0x63844000)
 I (../applications/Inc/remote_control.h)(0x64369B3A)
 I (../applications/Inc/chassis_api.h)(0x6437B149)
 I (../applications/Inc/chassis_task.h)(0x64369E1B)
-I (../applications/Inc/robot_api.h)(0x6437CEF2)
+I (../applications/Inc/robot_api.h)(0x6438E788)
 I (../applications/Inc/claw_task.h)(0x6437A500)
 I (../applications/Inc/shoot_task.h)(0x6437762D)
 I (../applications/Inc/conveyer_task.h)(0x6437B626)
@@ -262,7 +262,7 @@ I (../bsp/boards/Inc/bsp_rc.h)(0x63844000)
 I (../applications/Inc/remote_control.h)(0x64369B3A)
 I (../applications/Inc/chassis_api.h)(0x6437B149)
 I (../applications/Inc/chassis_task.h)(0x64369E1B)
-I (../applications/Inc/robot_api.h)(0x6437CEF2)
+I (../applications/Inc/robot_api.h)(0x6438E788)
 I (../applications/Inc/claw_task.h)(0x6437A500)
 I (../applications/Inc/shoot_task.h)(0x6437762D)
 I (../applications/Inc/conveyer_task.h)(0x6437B626)
@@ -329,7 +329,7 @@ I (../bsp/boards/Inc/bsp_rc.h)(0x63844000)
 I (../applications/Inc/remote_control.h)(0x64369B3A)
 I (../applications/Inc/chassis_api.h)(0x6437B149)
 I (../applications/Inc/chassis_task.h)(0x64369E1B)
-I (../applications/Inc/robot_api.h)(0x6437CEF2)
+I (../applications/Inc/robot_api.h)(0x6438E788)
 I (../applications/Inc/claw_task.h)(0x6437A500)
 I (../applications/Inc/shoot_task.h)(0x6437762D)
 I (../applications/Inc/conveyer_task.h)(0x6437B626)
@@ -396,7 +396,7 @@ I (../bsp/boards/Inc/bsp_rc.h)(0x63844000)
 I (../applications/Inc/remote_control.h)(0x64369B3A)
 I (../applications/Inc/chassis_api.h)(0x6437B149)
 I (../applications/Inc/chassis_task.h)(0x64369E1B)
-I (../applications/Inc/robot_api.h)(0x6437CEF2)
+I (../applications/Inc/robot_api.h)(0x6438E788)
 I (../applications/Inc/claw_task.h)(0x6437A500)
 I (../applications/Inc/shoot_task.h)(0x6437762D)
 I (../applications/Inc/conveyer_task.h)(0x6437B626)
@@ -462,7 +462,7 @@ I (../bsp/boards/Inc/bsp_rc.h)(0x63844000)
 I (../applications/Inc/remote_control.h)(0x64369B3A)
 I (../applications/Inc/chassis_api.h)(0x6437B149)
 I (../applications/Inc/chassis_task.h)(0x64369E1B)
-I (../applications/Inc/robot_api.h)(0x6437CEF2)
+I (../applications/Inc/robot_api.h)(0x6438E788)
 I (../applications/Inc/claw_task.h)(0x6437A500)
 I (../applications/Inc/shoot_task.h)(0x6437762D)
 I (../applications/Inc/conveyer_task.h)(0x6437B626)
@@ -529,7 +529,7 @@ I (../bsp/boards/Inc/bsp_rc.h)(0x63844000)
 I (../applications/Inc/remote_control.h)(0x64369B3A)
 I (../applications/Inc/chassis_api.h)(0x6437B149)
 I (../applications/Inc/chassis_task.h)(0x64369E1B)
-I (../applications/Inc/robot_api.h)(0x6437CEF2)
+I (../applications/Inc/robot_api.h)(0x6438E788)
 I (../applications/Inc/claw_task.h)(0x6437A500)
 I (../applications/Inc/shoot_task.h)(0x6437762D)
 I (../applications/Inc/conveyer_task.h)(0x6437B626)
@@ -1347,14 +1347,14 @@ I (../bsp/boards/Inc/bsp_rc.h)(0x63844000)
 I (../applications/Inc/remote_control.h)(0x64369B3A)
 I (../applications/Inc/chassis_api.h)(0x6437B149)
 I (../applications/Inc/chassis_task.h)(0x64369E1B)
-I (../applications/Inc/robot_api.h)(0x6437CEF2)
+I (../applications/Inc/robot_api.h)(0x6438E788)
 I (../applications/Inc/claw_task.h)(0x6437A500)
 I (../applications/Inc/shoot_task.h)(0x6437762D)
 I (../applications/Inc/conveyer_task.h)(0x6437B626)
 I (../applications/Inc/robot_behaviour_task.h)(0x6437CD5E)
 I (D:\Program Files\Arm\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
 I (D:\Program Files\Arm\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
-F (..\applications\Src\chassis_api.c)(0x6437B641)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../applications/Inc -I ../bsp/boards/Inc-I.\RTE\_RR_RTOS_V1-I"D:\Program Files\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\Program Files\Arm\Packs\Keil\STM32F4xx_DFP\2.16.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include"-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o rr_rtos_v1\chassis_api.o --omf_browse rr_rtos_v1\chassis_api.crf --depend rr_rtos_v1\chassis_api.d)
+F (..\applications\Src\chassis_api.c)(0x6438D6F4)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../applications/Inc -I ../bsp/boards/Inc-I.\RTE\_RR_RTOS_V1-I"D:\Program Files\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\Program Files\Arm\Packs\Keil\STM32F4xx_DFP\2.16.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include"-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o rr_rtos_v1\chassis_api.o --omf_browse rr_rtos_v1\chassis_api.crf --depend rr_rtos_v1\chassis_api.d)
 I (../applications/Inc/chassis_api.h)(0x6437B149)
 I (../bsp/boards/Inc/include.h)(0x6437DFCA)
 I (../Core/Inc/main.h)(0x6437B43C)
@@ -1413,7 +1413,7 @@ I (../applications/Inc/pid_user.h)(0x640C36F3)
 I (../bsp/boards/Inc/bsp_rc.h)(0x63844000)
 I (../applications/Inc/remote_control.h)(0x64369B3A)
 I (../applications/Inc/chassis_task.h)(0x64369E1B)
-I (../applications/Inc/robot_api.h)(0x6437CEF2)
+I (../applications/Inc/robot_api.h)(0x6438E788)
 I (../applications/Inc/claw_task.h)(0x6437A500)
 I (../applications/Inc/shoot_task.h)(0x6437762D)
 I (../applications/Inc/conveyer_task.h)(0x6437B626)
@@ -1479,7 +1479,7 @@ I (../applications/Inc/pid_user.h)(0x640C36F3)
 I (../bsp/boards/Inc/bsp_rc.h)(0x63844000)
 I (../applications/Inc/remote_control.h)(0x64369B3A)
 I (../applications/Inc/chassis_api.h)(0x6437B149)
-I (../applications/Inc/robot_api.h)(0x6437CEF2)
+I (../applications/Inc/robot_api.h)(0x6438E788)
 I (../applications/Inc/claw_task.h)(0x6437A500)
 I (../applications/Inc/shoot_task.h)(0x6437762D)
 I (../applications/Inc/conveyer_task.h)(0x6437B626)
@@ -1545,7 +1545,7 @@ I (../bsp/boards/Inc/bsp_rc.h)(0x63844000)
 I (../applications/Inc/remote_control.h)(0x64369B3A)
 I (../applications/Inc/chassis_api.h)(0x6437B149)
 I (../applications/Inc/chassis_task.h)(0x64369E1B)
-I (../applications/Inc/robot_api.h)(0x6437CEF2)
+I (../applications/Inc/robot_api.h)(0x6438E788)
 I (../applications/Inc/claw_task.h)(0x6437A500)
 I (../applications/Inc/shoot_task.h)(0x6437762D)
 I (../applications/Inc/conveyer_task.h)(0x6437B626)
@@ -1611,7 +1611,7 @@ I (../bsp/boards/Inc/bsp_rc.h)(0x63844000)
 I (../applications/Inc/remote_control.h)(0x64369B3A)
 I (../applications/Inc/chassis_api.h)(0x6437B149)
 I (../applications/Inc/chassis_task.h)(0x64369E1B)
-I (../applications/Inc/robot_api.h)(0x6437CEF2)
+I (../applications/Inc/robot_api.h)(0x6438E788)
 I (../applications/Inc/claw_task.h)(0x6437A500)
 I (../applications/Inc/shoot_task.h)(0x6437762D)
 I (../applications/Inc/conveyer_task.h)(0x6437B626)
@@ -1677,14 +1677,14 @@ I (../applications/Inc/pid.h)(0x640C3603)
 I (../applications/Inc/pid_user.h)(0x640C36F3)
 I (../applications/Inc/chassis_api.h)(0x6437B149)
 I (../applications/Inc/chassis_task.h)(0x64369E1B)
-I (../applications/Inc/robot_api.h)(0x6437CEF2)
+I (../applications/Inc/robot_api.h)(0x6438E788)
 I (../applications/Inc/claw_task.h)(0x6437A500)
 I (../applications/Inc/shoot_task.h)(0x6437762D)
 I (../applications/Inc/conveyer_task.h)(0x6437B626)
 I (../applications/Inc/robot_behaviour_task.h)(0x6437CD5E)
 I (D:\Program Files\Arm\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
 I (D:\Program Files\Arm\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
-F (..\applications\Src\claw_task.c)(0x6438171A)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../applications/Inc -I ../bsp/boards/Inc-I.\RTE\_RR_RTOS_V1-I"D:\Program Files\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\Program Files\Arm\Packs\Keil\STM32F4xx_DFP\2.16.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include"-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o rr_rtos_v1\claw_task.o --omf_browse rr_rtos_v1\claw_task.crf --depend rr_rtos_v1\claw_task.d)
+F (..\applications\Src\claw_task.c)(0x6438E527)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../applications/Inc -I ../bsp/boards/Inc-I.\RTE\_RR_RTOS_V1-I"D:\Program Files\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\Program Files\Arm\Packs\Keil\STM32F4xx_DFP\2.16.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include"-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o rr_rtos_v1\claw_task.o --omf_browse rr_rtos_v1\claw_task.crf --depend rr_rtos_v1\claw_task.d)
 I (../applications/Inc/claw_task.h)(0x6437A500)
 I (../bsp/boards/Inc/include.h)(0x6437DFCA)
 I (../Core/Inc/main.h)(0x6437B43C)
@@ -1744,7 +1744,7 @@ I (../bsp/boards/Inc/bsp_rc.h)(0x63844000)
 I (../applications/Inc/remote_control.h)(0x64369B3A)
 I (../applications/Inc/chassis_api.h)(0x6437B149)
 I (../applications/Inc/chassis_task.h)(0x64369E1B)
-I (../applications/Inc/robot_api.h)(0x6437CEF2)
+I (../applications/Inc/robot_api.h)(0x6438E788)
 I (../applications/Inc/shoot_task.h)(0x6437762D)
 I (../applications/Inc/conveyer_task.h)(0x6437B626)
 I (../applications/Inc/robot_behaviour_task.h)(0x6437CD5E)
@@ -1810,14 +1810,14 @@ I (../bsp/boards/Inc/bsp_rc.h)(0x63844000)
 I (../applications/Inc/remote_control.h)(0x64369B3A)
 I (../applications/Inc/chassis_api.h)(0x6437B149)
 I (../applications/Inc/chassis_task.h)(0x64369E1B)
-I (../applications/Inc/robot_api.h)(0x6437CEF2)
+I (../applications/Inc/robot_api.h)(0x6438E788)
 I (../applications/Inc/claw_task.h)(0x6437A500)
 I (../applications/Inc/conveyer_task.h)(0x6437B626)
 I (../applications/Inc/robot_behaviour_task.h)(0x6437CD5E)
 I (D:\Program Files\Arm\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8E3CC2)
 I (D:\Program Files\Arm\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
-F (..\applications\Src\robot_api.c)(0x64381421)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../applications/Inc -I ../bsp/boards/Inc-I.\RTE\_RR_RTOS_V1-I"D:\Program Files\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\Program Files\Arm\Packs\Keil\STM32F4xx_DFP\2.16.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include"-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o rr_rtos_v1\robot_api.o --omf_browse rr_rtos_v1\robot_api.crf --depend rr_rtos_v1\robot_api.d)
-I (../applications/Inc/robot_api.h)(0x6437CEF2)
+F (..\applications\Src\robot_api.c)(0x6438E91F)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../applications/Inc -I ../bsp/boards/Inc-I.\RTE\_RR_RTOS_V1-I"D:\Program Files\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\Program Files\Arm\Packs\Keil\STM32F4xx_DFP\2.16.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include"-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o rr_rtos_v1\robot_api.o --omf_browse rr_rtos_v1\robot_api.crf --depend rr_rtos_v1\robot_api.d)
+I (../applications/Inc/robot_api.h)(0x6438E788)
 I (../bsp/boards/Inc/include.h)(0x6437DFCA)
 I (../Core/Inc/main.h)(0x6437B43C)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x62CEBED7)
@@ -1942,7 +1942,7 @@ I (../bsp/boards/Inc/bsp_rc.h)(0x63844000)
 I (../applications/Inc/remote_control.h)(0x64369B3A)
 I (../applications/Inc/chassis_api.h)(0x6437B149)
 I (../applications/Inc/chassis_task.h)(0x64369E1B)
-I (../applications/Inc/robot_api.h)(0x6437CEF2)
+I (../applications/Inc/robot_api.h)(0x6438E788)
 I (../applications/Inc/claw_task.h)(0x6437A500)
 I (../applications/Inc/shoot_task.h)(0x6437762D)
 I (../applications/Inc/robot_behaviour_task.h)(0x6437CD5E)
@@ -2008,7 +2008,7 @@ I (../bsp/boards/Inc/bsp_rc.h)(0x63844000)
 I (../applications/Inc/remote_control.h)(0x64369B3A)
 I (../applications/Inc/chassis_api.h)(0x6437B149)
 I (../applications/Inc/chassis_task.h)(0x64369E1B)
-I (../applications/Inc/robot_api.h)(0x6437CEF2)
+I (../applications/Inc/robot_api.h)(0x6438E788)
 I (../applications/Inc/claw_task.h)(0x6437A500)
 I (../applications/Inc/shoot_task.h)(0x6437762D)
 I (../applications/Inc/conveyer_task.h)(0x6437B626)
@@ -2073,7 +2073,7 @@ I (../bsp/boards/Inc/bsp_rc.h)(0x63844000)
 I (../applications/Inc/remote_control.h)(0x64369B3A)
 I (../applications/Inc/chassis_api.h)(0x6437B149)
 I (../applications/Inc/chassis_task.h)(0x64369E1B)
-I (../applications/Inc/robot_api.h)(0x6437CEF2)
+I (../applications/Inc/robot_api.h)(0x6438E788)
 I (../applications/Inc/claw_task.h)(0x6437A500)
 I (../applications/Inc/shoot_task.h)(0x6437762D)
 I (../applications/Inc/conveyer_task.h)(0x6437B626)
@@ -2139,7 +2139,7 @@ I (../bsp/boards/Inc/bsp_rc.h)(0x63844000)
 I (../applications/Inc/remote_control.h)(0x64369B3A)
 I (../applications/Inc/chassis_api.h)(0x6437B149)
 I (../applications/Inc/chassis_task.h)(0x64369E1B)
-I (../applications/Inc/robot_api.h)(0x6437CEF2)
+I (../applications/Inc/robot_api.h)(0x6438E788)
 I (../applications/Inc/claw_task.h)(0x6437A500)
 I (../applications/Inc/shoot_task.h)(0x6437762D)
 I (../applications/Inc/conveyer_task.h)(0x6437B626)
@@ -2205,7 +2205,7 @@ I (../applications/Inc/pid_user.h)(0x640C36F3)
 I (../applications/Inc/remote_control.h)(0x64369B3A)
 I (../applications/Inc/chassis_api.h)(0x6437B149)
 I (../applications/Inc/chassis_task.h)(0x64369E1B)
-I (../applications/Inc/robot_api.h)(0x6437CEF2)
+I (../applications/Inc/robot_api.h)(0x6438E788)
 I (../applications/Inc/claw_task.h)(0x6437A500)
 I (../applications/Inc/shoot_task.h)(0x6437762D)
 I (../applications/Inc/conveyer_task.h)(0x6437B626)

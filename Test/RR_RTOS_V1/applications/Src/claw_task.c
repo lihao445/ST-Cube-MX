@@ -23,11 +23,11 @@ void claw_catch_task(void const * argument)
     {
 			xSemaphoreTake(ClawCatch_BinarySemHandle,portMAX_DELAY);
 			
-        if(rc_ctrl.rc.ch[1] >= 580 && abs(rc_ctrl.rc.ch[0]) <= 120)
+        if(rc_ctrl.rc.ch[1] >= 580 && abs(rc_ctrl.rc.ch[0]) <= 200)
         {
             absolute_robot_control.claw_catch_bool = 1;   
         }
-        else if(rc_ctrl.rc.ch[1] <= -580 && abs(rc_ctrl.rc.ch[0]) <= 120)
+        else if(rc_ctrl.rc.ch[1] <= -580 && abs(rc_ctrl.rc.ch[0]) <= 200)
         {
             absolute_robot_control.claw_catch_bool = 0;
         }
@@ -42,7 +42,8 @@ void claw_catch_task(void const * argument)
         {
             HAL_GPIO_WritePin(Claw_Catch_GPIO_Port, Claw_Catch_Pin, GPIO_PIN_RESET);
         }
-			xSemaphoreGive(ClawLinkage_BinarySemHandle);
+				osDelay(1000);
+			  xSemaphoreGive(ClawLinkage_BinarySemHandle);
     }
 }
 
@@ -53,13 +54,13 @@ void claw_position_task(void const * argument)
     {
 				xSemaphoreTake(ClawPosition_BinarySemHandle,portMAX_DELAY);
 			
-        if(rc_ctrl.rc.ch[1] >= 580 && abs(rc_ctrl.rc.ch[0]) <= 120)
+        if(rc_ctrl.rc.ch[1] >= 580 && abs(rc_ctrl.rc.ch[0]) <= 200)
         {
-            absolute_robot_control.claw_position = 8191.0f * 19.2f * 0.01f;
+            absolute_robot_control.claw_position = 8191.0f * 19.2f * 0.0f;
         }
-        else if(rc_ctrl.rc.ch[1] <= -580 && abs(rc_ctrl.rc.ch[0]) <= 120)
+        else if(rc_ctrl.rc.ch[1] <= -580 && abs(rc_ctrl.rc.ch[0]) <= 200)
         {
-            absolute_robot_control.claw_position = 8191.0f * 19.2f * 0.5f;
+            absolute_robot_control.claw_position = 8191.0f * 19.2f * 0.493f;
         }
 				
 				xSemaphoreTake(ClawLinkage_BinarySemHandle,portMAX_DELAY);

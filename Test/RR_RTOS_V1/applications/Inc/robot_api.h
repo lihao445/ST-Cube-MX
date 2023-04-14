@@ -2,6 +2,8 @@
 #define __ROBOT_API_H_
 #include "include.h"
 
+#define CLAW_DEFAULT_STATUS 0
+
 //机器人模式
 typedef enum
 {
