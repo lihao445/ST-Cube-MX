@@ -17,6 +17,9 @@
 #include "math.h"
 #include "claw_task.h"
 #include "shoot_task.h"
+#include "conveyer_task.h"
+#include "robot_api.h"
+#include "robot_behaviour_task.h"
 
 #endif
 

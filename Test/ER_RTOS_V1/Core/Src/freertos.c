@@ -52,6 +52,14 @@ osThreadId CHASSIS_TASKHandle;
 osThreadId CLAW_CATCHHandle;
 osThreadId CLAW_POSITIONHandle;
 osThreadId SHOOT_TASKHandle;
+osThreadId CONVEYER_TASKHandle;
+osThreadId ROBOT_BEHAVIOURHandle;
+osSemaphoreId Chassis_BinarySemHandle;
+osSemaphoreId ClawCatch_BinarySemHandle;
+osSemaphoreId ClawPosition_BinarySemHandle;
+osSemaphoreId Shoot_BinarySemHandle;
+osSemaphoreId Conveyer_BinarySemHandle;
+osSemaphoreId ClawLinkage_BinarySemHandle;
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -63,6 +71,8 @@ void chassis_task(void const * argument);
 void claw_catch_task(void const * argument);
 void claw_position_task(void const * argument);
 void shoot_task(void const * argument);
+void conveyer_task(void const * argument);
+void robot_behaviour_task(void const * argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -96,6 +106,31 @@ void MX_FREERTOS_Init(void) {
   /* add mutexes, ... */
   /* USER CODE END RTOS_MUTEX */
 
+  /* Create the semaphores(s) */
+  /* definition and creation of Chassis_BinarySem */
+  osSemaphoreDef(Chassis_BinarySem);
+  Chassis_BinarySemHandle = osSemaphoreCreate(osSemaphore(Chassis_BinarySem), 1);
+
+  /* definition and creation of ClawCatch_BinarySem */
+  osSemaphoreDef(ClawCatch_BinarySem);
+  ClawCatch_BinarySemHandle = osSemaphoreCreate(osSemaphore(ClawCatch_BinarySem), 1);
+
+  /* definition and creation of ClawPosition_BinarySem */
+  osSemaphoreDef(ClawPosition_BinarySem);
+  ClawPosition_BinarySemHandle = osSemaphoreCreate(osSemaphore(ClawPosition_BinarySem), 1);
+
+  /* definition and creation of Shoot_BinarySem */
+  osSemaphoreDef(Shoot_BinarySem);
+  Shoot_BinarySemHandle = osSemaphoreCreate(osSemaphore(Shoot_BinarySem), 1);
+
+  /* definition and creation of Conveyer_BinarySem */
+  osSemaphoreDef(Conveyer_BinarySem);
+  Conveyer_BinarySemHandle = osSemaphoreCreate(osSemaphore(Conveyer_BinarySem), 1);
+
+  /* definition and creation of ClawLinkage_BinarySem */
+  osSemaphoreDef(ClawLinkage_BinarySem);
+  ClawLinkage_BinarySemHandle = osSemaphoreCreate(osSemaphore(ClawLinkage_BinarySem), 1);
+
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
   /* USER CODE END RTOS_SEMAPHORES */
@@ -128,6 +163,14 @@ void MX_FREERTOS_Init(void) {
   /* definition and creation of SHOOT_TASK */
   osThreadDef(SHOOT_TASK, shoot_task, osPriorityNormal, 0, 128);
   SHOOT_TASKHandle = osThreadCreate(osThread(SHOOT_TASK), NULL);
+
+  /* definition and creation of CONVEYER_TASK */
+  osThreadDef(CONVEYER_TASK, conveyer_task, osPriorityNormal, 0, 128);
+  CONVEYER_TASKHandle = osThreadCreate(osThread(CONVEYER_TASK), NULL);
+
+  /* definition and creation of ROBOT_BEHAVIOUR */
+  osThreadDef(ROBOT_BEHAVIOUR, robot_behaviour_task, osPriorityNormal, 0, 128);
+  ROBOT_BEHAVIOURHandle = osThreadCreate(osThread(ROBOT_BEHAVIOUR), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -223,6 +266,42 @@ __weak void shoot_task(void const * argument)
     osDelay(1);
   }
   /* USER CODE END shoot_task */
+}
+
+/* USER CODE BEGIN Header_conveyer_task */
+/**
+* @brief Function implementing the CONVEYER_TASK thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_conveyer_task */
+__weak void conveyer_task(void const * argument)
+{
+  /* USER CODE BEGIN conveyer_task */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END conveyer_task */
+}
+
+/* USER CODE BEGIN Header_robot_behaviour_task */
+/**
+* @brief Function implementing the ROBOT_BEHAVIOUR thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_robot_behaviour_task */
+__weak void robot_behaviour_task(void const * argument)
+{
+  /* USER CODE BEGIN robot_behaviour_task */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END robot_behaviour_task */
 }
 
 /* Private application code --------------------------------------------------*/

@@ -11,7 +11,7 @@ void conveyer_task(void const * argument)
 
     while(1)
     {
-			xSemaphoreTake(Conveyer_BinarySemHandle,portMAX_DELAY);
+		xSemaphoreTake(Conveyer_BinarySemHandle,portMAX_DELAY);
 			
         conveyer_speed = absolute_robot_control.conveyer_speed;
         conveyer_current = PID_velocity_realize_2(conveyer_speed,1);

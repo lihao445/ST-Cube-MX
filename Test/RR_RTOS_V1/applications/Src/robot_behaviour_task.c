@@ -11,17 +11,17 @@ extern osSemaphoreId Conveyer_BinarySemHandle;
 void robot_behaviour_task(void const * argument)
 {
 	// wait a time
-	//¿ÕÏĞÒ»¶ÎÊ±¼ä
+	//ç©ºé—²ä¸€æ®µæ—¶é—´
 	vTaskDelay(CHASSIS_TASK_INIT_TIME);
 	
     while(1)
     {
     //set chassis motion mode
-		//Éè¶¨»úÆ÷ÈËĞĞÎªÄ£Ê½
+		//è®¾å®šæœºå™¨äººè¡Œä¸ºæ¨¡å¼
 		Remote_Control_Robot_Behavior_Set_Mode();
 
 		//robot control data update
-		//»úÆ÷ÈË¿ØÖÆÊı¾İ¸üĞÂ
+		//æœºå™¨äººæ§åˆ¶æ•°æ®æ›´æ–°
 		Remote_Control_Robot_Behavior_Mode();
 			
 		xSemaphoreGive(Chassis_BinarySemHandle);

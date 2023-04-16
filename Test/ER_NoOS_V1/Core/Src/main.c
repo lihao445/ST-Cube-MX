@@ -106,6 +106,8 @@ int main(void)
 	
 	CAN_Start(&hcan1);
 	CAN_Start(&hcan2);
+	
+	HAL_TIM_Base_Start_IT(&htim1);
 
   /* USER CODE END 2 */
 
@@ -116,10 +118,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-		if (rc_ctrl.rc.s[0] == 3 && rc_ctrl.rc.s[1] == 1) //底盘收环模式
-		{
-			
-		}
+
 		
 		
   }

@@ -33,10 +33,11 @@ fp32 direction_coefficient = 1.00f;
 fp32 Angle_Helm_Target[4];
 fp32 Speed_Motor_Target[4];
 fp32 Shoot_Motor_Target[2];
-fp32 Claw_Motor_Target[1];
+fp32 Claw_Motor_Target[2];
+fp32 Conveyer_Motor_Target[1];
 
 fp32 M2006_Target[4];
-fp32 M3508_Target[7];
+fp32 M3508_Target[9];
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
@@ -114,46 +115,63 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 			CAN2_CMD_1(M2006_Target[0], M2006_Target[1], M2006_Target[2], M2006_Target[3]);
 		
 		
-		
-		if (rc_ctrl.rc.s[0] == 3 && rc_ctrl.rc.s[1] == 1) //底盘收环模式
+
+		if (rc_ctrl.rc.s[0] == 1 && rc_ctrl.rc.s[1] == 3) //底盘收环模式
 		{
 		/**********************************爪子****************************************************************/
-			if(ABS(rc_ctrl.rc.ch[0]) > 180)
+			if(ABS(rc_ctrl.rc.ch[1]) <= 180)
 			{
-				Claw_Motor_Target[0] = 8191.0f * 19.2f * 0.25f * (fp32)rc_ctrl.rc.ch[0] / 660.0f;
-				M3508_Target[6] = pid_call_1(Claw_Motor_Target[0],7);
+				Claw_Motor_Target[0] = -(fp32)rc_ctrl.rc.ch[0] * 1.0f;
+				M3508_Target[4] = PID_velocity_realize_1(Claw_Motor_Target[0],5);
+			}
+			if(ABS(rc_ctrl.rc.ch[0]) <= 180)
+			{
+				if(ABS(rc_ctrl.rc.ch[1]) >= 300 )
+				{
+				Claw_Motor_Target[1] = (fp32)rc_ctrl.rc.ch[1] * 1.0f;
+				}
+				else if(ABS(rc_ctrl.rc.ch[1]) <= -300 )
+				{
+				Claw_Motor_Target[1] = (fp32)rc_ctrl.rc.ch[1] * 1.0f;
+				}
+				else if(ABS(rc_ctrl.rc.ch[1]) == 0 )
+				{
+					Claw_Motor_Target[1] = (fp32)rc_ctrl.rc.ch[1] * 0.0f;
+				}
+				M3508_Target[5] = PID_velocity_realize_1(Claw_Motor_Target[1],6);
 			}
 			
-			if(rc_ctrl.rc.ch[1] >= 580)
-			{
-				  HAL_GPIO_WritePin(Claw_Catch_GPIO_Port, Claw_Catch_Pin, GPIO_PIN_SET);
-			}			
-			else if(rc_ctrl.rc.ch[1] <= -580)
-			{
-				  HAL_GPIO_WritePin(Claw_Catch_GPIO_Port, Claw_Catch_Pin, GPIO_PIN_RESET);
-			}
+//			if(rc_ctrl.rc.ch[1] >= 580)
+//			{
+//					HAL_GPIO_WritePin(Claw_Catch_GPIO_Port, Claw_Catch_Pin, GPIO_PIN_SET);
+//			}			
+//			else if(rc_ctrl.rc.ch[1] <= -580)
+//			{
+//				  HAL_GPIO_WritePin(Claw_Catch_GPIO_Port, Claw_Catch_Pin, GPIO_PIN_RESET);
+//			}
 		}
 		
-		if (rc_ctrl.rc.s[0] == 3 && rc_ctrl.rc.s[1] == 2) //底盘发射模式
+		if (rc_ctrl.rc.s[0] == 2 && rc_ctrl.rc.s[1] == 3) //底盘发射模式
 		{
 				/****************************************发射装置****************************************************************/
-			Shoot_Motor_Target[0] = rc_ctrl.rc.ch[1] *13.67;
-			Shoot_Motor_Target[1] = -rc_ctrl.rc.ch[1] *13.67;
-		
-			for(int i = 5;i < 7;i++)
+			Shoot_Motor_Target[0] =  rc_ctrl.rc.ch[1] * 13.67;
+			Shoot_Motor_Target[1] = -rc_ctrl.rc.ch[1] * 13.67;
+			if(rc_ctrl.rc.ch[0] >= 580)
 			{
-				M3508_Target[i] = PID_velocity_realize_1(Shoot_Motor_Target[i],i+1);
+					Conveyer_Motor_Target[0] = 5000;
 			}
+			else if(rc_ctrl.rc.ch[0] <= -580)
+			{
+					Conveyer_Motor_Target[0] = 0;
+			}
+
+			for(int i = 6;i < 8;i++)
+			{
+				M3508_Target[i] = PID_velocity_realize_2(Shoot_Motor_Target[i-6],i-5);
+			}
+			M3508_Target[8] = PID_velocity_realize_2(Conveyer_Motor_Target[0],3);
 		}
-			CAN1_CMD_2(M3508_Target[4], M3508_Target[5], M3508_Target[6], 0);   //5,6号电机
-		
-		
-		
-			
-		
-		
-		
-		
-		
+			CAN1_CMD_2(M3508_Target[4],M3508_Target[5],0,0);   //5,6号电机
+			CAN2_CMD_2(M3508_Target[6],M3508_Target[7],M3508_Target[8],0);   //CAN2的1,2,3号电机
 	}
 }

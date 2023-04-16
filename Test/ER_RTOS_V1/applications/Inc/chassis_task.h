@@ -3,18 +3,18 @@
 #include "include.h"
 
 //in the beginning of task ,wait a time
-//ÈÎÎñ¿ªÊ¼¿ÕÏĞÒ»¶ÎÊ±¼ä
+//ä»»åŠ¡å¼€å§‹ç©ºé—²ä¸€æ®µæ—¶é—´
 #define CHASSIS_TASK_INIT_TIME 357
 
 //chassis task control time  2ms
-//µ×ÅÌÈÎÎñ¿ØÖÆ¼ä¸ô 2ms
+//åº•ç›˜ä»»åŠ¡æ§åˆ¶é—´éš” 2ms
 #define CHASSIS_CONTROL_TIME_MS 2
 
 
 
-static void chassis_feedback_update(void);
-static void chassis_set_contorl(void);
-static void chassis_control_loop(void);
+void Chassis_Loop_Out(void);
+void Chassis_Sports_Calc(void);
+	
 
 //void RC_speed_chassis_data(void);
 

@@ -24,78 +24,60 @@
 
 #include "chassis_task.h"
 
+extern Chassis_Speed_t absolute_chassis_speed;
+
 extern RC_ctrl_t rc_ctrl;
+
+extern osSemaphoreId Chassis_BinarySemHandle;
 
 fp32 res = 0.00f, prev_res = 0.00f, res1 = 0.00f;
 fp32 round_cnt = 0.00f;
 fp32 round1 = 0.00f, round2 = 0.00f;
 fp32 direction_coefficient = 1.00f;
 
-fp32 Angle_Helm_Target[5];
-fp32 Speed_Motor_Target[5];
+fp32 Angle_Helm_Target[4];
+fp32 Speed_Motor_Target[4];
 
-fp32 M2006_Target[5];
-fp32 M3508_Target[5];
+fp32 M2006_Target[4];
+fp32 M3508_Target[4];
 
-void chassis_task(void const *argument)
+void chassis_task(void const * argument)
 {
 	// wait a time
 	//空闲一段时间
 	vTaskDelay(CHASSIS_TASK_INIT_TIME);
 
-	//底盘初始化
+	//PID parameter initialization
+	//PID参数初始化
 	PID_devices_Init();
-
-	while (1)
+	
+	while(1)
 	{
-		// chassis data update
-		//底盘数据更新
-		chassis_feedback_update();
+		xSemaphoreTake(Chassis_BinarySemHandle,portMAX_DELAY);
 		
-		
-		// set chassis control set-point
-		//底盘控制量设置
-		chassis_set_contorl();
-		
-		// Speed_Motor_Target_1 = 1000;    //测试电机闭环是否可用的代码，正式使用时请注释该行代码
-		
-		// chassis control pid calculate
-		//底盘控制PID计算
-		chassis_control_loop();
-		
+		//calculate the speed of the chassis
+		//底盘速度解算
+		Chassis_Sports_Calc();
 
-		// os delay
-		//系统延时
-		vTaskDelay(CHASSIS_CONTROL_TIME_MS);
-		// osDelay(2);
+		//chassis control pid calculate
+		//底盘控制PID计算与数据发送
+		Chassis_Loop_Out();
+
+		//chassis task control time
+		//底盘任务控制间隔
+		osDelay(CHASSIS_CONTROL_TIME_MS);
 	}
+		
+
 }
 
 /**
- * @brief          chassis some measure data updata, such as motor speed, euler angle， robot speed
- * @param[out]     chassis_move_update: "chassis_move" valiable point
- * @retval         none
+ * @brief  底盘运动解析式计算
+ * @param  void
+ * @retval void
+ * @attention  此函数是全向轮底盘解析式
  */
-/**
- * @brief          底盘测量数据更新，包括电机速度，欧拉角度，机器人速度
- * @param[out]     chassis_move_update:"chassis_move"变量指针.
- * @retval         none
- */
-static void chassis_feedback_update(void)
-{
-}
-
-/**
- * @brief          set chassis control set-point, three movement control value is set by "chassis_behaviour_control_set".
- * @param[out]     chassis_move_update: "chassis_move" valiable point
- * @retval         none
- */
-/**
- * @brief          设置底盘控制设置值, 三运动控制值是通过chassis_behaviour_control_set函数设置的
- * @param[out]     chassis_move_update:"chassis_move"变量指针.
- * @retval         none
- */
-static void chassis_set_contorl(void)
+void Chassis_Sports_Calc(void)
 {
 	if (rc_ctrl.rc.s[0] == 3 && rc_ctrl.rc.s[1] == 3) //底盘正常模式
 	{
@@ -116,75 +98,70 @@ static void chassis_set_contorl(void)
 			direction_coefficient = -1.00f;
 		}
 		prev_res = res + res1;																				 //记录上一次的角度数据
-		Angle_Helm_Target[1] = 67.00f / 20.00f * (36.00f * 8192.00f * (round_cnt + (res + res1) / 360.00f)); //将数据转换成轮子转动的角度数据
+		Angle_Helm_Target[0] = 67.00f / 20.00f * (36.00f * 8192.00f * (round_cnt + (res + res1) / 360.00f)); //将数据转换成轮子转动的角度数据
+		Angle_Helm_Target[1] = 67.00f / 20.00f * (36.00f * 8192.00f * (round_cnt + (res + res1) / 360.00f));
 		Angle_Helm_Target[2] = 67.00f / 20.00f * (36.00f * 8192.00f * (round_cnt + (res + res1) / 360.00f));
 		Angle_Helm_Target[3] = 67.00f / 20.00f * (36.00f * 8192.00f * (round_cnt + (res + res1) / 360.00f));
-		Angle_Helm_Target[4] = 67.00f / 20.00f * (36.00f * 8192.00f * (round_cnt + (res + res1) / 360.00f));
 
 		if (ABS(rc_ctrl.rc.ch[2]) > 250 || ABS(rc_ctrl.rc.ch[3]) > 250)
 		{
-			Speed_Motor_Target[1] = direction_coefficient * (-0.849106f * sqrt(rc_ctrl.rc.ch[2] * rc_ctrl.rc.ch[2] + rc_ctrl.rc.ch[3] * rc_ctrl.rc.ch[3]));
+			Speed_Motor_Target[0] = direction_coefficient * (-0.849106f * sqrt(rc_ctrl.rc.ch[2] * rc_ctrl.rc.ch[2] + rc_ctrl.rc.ch[3] * rc_ctrl.rc.ch[3]));
+			Speed_Motor_Target[1] = direction_coefficient * (-0.849106f * sqrt(rc_ctrl.rc.ch[2] * rc_ctrl.rc.ch[2] + rc_ctrl.rc.ch[3] * rc_ctrl.rc.ch[3]) - rc_ctrl.rc.ch[3] / 98.636f);
 			Speed_Motor_Target[2] = direction_coefficient * (-0.849106f * sqrt(rc_ctrl.rc.ch[2] * rc_ctrl.rc.ch[2] + rc_ctrl.rc.ch[3] * rc_ctrl.rc.ch[3]) - rc_ctrl.rc.ch[3] / 98.636f);
-			Speed_Motor_Target[3] = direction_coefficient * (-0.849106f * sqrt(rc_ctrl.rc.ch[2] * rc_ctrl.rc.ch[2] + rc_ctrl.rc.ch[3] * rc_ctrl.rc.ch[3]) - rc_ctrl.rc.ch[3] / 98.636f);
-			Speed_Motor_Target[4] = direction_coefficient * (-0.849106f * sqrt(rc_ctrl.rc.ch[2] * rc_ctrl.rc.ch[2] + rc_ctrl.rc.ch[3] * rc_ctrl.rc.ch[3]));
+			Speed_Motor_Target[3] = direction_coefficient * (-0.849106f * sqrt(rc_ctrl.rc.ch[2] * rc_ctrl.rc.ch[2] + rc_ctrl.rc.ch[3] * rc_ctrl.rc.ch[3]));
 
+			Speed_Motor_Target[0] *= 7;
 			Speed_Motor_Target[1] *= 7;
 			Speed_Motor_Target[2] *= 7;
 			Speed_Motor_Target[3] *= 7;
-			Speed_Motor_Target[4] *= 7;
 		}
 		if (ABS(rc_ctrl.rc.ch[2]) <= 250 && ABS(rc_ctrl.rc.ch[3]) <= 250)
 		{
+			Speed_Motor_Target[0] = 0;
 			Speed_Motor_Target[1] = 0;
 			Speed_Motor_Target[2] = 0;
 			Speed_Motor_Target[3] = 0;
-			Speed_Motor_Target[4] = 0;
 		}
 
 		if (ABS(rc_ctrl.rc.ch[4]) >= 200)
 		{
-			Angle_Helm_Target[1] = -123494.400f + 67.00f / 20.00f * round_cnt * 8192.00f * 36.00f;
-			Angle_Helm_Target[2] = 123494.400f + 67.00f / 20.00f * round_cnt * 8192.00f * 36.00f;
-			Angle_Helm_Target[3] = -123494.400f + 67.00f / 20.00f * round_cnt * 8192.00f * 36.00f;
-			Angle_Helm_Target[4] = 123494.400f + 67.00f / 20.00f * round_cnt * 8192.00f * 36.00f;
+			Angle_Helm_Target[0] = -123494.400f + 67.00f / 20.00f * round_cnt * 8192.00f * 36.00f;
+			Angle_Helm_Target[1] = 123494.400f + 67.00f / 20.00f * round_cnt * 8192.00f * 36.00f;
+			Angle_Helm_Target[2] = -123494.400f + 67.00f / 20.00f * round_cnt * 8192.00f * 36.00f;
+			Angle_Helm_Target[3] = 123494.400f + 67.00f / 20.00f * round_cnt * 8192.00f * 36.00f;
 		}
 		if (ABS(rc_ctrl.rc.ch[4]) >= 330)
 		{
-			Speed_Motor_Target[1] = +0.707106f * rc_ctrl.rc.ch[4]; // 原地旋转
+			Speed_Motor_Target[0] = +0.707106f * rc_ctrl.rc.ch[4]; // 原地旋转
+			Speed_Motor_Target[1] = -0.707106f * rc_ctrl.rc.ch[4];
 			Speed_Motor_Target[2] = -0.707106f * rc_ctrl.rc.ch[4];
-			Speed_Motor_Target[3] = -0.707106f * rc_ctrl.rc.ch[4];
-			Speed_Motor_Target[4] = +0.707106f * rc_ctrl.rc.ch[4];
+			Speed_Motor_Target[3] = +0.707106f * rc_ctrl.rc.ch[4];
 
+			Speed_Motor_Target[0] *= 5.2f;
 			Speed_Motor_Target[1] *= 5.2f;
 			Speed_Motor_Target[2] *= 5.2f;
 			Speed_Motor_Target[3] *= 5.2f;
-			Speed_Motor_Target[4] *= 5.2f;
 		}
 	}
 }
 /**
- * @brief          control loop, according to control set-point, calculate motor current,
- *                 motor current will be sentto motor
- * @param[out]     chassis_move_control_loop: "chassis_move" valiable point
- * @retval         none
+ * @brief  底盘电机输出
+ * @param  void
+ * @retval void
+ * @attention
  */
-/**
- * @brief          控制循环，根据控制设定值，计算电机电流值，进行控制
- * @param[out]     chassis_move_control_loop:"chassis_move"变量指针.
- * @retval         none
- */
-static void chassis_control_loop(void)
+void Chassis_Loop_Out(void)
 {
-	M3508_Target[1] = PID_velocity_realize_1(Speed_Motor_Target[1], 1);
-	M3508_Target[2] = PID_velocity_realize_1(Speed_Motor_Target[2], 2);
-	M3508_Target[3] = PID_velocity_realize_1(Speed_Motor_Target[3], 3);
-	M3508_Target[4] = PID_velocity_realize_1(Speed_Motor_Target[4], 4);
+	M3508_Target[0] = PID_velocity_realize_1(Speed_Motor_Target[0], 1);
+	M3508_Target[1] = PID_velocity_realize_1(Speed_Motor_Target[1], 2);
+	M3508_Target[2] = PID_velocity_realize_1(Speed_Motor_Target[2], 3);
+	M3508_Target[3] = PID_velocity_realize_1(Speed_Motor_Target[3], 4);
 
-	M2006_Target[1] = pid_call_2(Angle_Helm_Target[1], 1);
-	M2006_Target[2] = pid_call_2(Angle_Helm_Target[2], 2);
-	M2006_Target[3] = pid_call_2(Angle_Helm_Target[3], 3);
-	M2006_Target[4] = pid_call_2(Angle_Helm_Target[4], 4);
+	M2006_Target[0] = pid_call_2(Angle_Helm_Target[0], 1);
+	M2006_Target[1] = pid_call_2(Angle_Helm_Target[1], 2);
+	M2006_Target[2] = pid_call_2(Angle_Helm_Target[2], 3);
+	M2006_Target[3] = pid_call_2(Angle_Helm_Target[3], 4);
 
-	CAN1_CMD_1(M3508_Target[1], M3508_Target[2], M3508_Target[3], M3508_Target[4]);
-	CAN2_CMD_1(M2006_Target[1], M2006_Target[2], M2006_Target[3], M2006_Target[4]);
+	CAN1_CMD_1(M3508_Target[0], M3508_Target[1], M3508_Target[2], M3508_Target[3]);
+	CAN2_CMD_1(M2006_Target[0], M2006_Target[1], M2006_Target[2], M2006_Target[3]);
 }

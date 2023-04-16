@@ -47,21 +47,21 @@ void Remote_Control_Chassis_Mode(Chassis_Speed_t *chassis_speed)
     case CHASSIS_NORMAL: //正常模式
         chassis_speed->vx = (fp32)rc_ctrl.rc.ch[2]; 
         chassis_speed->vy = (fp32)rc_ctrl.rc.ch[3]; 
-        chassis_speed->vw = (fp32)rc_ctrl.rc.ch[4]; 
+        chassis_speed->vw = -(fp32)rc_ctrl.rc.ch[4]; 
 
         chassis_speed->vx *= 6;
-        chassis_speed->vx *= 6;
-        chassis_speed->vx *= 5;
+        chassis_speed->vy *= 6;
+        chassis_speed->vw *= 5;
         break;
 
     case CHASSIS_GYROSCOPE: //小陀螺模式
         chassis_speed->vx = (fp32)rc_ctrl.rc.ch[2];
         chassis_speed->vy = (fp32)rc_ctrl.rc.ch[3];
-        chassis_speed->vw = 330.0f;
+        chassis_speed->vw = -330.0f;
 
         chassis_speed->vx *= 6;
-        chassis_speed->vx *= 6;
-        chassis_speed->vx *= 5;
+        chassis_speed->vy *= 6;
+        chassis_speed->vw *= 5;
         break;
     default:
         break;
@@ -76,7 +76,7 @@ void Remote_Control_Chassis_Mode(Chassis_Speed_t *chassis_speed)
  */
 void Chassis_Sports_Calc(Chassis_Speed_t speed)
 {
-        Speed_Motor_Target[0] =   speed.vy + speed.vx + speed.vw;
+    Speed_Motor_Target[0] =   speed.vy + speed.vx + speed.vw;
 		Speed_Motor_Target[1] = - speed.vy + speed.vx + speed.vw;
 		Speed_Motor_Target[2] = - speed.vy - speed.vx + speed.vw;
 		Speed_Motor_Target[3] =   speed.vy - speed.vx + speed.vw;

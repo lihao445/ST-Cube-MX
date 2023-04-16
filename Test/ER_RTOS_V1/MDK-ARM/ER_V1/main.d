@@ -32,6 +32,9 @@ er_v1\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
 er_v1\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 er_v1\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 er_v1\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+er_v1\main.o: ../bsp/boards/Inc/include.h
+er_v1\main.o: ../Core/Inc/main.h
+er_v1\main.o: ../Core/Inc/gpio.h
 er_v1\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 er_v1\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
 er_v1\main.o: ../Core/Inc/FreeRTOSConfig.h
@@ -46,12 +49,6 @@ er_v1\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 er_v1\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 er_v1\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 er_v1\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
-er_v1\main.o: ../Core/Inc/can.h
-er_v1\main.o: ../Core/Inc/dma.h
-er_v1\main.o: ../Core/Inc/usart.h
-er_v1\main.o: ../Core/Inc/gpio.h
-er_v1\main.o: ../bsp/boards/Inc/include.h
-er_v1\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 er_v1\main.o: ../bsp/boards/Inc/bsp_delay.h
 er_v1\main.o: ../bsp/boards/Inc/struct_typedef.h
 er_v1\main.o: ../applications/Inc/CAN_receive.h
@@ -66,3 +63,10 @@ er_v1\main.o: ../applications/Inc/chassis_task.h
 er_v1\main.o: D:\Program Files\Arm\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 er_v1\main.o: ../applications/Inc/claw_task.h
 er_v1\main.o: ../applications/Inc/shoot_task.h
+er_v1\main.o: ../applications/Inc/conveyer_task.h
+er_v1\main.o: ../applications/Inc/robot_api.h
+er_v1\main.o: ../applications/Inc/robot_behaviour_task.h
+er_v1\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
+er_v1\main.o: ../Core/Inc/can.h
+er_v1\main.o: ../Core/Inc/dma.h
+er_v1\main.o: ../Core/Inc/usart.h

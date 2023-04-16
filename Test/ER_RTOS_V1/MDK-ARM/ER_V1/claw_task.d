@@ -34,6 +34,7 @@ er_v1\claw_task.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
 er_v1\claw_task.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 er_v1\claw_task.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 er_v1\claw_task.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+er_v1\claw_task.o: ../bsp/boards/Inc/include.h
 er_v1\claw_task.o: ../Core/Inc/gpio.h
 er_v1\claw_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 er_v1\claw_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
@@ -52,7 +53,6 @@ er_v1\claw_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_grou
 er_v1\claw_task.o: ../bsp/boards/Inc/bsp_delay.h
 er_v1\claw_task.o: ../bsp/boards/Inc/struct_typedef.h
 er_v1\claw_task.o: ../applications/Inc/CAN_receive.h
-er_v1\claw_task.o: ../bsp/boards/Inc/include.h
 er_v1\claw_task.o: ../bsp/boards/Inc/bsp_can.h
 er_v1\claw_task.o: ../applications/Inc/pid.h
 er_v1\claw_task.o: ../applications/Inc/pid_user.h
@@ -63,3 +63,6 @@ er_v1\claw_task.o: ../applications/Inc/chassis_task.h
 er_v1\claw_task.o: D:\Program Files\Arm\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 er_v1\claw_task.o: ../applications/Inc/claw_task.h
 er_v1\claw_task.o: ../applications/Inc/shoot_task.h
+er_v1\claw_task.o: ../applications/Inc/conveyer_task.h
+er_v1\claw_task.o: ../applications/Inc/robot_api.h
+er_v1\claw_task.o: ../applications/Inc/robot_behaviour_task.h
