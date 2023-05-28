@@ -23,6 +23,9 @@ uint8_t rx_buffer[1];
 
 uint8_t imu_buffer[11];
 
+uint8_t unlocking[5] = {0xff, 0xaa, 0x69, 0x88, 0xb5};
+uint8_t make_zero[5] = {0xff, 0xaa, 0x76, 0x00, 0x00};
+
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
 	if(huart->Instance == USART1)

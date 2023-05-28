@@ -55,6 +55,8 @@ void SystemClock_Config(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 extern  uint8_t rx_buffer[1];
+extern uint8_t unlocking[5];
+extern uint8_t make_zero[5];
 /* USER CODE END 0 */
 
 /**
@@ -87,7 +89,19 @@ int main(void)
   MX_GPIO_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
+	HAL_Delay(1000);
+	for(int i = 0;i < 5;i++)
+	{
+		HAL_UART_Transmit(&huart1,&(unlocking[i]),1,HAL_MAX_DELAY);
+	}
+	for(int i = 0;i < 5;i++)
+	{
+		HAL_UART_Transmit(&huart1,&(make_zero[i]),1,HAL_MAX_DELAY);
+	}
+	
+	
 	HAL_UART_Receive_IT(&huart1,rx_buffer,1);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
