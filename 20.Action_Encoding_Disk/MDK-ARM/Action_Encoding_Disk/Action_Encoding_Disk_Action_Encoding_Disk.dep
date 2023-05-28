@@ -649,8 +649,8 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x62CEBED7
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x62CEBED7)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x62CEBED7)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x62CEBED7)
-F (..\applications\Src\encoding_disk.c)(0x6422F161)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../applications/Inc -I ../bsp/boards/Inc-I.\RTE\_Action_Encoding_Disk-I"D:\Program Files\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\Program Files\Arm\Packs\Keil\STM32F4xx_DFP\2.16.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include"-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o action_encoding_disk\encoding_disk.o --omf_browse action_encoding_disk\encoding_disk.crf --depend action_encoding_disk\encoding_disk.d)
-I (../applications/Inc/encoding_disk.h)(0x6422F115)
+F (..\applications\Src\encoding_disk.c)(0x645CD33D)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../applications/Inc -I ../bsp/boards/Inc-I.\RTE\_Action_Encoding_Disk-I"D:\Program Files\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\Program Files\Arm\Packs\Keil\STM32F4xx_DFP\2.16.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include"-D__UVISION_VERSION="537" -D_RTE_ -DSTM32F407xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F407xx-o action_encoding_disk\encoding_disk.o --omf_browse action_encoding_disk\encoding_disk.crf --depend action_encoding_disk\encoding_disk.d)
+I (../applications/Inc/encoding_disk.h)(0x645CD36E)
 I (../bsp/boards/Inc/include.h)(0x640EFA4E)
 I (../Core/Inc/main.h)(0x64153E12)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x62CEBED7)

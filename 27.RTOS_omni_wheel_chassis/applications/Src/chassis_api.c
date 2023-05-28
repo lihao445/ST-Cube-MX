@@ -35,13 +35,13 @@ void Remote_Control_Chassis_Set_Mode(void)
 
 /**
  * @brief  遥控器控制方式
- * @param  void
+ * @param  chassis_speed 底盘速度
  * @retval void
  * @attention
  */
 void Remote_Control_Chassis_Mode(Chassis_Speed_t *chassis_speed)
 {
-    /***********************************确定底盘四个电机的目标速度*****************************************/
+    /***********************************确定底盘的目标速度*****************************************/
     switch (actChassis)
     {
     case CHASSIS_NORMAL: //正常模式
@@ -70,9 +70,9 @@ void Remote_Control_Chassis_Mode(Chassis_Speed_t *chassis_speed)
 
 /**
  * @brief  底盘运动解析式计算
- * @param  void
+ * @param  speed 底盘速度
  * @retval void
- * @attention  此函数是全向轮底盘解析式
+* @attention  此函数是全向轮底盘电机的速度解析式
  */
 void Chassis_Sports_Calc(Chassis_Speed_t speed)
 {

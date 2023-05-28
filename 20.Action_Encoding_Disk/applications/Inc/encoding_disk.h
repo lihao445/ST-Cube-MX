@@ -21,9 +21,9 @@ void Data_Analyse(uint8_t rec);
 
 
 
-//void stract(char str1[],char str2[],int num);
-//void Update_x(float new_x);
-//void Update_y(float new_y);
-//void Update_yaw(float new_yaw);
+void stract(char str1[],char str2[],int num);
+void Update_x(float new_x);
+void Update_y(float new_y);
+void Update_yaw(float new_yaw);
 
 #endif

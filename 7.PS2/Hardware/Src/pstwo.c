@@ -2,9 +2,9 @@
 /*
   ******************************************************************************
   * @author
-  *»úµç´´ÐÂÑ§»á
-	*Vinci»úÆ÷ÈË¶Ó
-	*¶­¼Ñ»Ô
+  *æœºç”µåˆ›æ–°å­¦ä¼š
+	*Vinciæœºå™¨äººé˜Ÿ
+	*è‘£ä½³è¾‰
   ******************************************************************************
   */
 
@@ -13,7 +13,7 @@ PS2_DataTypedef PS2;
 PS2_UserDataTypedef PStwo;
 
 
-uint8_t Comd[3] = {0x01,0x42,0x00};    //bit3,4¿ÉÒÔÕñ¶¯ÊÖ±ú£¬ÎÒÃÇÖ»ÓÃÁËbit0-2,    bit2Îª¿ÕÏÐidle¡£
+uint8_t Comd[3] = {0x01,0x42,0x00};    //bit3,4å¯ä»¥æŒ¯åŠ¨æ‰‹æŸ„ï¼Œæˆ‘ä»¬åªç”¨äº†bit0-2,    bit2ä¸ºç©ºé—²idleã€‚
 uint8_t PS2Data[9] = {0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00};
 
 
@@ -34,25 +34,25 @@ void PS2Data_Receive(void)
 {
 	uint8_t i = 0;
 	
-	//µ±µ¥Æ¬»úÏë¶ÁÊÖ±úÊý¾Ý»òÏòÊÖ±ú·¢ËÍÃüÁîÊ±£¬½«»áÀ­µÍ CS ÏßµçÆ½¡£
-	HAL_GPIO_WritePin(SPI1_CS_GPIO_Port, SPI1_CS_Pin, GPIO_PIN_RESET);   //PA4 SPI1_CS  ¿ªÊ¼Í¨ÐÅµÄ±êÖ¾
-	//·¢³öÒ»¸öÃüÁî¡°0x01¡±£¬½ÓÊÕ¿ÕÏÐidle¡£
+	//å½“å•ç‰‡æœºæƒ³è¯»æ‰‹æŸ„æ•°æ®æˆ–å‘æ‰‹æŸ„å‘é€å‘½ä»¤æ—¶ï¼Œå°†ä¼šæ‹‰ä½Ž CS çº¿ç”µå¹³ã€‚
+	HAL_GPIO_WritePin(SPI1_CS_GPIO_Port, SPI1_CS_Pin, GPIO_PIN_RESET);   //PA4 SPI1_CS  å¼€å§‹é€šä¿¡çš„æ ‡å¿—
+	//å‘å‡ºä¸€ä¸ªå‘½ä»¤â€œ0x01â€ï¼ŒæŽ¥æ”¶ç©ºé—²idleã€‚
 	HAL_SPI_TransmitReceive(&hspi1,&Comd[0],&PS2Data[0],1,0xffff);   
 	nop_delay_us(3);
-	//µ¥Æ¬»ú·¢ËÍ¡°0x42¡±£¬À´ÏòÊÖ±úÇëÇóÊý¾Ý£¬£¬´ËÊ±½ÓÊÕµ½ÊÖ±ú´«À´µÄ¡°0x41ÂÌµÆÄ£Ê½»òÕß0x73ºìµÆÄ£Ê½¡±¡£
+	//å•ç‰‡æœºå‘é€â€œ0x42â€ï¼Œæ¥å‘æ‰‹æŸ„è¯·æ±‚æ•°æ®ï¼Œï¼Œæ­¤æ—¶æŽ¥æ”¶åˆ°æ‰‹æŸ„ä¼ æ¥çš„â€œ0x41ç»¿ç¯æ¨¡å¼æˆ–è€…0x73çº¢ç¯æ¨¡å¼â€ã€‚
 	HAL_SPI_TransmitReceive(&hspi1,&Comd[1],&PS2Data[1],1,0xffff);
 	nop_delay_us(3);
-	//µ¥Æ¬»ú·¢ËÍ¿ÕÏÐidle£¬½ÓÊÕµ½ÊÖ±ú·¢ËÍµÄ0x5a£¬±íÊ¾¸æËßµ¥Æ¬»úÊý¾ÝÒªÀ´ÁË¡£
+	//å•ç‰‡æœºå‘é€ç©ºé—²idleï¼ŒæŽ¥æ”¶åˆ°æ‰‹æŸ„å‘é€çš„0x5aï¼Œè¡¨ç¤ºå‘Šè¯‰å•ç‰‡æœºæ•°æ®è¦æ¥äº†ã€‚
 	HAL_SPI_TransmitReceive(&hspi1,&Comd[2],&PS2Data[2],1,0xffff);
 	nop_delay_us(3); 
 	
 	for(i = 3;i <9;i++)
 	{
-	HAL_SPI_TransmitReceive(&hspi1,&Comd[2],&PS2Data[i],1,0xffff); // ½ÓÊÜÊý¾Ý
+	HAL_SPI_TransmitReceive(&hspi1,&Comd[2],&PS2Data[i],1,0xffff); // æŽ¥å—æ•°æ®
 	nop_delay_us(3);
 	}
 	
-	HAL_GPIO_WritePin(SPI1_CS_GPIO_Port, SPI1_CS_Pin, GPIO_PIN_SET);   //PA4 SPI1_CS    ½áÊøÍ¨ÐÅµÄ±êÖ¾
+	HAL_GPIO_WritePin(SPI1_CS_GPIO_Port, SPI1_CS_Pin, GPIO_PIN_SET);   //PA4 SPI1_CS    ç»“æŸé€šä¿¡çš„æ ‡å¿—
 }
 
 
@@ -61,15 +61,15 @@ void PS2Data_Get(void)
 {  
 
   
-	//Ä¬ÈÏÊý¾ÝÊÖ²áÎª0²ÅÊÇ°´ÏÂ£¬Îª1ÔòÃ»°´ÏÂ¡£
-	//°´Î»È¡·´  ±äÎª1Îª°´ÏÂ£¬0ÎªÃ»°´ÏÂ¡£
+	//é»˜è®¤æ•°æ®æ‰‹å†Œä¸º0æ‰æ˜¯æŒ‰ä¸‹ï¼Œä¸º1åˆ™æ²¡æŒ‰ä¸‹ã€‚
+	//æŒ‰ä½å–å  å˜ä¸º1ä¸ºæŒ‰ä¸‹ï¼Œ0ä¸ºæ²¡æŒ‰ä¸‹ã€‚
 	
 		PS2Data[3] = ~PS2Data[3];
 		PS2Data[4] = ~PS2Data[4];	
 	
 	
 	
-	//Êý¾Ý½âÎö  
+	//æ•°æ®è§£æž  
 	PS2.SELECT = (PS2Data[3] << 7);
 	PS2.L3 = (PS2Data[3] << 6);
 	PS2.R3 = (PS2Data[3] << 5);
@@ -116,7 +116,7 @@ void PS2Data_Get(void)
 	
 	
 	
-//×ª»»ÎªintÀàÐÍÊý¾Ý
+//è½¬æ¢ä¸ºintç±»åž‹æ•°æ®
 	PStwo.SELECT = PS2.SELECT;
 	PStwo.L3 = 	PS2.L3;
 	PStwo.R3 = PS2.R3;
@@ -135,8 +135,8 @@ void PS2Data_Get(void)
 	PStwo.X = PS2.X;
 	PStwo.SQUARE = PS2.SQUARE;
 
-	PS2.PSS_RX = PS2Data[5];   //×ó0£¬ÓÒ255
-	PS2.PSS_RY = PS2Data[6];	//ÉÏ0£¬ÏÂ255
+	PS2.PSS_RX = PS2Data[5];   //å·¦0ï¼Œå³255
+	PS2.PSS_RY = PS2Data[6];	//ä¸Š0ï¼Œä¸‹255
 	PS2.PSS_LX = PS2Data[7];
 	PS2.PSS_LY = PS2Data[8];
 	
@@ -151,13 +151,13 @@ void PS2Data_Get(void)
 void PS2Rocker_correct(void)
 {
 	
-	//´¦ÀíÖÐÖµ   ×ó-128  ÖÐ0   ÓÒ128
+	//å¤„ç†ä¸­å€¼   å·¦-128  ä¸­0   å³128
 	PStwo.PSS_RX -= 128;
 	PStwo.PSS_RY -= 127;
 	PStwo.PSS_LX -= 128;
 	PStwo.PSS_LY -= 127;
 	
-	//¸³ËÙ¶ÈÏµÊý
+	//èµ‹é€Ÿåº¦ç³»æ•°
 	PStwo.PSS_RX *= 1;
 	PStwo.PSS_RY *= -1;
 	PStwo.PSS_LX *= 1;
