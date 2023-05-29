@@ -121,14 +121,14 @@ int main(void)
     //电机速度赋值
     for(int i = 1;i < 5;i++)
     {
-      Speed_Motor_Target[i] = 1000;
+      Speed_Motor_Target[i] = 2000;
     }
+		Speed_Motor_Target[1] *= -1;
     //进行电机PID计算，计算出电流值
     for(int j = 1;j < 5;j++)
     {
       Current_Motor_Target[j] = PID_velocity_realize_1(Speed_Motor_Target[j],j);   //CAN1的PID速度环
     }
-
     //让CAN1的1,2,3,4号电机的转子的转速为1000rpm(闭环);
     CAN1_CMD_1(Current_Motor_Target[1],Current_Motor_Target[2],Current_Motor_Target[3],Current_Motor_Target[4]);
 

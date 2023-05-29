@@ -99,7 +99,6 @@ int main(void)
 		HAL_UART_Transmit(&huart1,&(make_zero[i]),1,HAL_MAX_DELAY);
 	}
 	
-	
 	HAL_UART_Receive_IT(&huart1,rx_buffer,1);
 
   /* USER CODE END 2 */

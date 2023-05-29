@@ -1,0 +1,27 @@
+--cpu=Cortex-M4.fp.sp
+"rotating_servo_motor\startup_stm32f407xx.o"
+"rotating_servo_motor\main.o"
+"rotating_servo_motor\gpio.o"
+"rotating_servo_motor\tim.o"
+"rotating_servo_motor\stm32f4xx_it.o"
+"rotating_servo_motor\stm32f4xx_hal_msp.o"
+"rotating_servo_motor\stm32f4xx_hal_tim.o"
+"rotating_servo_motor\stm32f4xx_hal_tim_ex.o"
+"rotating_servo_motor\stm32f4xx_hal_rcc.o"
+"rotating_servo_motor\stm32f4xx_hal_rcc_ex.o"
+"rotating_servo_motor\stm32f4xx_hal_flash.o"
+"rotating_servo_motor\stm32f4xx_hal_flash_ex.o"
+"rotating_servo_motor\stm32f4xx_hal_flash_ramfunc.o"
+"rotating_servo_motor\stm32f4xx_hal_gpio.o"
+"rotating_servo_motor\stm32f4xx_hal_dma_ex.o"
+"rotating_servo_motor\stm32f4xx_hal_dma.o"
+"rotating_servo_motor\stm32f4xx_hal_pwr.o"
+"rotating_servo_motor\stm32f4xx_hal_pwr_ex.o"
+"rotating_servo_motor\stm32f4xx_hal_cortex.o"
+"rotating_servo_motor\stm32f4xx_hal.o"
+"rotating_servo_motor\stm32f4xx_hal_exti.o"
+"rotating_servo_motor\system_stm32f4xx.o"
+--strict --scatter "Rotating_servo_motor\Rotating_servo_motor.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "Rotating_servo_motor.map" -o Rotating_servo_motor\Rotating_servo_motor.axf
