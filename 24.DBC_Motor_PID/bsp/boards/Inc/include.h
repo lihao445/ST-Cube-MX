@@ -6,8 +6,12 @@
 #endif
 
 #include "main.h"
+#include "tim.h"
+#include "gpio.h"
 #include "bsp_delay.h"
 #include "struct_typedef.h"
+#include "encoder.h"
+#include "dbc_motor.h"
 
 #ifdef __cplusplus
 }
