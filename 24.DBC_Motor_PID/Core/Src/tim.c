@@ -198,7 +198,7 @@ void HAL_TIM_Encoder_MspInit(TIM_HandleTypeDef* tim_encoderHandle)
     PB4     ------> TIM3_CH1
     PB5     ------> TIM3_CH2
     */
-    GPIO_InitStruct.Pin = Encoder_A_Pin|Encoder_B_Pin;
+    GPIO_InitStruct.Pin = Motor1_Encoder_A_Pin|Motor1_Encoder_B_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -273,12 +273,12 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef* timHandle)
     /**TIM10 GPIO Configuration
     PF6     ------> TIM10_CH1
     */
-    GPIO_InitStruct.Pin = Motor_PWM_Pin;
+    GPIO_InitStruct.Pin = Motor1_PWM_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
     GPIO_InitStruct.Alternate = GPIO_AF3_TIM10;
-    HAL_GPIO_Init(Motor_PWM_GPIO_Port, &GPIO_InitStruct);
+    HAL_GPIO_Init(Motor1_PWM_GPIO_Port, &GPIO_InitStruct);
 
   /* USER CODE BEGIN TIM10_MspPostInit 1 */
 
@@ -302,7 +302,7 @@ void HAL_TIM_Encoder_MspDeInit(TIM_HandleTypeDef* tim_encoderHandle)
     PB4     ------> TIM3_CH1
     PB5     ------> TIM3_CH2
     */
-    HAL_GPIO_DeInit(GPIOB, Encoder_A_Pin|Encoder_B_Pin);
+    HAL_GPIO_DeInit(GPIOB, Motor1_Encoder_A_Pin|Motor1_Encoder_B_Pin);
 
     /* TIM3 interrupt Deinit */
     HAL_NVIC_DisableIRQ(TIM3_IRQn);

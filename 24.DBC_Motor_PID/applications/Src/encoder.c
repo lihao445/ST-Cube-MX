@@ -30,7 +30,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 	{
 		encoder_data.encoder_now = get_encoder_value();                             /* 获取编码器值，用于计算速度 */
 		
-    motor_message_filtering(&encoder_data,&motor_data,50);                       /* 中位平均值滤除编码器抖动数据，50ms计算一次速度*/
+    motor_message_filtering(&encoder_data,&motor_data,1);                       /* 中位平均值滤除编码器抖动数据，50ms计算一次速度*/
 	}
 	if(htim->Instance == TIM6)
 	{

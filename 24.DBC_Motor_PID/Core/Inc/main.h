@@ -31,7 +31,7 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "include.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -57,16 +57,16 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define Motor_PWM_Pin GPIO_PIN_6
-#define Motor_PWM_GPIO_Port GPIOF
-#define Motor_IN1_Pin GPIO_PIN_7
-#define Motor_IN1_GPIO_Port GPIOF
-#define Motor_IN2_Pin GPIO_PIN_8
-#define Motor_IN2_GPIO_Port GPIOF
-#define Encoder_A_Pin GPIO_PIN_4
-#define Encoder_A_GPIO_Port GPIOB
-#define Encoder_B_Pin GPIO_PIN_5
-#define Encoder_B_GPIO_Port GPIOB
+#define Motor1_PWM_Pin GPIO_PIN_6
+#define Motor1_PWM_GPIO_Port GPIOF
+#define Motor1_IN1_Pin GPIO_PIN_7
+#define Motor1_IN1_GPIO_Port GPIOF
+#define Motor1_IN2_Pin GPIO_PIN_8
+#define Motor1_IN2_GPIO_Port GPIOF
+#define Motor1_Encoder_A_Pin GPIO_PIN_4
+#define Motor1_Encoder_A_GPIO_Port GPIOB
+#define Motor1_Encoder_B_Pin GPIO_PIN_5
+#define Motor1_Encoder_B_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 

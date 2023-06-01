@@ -1,7 +1,7 @@
 #ifndef __PID_H
 #define __PID_H
 #include "stm32f4xx_hal.h"
-#include "include.h"
+#include "struct_typedef.h"
 
 enum PID_MODE
 {

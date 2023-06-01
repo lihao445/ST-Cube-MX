@@ -90,6 +90,8 @@ int main(void)
   MX_TIM10_Init();
   MX_TIM6_Init();
   /* USER CODE BEGIN 2 */
+	PID_devices_Init();
+	
 	HAL_TIM_Encoder_Start_IT(&htim3,TIM_CHANNEL_1);
 	HAL_TIM_Encoder_Start_IT(&htim3,TIM_CHANNEL_2);
 
@@ -105,6 +107,23 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+		fp32 pos;
+		pos = 10000;
+		Motor_CMD_PID(call,pos,0);
+		HAL_Delay(3);
+	
+//		fp32 vel;
+//		vel = 3000;
+//		Motor_CMD_PID(velocity,vel,0);
+//		HAL_Delay(10);
+		
+		
+//		Motor_Set_Pulse(7000,0);
+//		HAL_GPIO_WritePin(Motor1_IN1_GPIO_Port,Motor1_IN1_Pin,GPIO_PIN_SET);
+//		HAL_GPIO_WritePin(Motor1_IN2_GPIO_Port,Motor1_IN2_Pin,GPIO_PIN_RESET);
+		
+		
+		
   }
   /* USER CODE END 3 */
 }

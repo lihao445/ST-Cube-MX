@@ -30,4 +30,14 @@ dbc_motor_pid\stm32f4xx_it.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_
 dbc_motor_pid\stm32f4xx_it.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
 dbc_motor_pid\stm32f4xx_it.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 dbc_motor_pid\stm32f4xx_it.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
+dbc_motor_pid\stm32f4xx_it.o: ../bsp/boards/Inc/include.h
+dbc_motor_pid\stm32f4xx_it.o: ../Core/Inc/main.h
+dbc_motor_pid\stm32f4xx_it.o: ../Core/Inc/tim.h
+dbc_motor_pid\stm32f4xx_it.o: ../Core/Inc/gpio.h
+dbc_motor_pid\stm32f4xx_it.o: ../bsp/boards/Inc/bsp_delay.h
+dbc_motor_pid\stm32f4xx_it.o: ../bsp/boards/Inc/struct_typedef.h
+dbc_motor_pid\stm32f4xx_it.o: ../applications/Inc/encoder.h
+dbc_motor_pid\stm32f4xx_it.o: ../applications/Inc/dbc_motor.h
+dbc_motor_pid\stm32f4xx_it.o: ../applications/Inc/pid_user.h
+dbc_motor_pid\stm32f4xx_it.o: ../applications/Inc/pid.h
 dbc_motor_pid\stm32f4xx_it.o: ../Core/Inc/stm32f4xx_it.h

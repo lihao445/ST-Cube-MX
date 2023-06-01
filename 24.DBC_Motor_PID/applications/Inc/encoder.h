@@ -6,7 +6,8 @@ extern "C"
 {
 #endif
 
-#include "include.h"
+#include "struct_typedef.h"
+#include "tim.h"
 
 #define ABS(x)	( (x>0) ? (x) : (-x) ) 
 
