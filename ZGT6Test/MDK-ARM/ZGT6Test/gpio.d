@@ -1,0 +1,33 @@
+zgt6test\gpio.o: ../Core/Src/gpio.c
+zgt6test\gpio.o: ../Core/Inc/gpio.h
+zgt6test\gpio.o: ../Core/Inc/main.h
+zgt6test\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
+zgt6test\gpio.o: ../Core/Inc/stm32f4xx_hal_conf.h
+zgt6test\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h
+zgt6test\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h
+zgt6test\gpio.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
+zgt6test\gpio.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h
+zgt6test\gpio.o: ../Drivers/CMSIS/Include/core_cm4.h
+zgt6test\gpio.o: D:\Program Files\Arm\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+zgt6test\gpio.o: ../Drivers/CMSIS/Include/cmsis_version.h
+zgt6test\gpio.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
+zgt6test\gpio.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+zgt6test\gpio.o: ../Drivers/CMSIS/Include/mpu_armv7.h
+zgt6test\gpio.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
+zgt6test\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
+zgt6test\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
+zgt6test\gpio.o: D:\Program Files\Arm\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+zgt6test\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
+zgt6test\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
+zgt6test\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h
+zgt6test\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h
+zgt6test\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h
+zgt6test\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h
+zgt6test\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h
+zgt6test\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h
+zgt6test\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h
+zgt6test\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h
+zgt6test\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h
+zgt6test\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
+zgt6test\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
+zgt6test\gpio.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h

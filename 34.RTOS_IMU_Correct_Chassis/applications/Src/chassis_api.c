@@ -84,7 +84,7 @@ void Remote_Control_Chassis_Mode(Chassis_Speed_t *chassis_speed)
 		
 		RC_atan2_value = rad2deg(atan2(absolute_chassis_measure.Speed.vx,absolute_chassis_measure.Speed.vy));
 		
-		yaw_delta = absolute_chassis_measure.Speed.vw / 660.0f * 0.5f;
+		yaw_delta = absolute_chassis_measure.Speed.vw / 660.0f * 0.4f;
 		
 		absolute_chassis_measure.Euler.yaw_target += yaw_delta;
 		
@@ -93,7 +93,18 @@ void Remote_Control_Chassis_Mode(Chassis_Speed_t *chassis_speed)
 			absolute_chassis_measure.Euler.yaw_offset = imu.Euler.yaw;
 			imu_offset_flags = 0;
 		}
+		absolute_chassis_measure.Euler.yaw_last_angle = absolute_chassis_measure.Euler.yaw_rel;
 		absolute_chassis_measure.Euler.yaw_rel = absolute_chassis_measure.Euler.yaw - absolute_chassis_measure.Euler.yaw_offset;
+		
+		if(absolute_chassis_measure.Euler.yaw_rel - absolute_chassis_measure.Euler.yaw_last_angle < -300.0f)
+		{
+			absolute_chassis_measure.Euler.yaw_round_cnt++;
+		}
+		else if(absolute_chassis_measure.Euler.yaw_rel - absolute_chassis_measure.Euler.yaw_last_angle > 300.0f)
+		{
+			absolute_chassis_measure.Euler.yaw_round_cnt--;
+		}
+		absolute_chassis_measure.Euler.yaw_total = 360.0f * absolute_chassis_measure.Euler.yaw_round_cnt + absolute_chassis_measure.Euler.yaw_rel;
 }
 
 /**

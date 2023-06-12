@@ -36,7 +36,10 @@ typedef struct
 		fp32 roll;
 		
 		fp32 yaw_offset;
+		fp32 yaw_last_angle;
 		fp32 yaw_rel;   //yaw_relative
+		fp32 yaw_round_cnt;
+		fp32 yaw_total;
 		
 		fp32 yaw_target;
 	}Euler;

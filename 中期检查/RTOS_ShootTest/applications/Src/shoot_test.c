@@ -2,6 +2,8 @@
 
 extern RC_ctrl_t rc_ctrl;
 
+fp32 fff = 7000;
+
 void shoot_test_task(void const * argument)
 {
 	PID_devices_Init();
@@ -51,14 +53,14 @@ void shoot_test_task(void const * argument)
 //	{
 //		CAN1_CMD_1(PID_velocity_realize_1(0,1),PID_velocity_realize_1(0,2),0,0);
 //	}
-	
+//	
 
 		
 		
 //		CAN1_CMD_1(PID_velocity_realize_1(rc_ctrl.rc.ch[3]*2,1),PID_velocity_realize_1(-rc_ctrl.rc.ch[3],2),0,0); 
-//		CAN1_CMD_1(PID_velocity_realize_1(-3100,1),PID_velocity_realize_1(3100,2),0,0);
+		CAN1_CMD_1(PID_velocity_realize_1(+fff,1),PID_velocity_realize_1(-fff,2),0,0);
 		vTaskDelay(2);             //ÑÓÊ±²»ÄÜÌ«¾Ã
-		CAN1_CMD_1(PID_velocity_realize_1(469,1),PID_velocity_realize_1(-469,2),PID_velocity_realize_1(469,3),PID_velocity_realize_1(-469,4));
-		
+//		CAN1_CMD_1(PID_velocity_realize_1(469,1),PID_velocity_realize_1(-469,2),PID_velocity_realize_1(469,3),PID_velocity_realize_1(-469,4));
+//		
 	}
 }

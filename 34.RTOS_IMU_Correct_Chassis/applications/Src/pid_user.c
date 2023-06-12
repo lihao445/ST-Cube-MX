@@ -15,7 +15,7 @@ fp32 motor_speed_3508_pid[3] = {10, 0.1, 0};//底盘3508参数
 fp32 motor_position_3508_pid[3] = {0.2, 0, 1};
 fp32 motor_speed_2006_pid[3] = {8.3,0.1,1};//底盘2006参数
 fp32 motor_position_2006_pid[3] = {0.27,0.022,0.3};
-fp32 motor_yaw_pid[3] = {15,0.01,0.5};
+fp32 motor_yaw_pid[3] = {60,0,0};
 
 extern IMU_t imu;
 
@@ -53,7 +53,7 @@ void PID_devices_Init(void)
 		PID_init(&pid_pos_2[i], PID_POSITION, motor_position_3508_pid, 400, 300);
 	}
 	
-	PID_init(&pid_yaw,PID_POSITION,motor_yaw_pid,4000,300);
+	PID_init(&pid_yaw,PID_POSITION,motor_yaw_pid,2300,1300);
 }
 
 
@@ -105,12 +105,6 @@ fp32 PID_call_2(fp32 position,int i)
 
 fp32 PID_Yaw_realize(fp32 set_yaw)
 {
-	int32_t delta_yaw;
-	delta_yaw = set_yaw - absolute_chassis_measure.Euler.yaw_rel;
-	if(ABS(delta_yaw) <= 2)
-	{
-		return 0;
-	}
-	PID_calc(&pid_yaw,absolute_chassis_measure.Euler.yaw_rel,set_yaw);
+	PID_calc(&pid_yaw,absolute_chassis_measure.Euler.yaw_total,set_yaw);
 	return pid_yaw.out;
 }
