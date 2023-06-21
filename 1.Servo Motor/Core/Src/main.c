@@ -89,20 +89,21 @@ int main(void)
   /* USER CODE BEGIN 2 */
 	HAL_TIM_Base_Start(&htim1);
 	HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_1);      //红色正极，黑色褐色负极，黄色白色信号。
+	
+	__HAL_TIM_SetCompare(&htim1,TIM_CHANNEL_1,1500);   //复位（可省略）
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-		HAL_Delay(1000);
-		 __HAL_TIM_SetCompare(&htim1,TIM_CHANNEL_1,2500);
+		 __HAL_TIM_SetCompare(&htim1,TIM_CHANNEL_1,2000);    //后置位45度
+		 
+		HAL_Delay(2000);
 		
-		HAL_Delay(1000);
+		 __HAL_TIM_SetCompare(&htim1,TIM_CHANNEL_1,950);     //前置位50度
 		
-		 __HAL_TIM_SetCompare(&htim1,TIM_CHANNEL_1,1000);
-		
-		HAL_Delay(1000);
+		HAL_Delay(2000);
 		
     /* USER CODE END WHILE */
 

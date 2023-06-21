@@ -62,6 +62,8 @@ fp32 Speed_Motor_Target[5];
 
 fp32 Current_Motor_Target[5];
 
+
+
 /* USER CODE END 0 */
 
 /**
@@ -100,14 +102,16 @@ int main(void)
 //PID初始化
 	PID_devices_Init();
 
-//CAN通信滤波初始化
-	CAN1_Filter_Init();
-	CAN2_Filter_Init();
-
 //开启CAN通信
 	CAN_Start(&hcan1);
 	CAN_Start(&hcan2); 
 	
+	//CAN通信滤波初始化
+	CAN1_Filter_Init();
+	CAN2_Filter_Init();
+	
+	
+	*Speed_Motor_Target = 2000;
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -118,24 +122,24 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 
-    //电机速度赋值
-    for(int i = 1;i < 5;i++)
-    {
-      Speed_Motor_Target[i] = 2000;
-    }
-		Speed_Motor_Target[1] *= -1;
-    //进行电机PID计算，计算出电流值
-    for(int j = 1;j < 5;j++)
-    {
-      Current_Motor_Target[j] = PID_velocity_realize_1(Speed_Motor_Target[j],j);   //CAN1的PID速度环
-    }
-    //让CAN1的1,2,3,4号电机的转子的转速为1000rpm(闭环);
-    CAN1_CMD_1(Current_Motor_Target[1],Current_Motor_Target[2],Current_Motor_Target[3],Current_Motor_Target[4]);
+//    //电机速度赋值
+//    for(int i = 1;i < 5;i++)
+//    {
+//      Speed_Motor_Target[i] = 300;
+//    }
+//		Speed_Motor_Target[1] *= 1;
+//    //进行电机PID计算，计算出电流值
+//    for(int j = 1;j < 5;j++)
+//    {
+//      Current_Motor_Target[j] = PID_velocity_realize_1(Speed_Motor_Target[j],j);   //CAN1的PID速度环
+//    }
+//    //让CAN1的1,2,3,4号电机的转子的转速为1000rpm(闭环);
+//    CAN1_CMD_1(Current_Motor_Target[1],Current_Motor_Target[2],Current_Motor_Target[3],Current_Motor_Target[4]);
 
-    //让CAN1的1号电机的转子的转速为1000rpm(闭环),2号电机的转子的转速为500rpm(闭环),3号电机的转子的转速为0rpm(闭环),4号电机的电流值为0(开环);
-//		CAN1_CMD_1(PID_velocity_realize_1(1000,1),PID_velocity_realize_1(500,2),PID_velocity_realize_1(0,3),0);
+//    //让CAN1的1号电机的转子的转速为1000rpm(闭环),2号电机的转子的转速为500rpm(闭环),3号电机的转子的转速为0rpm(闭环),4号电机的电流值为0(开环);
+		CAN1_CMD_1(PID_velocity_realize_1(-*Speed_Motor_Target,1),0,PID_velocity_realize_1(*Speed_Motor_Target,3),0);
 
-		HAL_Delay(1); //延时不能太久，延时太长会导致电机震荡
+		HAL_Delay(3); //延时不能太久，延时太长会导致电机震荡
   }
   /* USER CODE END 3 */
 }

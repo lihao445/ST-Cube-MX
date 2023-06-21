@@ -1,7 +1,0 @@
-{
-    "files.associations": {
-        "imu101.h": "c",
-        "include.h": "c",
-        "struct_typedef.h": "c"
-    }
-}

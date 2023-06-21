@@ -1,0 +1,26 @@
+#ifndef __CHASSIS_TASK_H_
+#define __CHASSIS_TASK_H_
+#include "main.h"
+#include "cmsis_os.h"
+#include "can.h"
+#include "dma.h"
+#include "usart.h"
+#include "gpio.h"
+
+//in the beginning of task ,wait a time
+//任务开始空闲一段时间
+#define CHASSIS_TASK_INIT_TIME 357
+
+//chassis task control time  2ms
+//底盘任务控制间隔 2ms
+#define CHASSIS_CONTROL_TIME_MS 2
+
+//void RC_speed_chassis_data(void);
+
+
+void chassis_task(void const * argument);
+
+
+
+#endif
+

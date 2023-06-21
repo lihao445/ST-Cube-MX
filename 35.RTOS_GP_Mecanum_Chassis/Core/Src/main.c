@@ -26,7 +26,9 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "bsp_can.h"
+#include "remote_control.h"
+#include "global_position.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -59,7 +61,8 @@ void MX_FREERTOS_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+extern uint8_t rx_buffer[11];
+extern uint8_t ops9_buffer[1];
 /* USER CODE END 0 */
 
 /**
@@ -97,7 +100,18 @@ int main(void)
   MX_CAN2_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
+	remote_control_init();
+	CAN_Start(&hcan1);
+	CAN_Start(&hcan2);
+	
+	CAN1_Filter_Init();
+	CAN2_Filter_Init();
 
+ HAL_UART_Receive_DMA(&huart1,rx_buffer,11);
+ HAL_UART_Receive_DMA(&huart2,ops9_buffer,1);
+ 
+// osDelay(OPS_READY_TIME); //等待设备就绪延时
+ 
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in freertos.c) */
